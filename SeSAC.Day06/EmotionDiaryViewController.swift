@@ -15,97 +15,64 @@ class EmotionDiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let countNum1 = UserDefaults.standard.integer(forKey: "countNum1")
-        TextLabelCount1.text = "행복해 \(countNum1)개"
-        
-        let countNum2 = UserDefaults.standard.integer(forKey: "countNum2")
-        TextLabelCount2.text = "좋아해 \(countNum2)개"
-        
-        let countNum3 = UserDefaults.standard.integer(forKey: "countNum3")
-        TextLabelCount3.text = "사랑해 \(countNum3)개"
-        
-        let countNum4 = UserDefaults.standard.integer(forKey: "countNum4")
-        TextLabelCount4.text = "심술나 \(countNum4)개"
-        
-        let countNum5 = UserDefaults.standard.integer(forKey: "countNum5")
-        TextLabelCount5.text = "속상해 \(countNum5)개"
-        
-        let countNum6 = UserDefaults.standard.integer(forKey: "countNum6")
-        TextLabelCount6.text = "우울해 \(countNum6)개"
-        
-        let countNum7 = UserDefaults.standard.integer(forKey: "countNum7")
-        TextLabelCount7.text = "심심해 \(countNum7)개"
-    
-        let countNum8 = UserDefaults.standard.integer(forKey: "countNum8")
-        TextLabelCount8.text = "당황해 \(countNum8)개"
-        
-        let countNum9 = UserDefaults.standard.integer(forKey: "countNum9")
-        TextLabelCount9.text = "눈물나 \(countNum9)개"
-
+        updateCountNum(TextLabelCount1, "countNum1", "행복해")
+        updateCountNum(TextLabelCount2, "countNum2", "좋아해")
+        updateCountNum(TextLabelCount3, "countNum3", "사랑해")
+        updateCountNum(TextLabelCount4, "countNum4", "심술나")
+        updateCountNum(TextLabelCount5, "countNum5", "속상해")
+        updateCountNum(TextLabelCount6, "countNum6", "우울해")
+        updateCountNum(TextLabelCount7, "countNum7", "심심해")
+        updateCountNum(TextLabelCount8, "countNum8", "당황해")
+        updateCountNum(TextLabelCount9, "countNum9", "눈물나")
         // Do any additional setup after loading the view.
     }
+    //viewDidLoad Label Func
+    func updateCountNum(_ n: UILabel, _ t: String, _ v: String) {
+        let t = UserDefaults.standard.integer(forKey: t)
+        n.text = "\(v) \(t)개"
+    }
+    
     @IBAction func btnEmotionButton1(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum1")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum1")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum1")
-        TextLabelCount1.text = "행복해 \(updateCountNum)개"
+        emotionButtonClicked("countNum1", "행복해", TextLabelCount1)
     }
     
     @IBAction func btnEmotionButton2(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum2")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum2")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum2")
-        TextLabelCount2.text = "좋아해 \(updateCountNum)개"
+        emotionButtonClicked("countNum2", "좋아해", TextLabelCount2)
     }
     
     @IBAction func btnEmotionButton3(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum3")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum3")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum3")
-        TextLabelCount3.text = "사랑해 \(updateCountNum)개"
+        emotionButtonClicked("countNum3", "사랑해", TextLabelCount3)
     }
     
     @IBAction func btnEmotionButton4(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum4")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum4")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum4")
-        TextLabelCount4.text = "심술나 \(updateCountNum)개"
+        emotionButtonClicked("countNum4", "심술나", TextLabelCount4)
     }
     
     @IBAction func btnEmotionButton5(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum5")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum5")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum5")
-        TextLabelCount5.text = "속상해 \(updateCountNum)개"
+        emotionButtonClicked("countNum5", "속상해", TextLabelCount5)
     }
     
     @IBAction func btnEmotionButton6(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum6")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum6")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum6")
-        TextLabelCount6.text = "우울해 \(updateCountNum)개"
+        emotionButtonClicked("countNum6", "우울해", TextLabelCount6)
     }
     
     @IBAction func btnEmotionButton7(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum7")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum7")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum7")
-        TextLabelCount7.text = "심심해 \(updateCountNum)개"
+        emotionButtonClicked("countNum7", "심심해", TextLabelCount7)
     }
     
     @IBAction func btnEmotionButton8(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum8")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum8")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum8")
-        TextLabelCount8.text = "당황해 \(updateCountNum)개"
+        emotionButtonClicked("countNum8", "당황해", TextLabelCount8)
     }
     
     @IBAction func btnEmotionButton9(_ sender: UIButton) {
-        let countNum = UserDefaults.standard.integer(forKey: "countNum9")
-        UserDefaults.standard.set(countNum+1, forKey: "countNum9")
-        let updateCountNum = UserDefaults.standard.integer(forKey: "countNum9")
-        TextLabelCount9.text = "눈물나 \(updateCountNum)개"
+        emotionButtonClicked("countNum9", "눈물나", TextLabelCount9)
     }
-        
+    func emotionButtonClicked(_ target: String, _ text: String, _ number: UILabel) {
+        let countNum = UserDefaults.standard.integer(forKey: target)
+        UserDefaults.standard.set(countNum+1, forKey: target)
+        let updateCountNum = UserDefaults.standard.integer(forKey: target)
+        number.text = "\(text) \(updateCountNum)개"
+    }
+    
 
 }

@@ -564,9 +564,6 @@
                                         <color key="value" systemColor="systemYellowColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="enterText:" destination="DZA-ub-zUq" eventType="editingDidEnd" id="qnt-c8-qAf"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-he-xDT">
                                 <rect key="frame" x="334" y="128" width="60" height="40"/>
@@ -580,7 +577,7 @@
                                     <action selector="addTextView:" destination="DZA-ub-zUq" eventType="touchUpInside" id="EFc-P8-VFs"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="문장을 입력하세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xsJ-8X-HGN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xsJ-8X-HGN">
                                 <rect key="frame" x="20" y="188" width="374" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -589,7 +586,20 @@
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx6-lA-ktA">
+                                <rect key="frame" x="314" y="508" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6Af-hd-OAH"/>
+                                    <constraint firstAttribute="height" constant="40" id="PG5-Lu-uNz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTextView:" destination="DZA-ub-zUq" eventType="touchUpInside" id="5JH-Ts-94t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rbp-BV-dM0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -599,9 +609,11 @@
                             <constraint firstItem="cBx-he-xDT" firstAttribute="top" secondItem="Rbp-BV-dM0" secondAttribute="top" constant="40" id="4x8-K4-lxv"/>
                             <constraint firstItem="tqh-Av-yWZ" firstAttribute="leading" secondItem="Rbp-BV-dM0" secondAttribute="leading" constant="20" id="6SO-px-5ON"/>
                             <constraint firstItem="Rbp-BV-dM0" firstAttribute="trailing" secondItem="xsJ-8X-HGN" secondAttribute="trailing" constant="20" id="Esl-g5-LSw"/>
+                            <constraint firstItem="yx6-lA-ktA" firstAttribute="top" secondItem="xsJ-8X-HGN" secondAttribute="bottom" constant="20" id="K5m-NT-iOX"/>
                             <constraint firstItem="xsJ-8X-HGN" firstAttribute="leading" secondItem="Rbp-BV-dM0" secondAttribute="leading" constant="20" id="hbm-Yg-RxD"/>
                             <constraint firstItem="xsJ-8X-HGN" firstAttribute="top" secondItem="tqh-Av-yWZ" secondAttribute="bottom" constant="20" id="n9h-xz-xZX"/>
                             <constraint firstItem="cBx-he-xDT" firstAttribute="leading" secondItem="tqh-Av-yWZ" secondAttribute="trailing" id="xkm-7a-NB1"/>
+                            <constraint firstItem="Rbp-BV-dM0" firstAttribute="trailing" secondItem="yx6-lA-ktA" secondAttribute="trailing" constant="20" id="zsh-aj-rxi"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="fU7-f5-8T3" appends="YES" id="Ynk-0T-7SQ"/>
@@ -737,7 +749,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="hs8-gm-Q3U"/>
+        <segue reference="79u-Rx-ABD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon" width="382" height="364"/>

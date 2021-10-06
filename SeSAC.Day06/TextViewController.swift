@@ -14,12 +14,18 @@ class TextViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    @IBAction func enterText(_ sender: HoshiTextField) {
-        
-    }
     
     @IBAction func addTextView(_ sender: UIButton) {
-        
+        textViewreload()
+        enterTextField.text = ""
+    }
+    
+    func textViewreload() {
+        enterTextView.text = enterTextView.text + enterTextField.text! + "\n"
+    }
+    
+    @IBAction func resetTextView(_ sender: UIButton) {
+        enterTextView.text = ""
     }
     
     @IBAction func tabKeybordHide(_ sender: UITapGestureRecognizer) {

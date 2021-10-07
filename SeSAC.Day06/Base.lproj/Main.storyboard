@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +34,7 @@
                     <navigationItem key="navigationItem" title="Calender" id="4s2-OD-8gW">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="9ZB-5I-3GM">
                             <connections>
-                                <segue destination="257-Z4-LTS" kind="show" id="tFQ-Ek-txA"/>
+                                <segue destination="257-Z4-LTS" kind="presentation" id="dU7-cN-S4V"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -349,7 +350,7 @@
                     <navigationItem key="navigationItem" title="Item" id="iTS-hU-3ai">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="gzu-sN-u20">
                             <connections>
-                                <segue destination="257-Z4-LTS" kind="show" id="hs8-gm-Q3U"/>
+                                <segue destination="257-Z4-LTS" kind="presentation" id="T5o-ou-GSF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -404,7 +405,7 @@
                     <navigationItem key="navigationItem" title="Main" id="M37-BC-2QA">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="9mM-Hz-Ui6">
                             <connections>
-                                <segue destination="257-Z4-LTS" kind="show" id="EpV-G0-NZc"/>
+                                <segue destination="257-Z4-LTS" kind="presentation" id="9N3-4J-Jhk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -419,11 +420,11 @@
             <objects>
                 <viewController id="tqn-6z-Djh" customClass="SideMenuViewController" customModule="SeSAC_Day06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0sc-HX-TVT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYd-fh-A4m">
-                                <rect key="frame" x="157" y="108" width="100" height="31"/>
+                                <rect key="frame" x="157" y="76" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BcZ-85-VIq"/>
                                 </constraints>
@@ -431,7 +432,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-gy-aVT">
-                                <rect key="frame" x="157" y="159" width="100" height="31"/>
+                                <rect key="frame" x="157" y="127" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="ljB-Me-IyQ"/>
                                 </constraints>
@@ -439,7 +440,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Join"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoB-oe-Ghf">
-                                <rect key="frame" x="157" y="210" width="100" height="31"/>
+                                <rect key="frame" x="157" y="178" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="ZEQ-Xw-Ein"/>
                                 </constraints>
@@ -447,7 +448,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Contect"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unv-0m-r6s">
-                                <rect key="frame" x="157" y="261" width="100" height="31"/>
+                                <rect key="frame" x="157" y="229" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="hOg-NS-FNS"/>
                                 </constraints>
@@ -542,7 +543,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="문장을 입력하세요 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-Av-yWZ" customClass="HoshiTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="문장을 입력하세요 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-Av-yWZ" customClass="MadokaTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="20" y="128" width="314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T3K-zt-kiM"/>
@@ -563,9 +564,21 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" systemColor="systemYellowColor"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                        <color key="value" red="0.94333755969999999" green="0.3641991913" blue="0.30736381909999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.94333755969999999" green="0.44579036709999997" blue="0.32375272710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="foregroundColor">
+                                        <color key="value" red="0.94333755969999999" green="0.44579036709999997" blue="0.32375272710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-he-xDT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-he-xDT">
                                 <rect key="frame" x="334" y="128" width="60" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="I3U-k1-2YH"/>
@@ -602,7 +615,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rbp-BV-dM0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Color"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tqh-Av-yWZ" firstAttribute="top" secondItem="Rbp-BV-dM0" secondAttribute="top" constant="40" id="4pl-xF-az3"/>
@@ -623,7 +636,7 @@
                     <navigationItem key="navigationItem" title="text" id="hS8-96-4l6">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="YXs-Nk-gyw">
                             <connections>
-                                <segue destination="257-Z4-LTS" kind="show" id="79u-Rx-ABD"/>
+                                <segue destination="257-Z4-LTS" kind="presentation" id="HLG-y1-3g1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -675,7 +688,7 @@
                     <navigationItem key="navigationItem" title="ect" id="RhZ-fB-LJz">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="eo4-AS-lqP">
                             <connections>
-                                <segue destination="257-Z4-LTS" kind="show" id="irq-Dv-UWe"/>
+                                <segue destination="257-Z4-LTS" kind="presentation" id="P6F-9U-5Oj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -730,7 +743,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Yop-n8-cdG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VmW-UH-X8y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -749,7 +762,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="79u-Rx-ABD"/>
+        <segue reference="HLG-y1-3g1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon" width="382" height="364"/>
@@ -762,6 +775,9 @@
         <image name="mono_slime7" width="278" height="258"/>
         <image name="mono_slime8" width="278" height="258"/>
         <image name="mono_slime9" width="278" height="258"/>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

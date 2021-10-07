@@ -8,9 +8,11 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Text View Setting
-        enterTextView.layer.borderColor = UIColor.black.cgColor
-        enterTextView.layer.borderWidth = 1
         
+        //enterTextView.layer.borderColor = UIColor.black.cgColor
+        //커스텀 색상 RGB값 넣기
+        enterTextView.layer.borderColor = UIColor(red: 224/255, green: 93/255, blue: 93/255, alpha: 1).cgColor
+        enterTextView.layer.borderWidth = 1
         
         // Do any additional setup after loading the view.
     }

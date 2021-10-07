@@ -674,18 +674,34 @@
             </objects>
             <point key="canvasLocation" x="1042" y="2234"/>
         </scene>
-        <!--ect-->
+        <!--DatePicker-->
         <scene sceneID="Igs-3q-CEV">
             <objects>
                 <viewController id="Ztm-lf-kAx" customClass="EctViewController" customModule="SeSAC_Day06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rne-9w-xL0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="STz-0l-yXC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="STz-0l-yXC" secondAttribute="height" multiplier="1:1" id="21s-KE-3Do"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="datePickerValueChange:" destination="Ztm-lf-kAx" eventType="valueChanged" id="nF2-Zn-ZE8"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hHG-D5-y2E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="STz-0l-yXC" firstAttribute="leading" secondItem="hHG-D5-y2E" secondAttribute="leading" id="Nda-Rf-OeN"/>
+                            <constraint firstItem="STz-0l-yXC" firstAttribute="trailing" secondItem="hHG-D5-y2E" secondAttribute="trailing" id="UP9-lL-hKi"/>
+                            <constraint firstItem="STz-0l-yXC" firstAttribute="top" secondItem="hHG-D5-y2E" secondAttribute="top" id="wrY-FM-uIK"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="ect" id="RhZ-fB-LJz">
+                    <navigationItem key="navigationItem" title="DatePicker" id="RhZ-fB-LJz">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="eo4-AS-lqP">
                             <connections>
                                 <segue destination="257-Z4-LTS" kind="presentation" id="P6F-9U-5Oj"/>
@@ -693,6 +709,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="STz-0l-yXC" id="LU0-15-RiW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dee-Ak-9XM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -762,7 +781,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="HLG-y1-3g1"/>
+        <segue reference="P6F-9U-5Oj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon" width="382" height="364"/>

@@ -65,7 +65,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime1"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton1:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="i5x-go-jhw"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="sOR-S4-6a0"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32z-9T-FxW">
@@ -88,12 +88,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="95p-DI-TXj">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXd-na-c9q">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXd-na-c9q">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime2"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton2:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="LaN-al-c6e"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="Lii-nh-giK"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36G-15-XWi">
@@ -116,12 +116,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xLB-LN-u55">
                                                 <rect key="frame" x="240" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-H2-Fcn">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-H2-Fcn">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime3"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton3:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="flk-ro-Zig"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="uwe-jl-9pT"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAT-w3-d7m">
@@ -153,7 +153,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lao-um-rf4">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnk-Dq-qHR">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnk-Dq-qHR">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="369-NI-mkg"/>
@@ -162,7 +162,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime4"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton4:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="6Zz-lk-I92"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="3DK-go-zTG"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lD-c2-kUj">
@@ -184,12 +184,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-q6-ogL">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obd-wP-spz">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obd-wP-spz">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime5"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton5:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="KQx-3D-KID"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="GrH-t7-bwZ"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfF-7h-OjE">
@@ -212,12 +212,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-OC-8x6">
                                                 <rect key="frame" x="240" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-jY-kPE">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-jY-kPE">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime6"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton6:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="c0o-PJ-62E"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="Ath-oX-8rd"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZD-wg-ihh">
@@ -250,14 +250,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PXC-Kr-0jI">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-69-qWw">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-69-qWw">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime7">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btnEmotionButton7:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="8tK-YO-Qpg"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="vmJ-jZ-LJE"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-qF-6m8">
@@ -279,12 +279,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NRx-Sc-Hha">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-J7-S9R">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-J7-S9R">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mono_slime8"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton8:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="IEm-hE-aSx"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="x0T-J4-4eU"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4c-5S-z6n">
@@ -306,12 +306,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SfN-cE-Bwv">
                                                 <rect key="frame" x="240" y="0.0" width="100" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-hS-iyN">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-hS-iyN">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime9"/>
                                                         <connections>
-                                                            <action selector="btnEmotionButton9:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="vhR-zI-2Eq"/>
+                                                            <action selector="btnEmotionButton:" destination="kqJ-6x-xDY" eventType="touchUpInside" id="4WP-6Z-wIN"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tK-Zp-obg">
@@ -371,7 +371,7 @@
             </objects>
             <point key="canvasLocation" x="1950.7246376811595" y="798.88392857142856"/>
         </scene>
-        <!--Main-->
+        <!--Example-->
         <scene sceneID="4OO-Qs-C31">
             <objects>
                 <viewController id="nok-JF-Lxa" customClass="ViewController" customModule="SeSAC_Day06" customModuleProvider="target" sceneMemberID="viewController">
@@ -379,30 +379,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTS-Rn-hWN">
-                                <rect key="frame" x="20" y="174" width="374" height="52"/>
-                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="40"/>
-                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHw-fd-MJl">
+                                <rect key="frame" x="76" y="170" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-GV-I2N">
-                                <rect key="frame" x="20" y="266" width="374" height="364"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIa-c7-e9S">
+                                <rect key="frame" x="76" y="234" width="257" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showAlert:" destination="nok-JF-Lxa" eventType="touchUpInside" id="tkJ-11-Zmt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UxJ-ua-KXR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="wbK-GV-I2N" firstAttribute="top" secondItem="FTS-Rn-hWN" secondAttribute="bottom" constant="40" id="5mu-B8-lUy"/>
-                            <constraint firstItem="UxJ-ua-KXR" firstAttribute="trailing" secondItem="wbK-GV-I2N" secondAttribute="trailing" constant="20" id="G9X-tU-8Qe"/>
-                            <constraint firstItem="wbK-GV-I2N" firstAttribute="leading" secondItem="UxJ-ua-KXR" secondAttribute="leading" constant="20" id="IcG-xG-sYb"/>
-                            <constraint firstItem="wbK-GV-I2N" firstAttribute="centerX" secondItem="40M-e0-XQh" secondAttribute="centerX" id="hBV-Gj-0kb"/>
-                            <constraint firstItem="FTS-Rn-hWN" firstAttribute="leading" secondItem="UxJ-ua-KXR" secondAttribute="leading" constant="20" id="lPK-vZ-UD6"/>
-                            <constraint firstItem="UxJ-ua-KXR" firstAttribute="trailing" secondItem="FTS-Rn-hWN" secondAttribute="trailing" constant="20" id="t2X-iq-98n"/>
-                            <constraint firstItem="wbK-GV-I2N" firstAttribute="centerY" secondItem="40M-e0-XQh" secondAttribute="centerY" id="zPO-gm-QxI"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Main" id="M37-BC-2QA">
+                    <navigationItem key="navigationItem" title="Example" id="M37-BC-2QA">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="9mM-Hz-Ui6">
                             <connections>
                                 <segue destination="257-Z4-LTS" kind="presentation" id="9N3-4J-Jhk"/>
@@ -410,10 +408,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="label" destination="FHw-fd-MJl" id="WeU-wj-33h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVG-cC-i1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="1515"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="1514.7321428571429"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="6FD-hz-ow2">
@@ -877,14 +878,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="P6F-9U-5Oj"/>
+        <segue reference="T5o-ou-GSF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="100" width="498" height="498"/>
         <image name="200" width="498" height="498"/>
         <image name="300" width="498" height="498"/>
         <image name="400" width="498" height="498"/>
-        <image name="icon" width="382" height="364"/>
         <image name="mono_slime1" width="278" height="258"/>
         <image name="mono_slime2" width="278" height="258"/>
         <image name="mono_slime3" width="278" height="258"/>
@@ -902,9 +902,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

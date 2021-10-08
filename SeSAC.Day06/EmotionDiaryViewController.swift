@@ -31,41 +31,26 @@ class EmotionDiaryViewController: UIViewController {
         let t = UserDefaults.standard.integer(forKey: t)
         n.text = "\(v) \(t)개"
     }
-    
-    @IBAction func btnEmotionButton1(_ sender: UIButton) {
-        emotionButtonClicked("countNum1", "행복해", TextLabelCount1)
-    }
-    
-    @IBAction func btnEmotionButton2(_ sender: UIButton) {
-        emotionButtonClicked("countNum2", "좋아해", TextLabelCount2)
-    }
-    
-    @IBAction func btnEmotionButton3(_ sender: UIButton) {
-        emotionButtonClicked("countNum3", "사랑해", TextLabelCount3)
-    }
-    
-    @IBAction func btnEmotionButton4(_ sender: UIButton) {
-        emotionButtonClicked("countNum4", "심술나", TextLabelCount4)
-    }
-    
-    @IBAction func btnEmotionButton5(_ sender: UIButton) {
-        emotionButtonClicked("countNum5", "속상해", TextLabelCount5)
-    }
-    
-    @IBAction func btnEmotionButton6(_ sender: UIButton) {
-        emotionButtonClicked("countNum6", "우울해", TextLabelCount6)
-    }
-    
-    @IBAction func btnEmotionButton7(_ sender: UIButton) {
-        emotionButtonClicked("countNum7", "심심해", TextLabelCount7)
-    }
-    
-    @IBAction func btnEmotionButton8(_ sender: UIButton) {
-        emotionButtonClicked("countNum8", "당황해", TextLabelCount8)
-    }
-    
-    @IBAction func btnEmotionButton9(_ sender: UIButton) {
-        emotionButtonClicked("countNum9", "눈물나", TextLabelCount9)
+    @IBAction func btnEmotionButton(_ sender: UIButton) {
+        if sender.tag == 0 {
+            emotionButtonClicked("countNum1", "행복해", TextLabelCount1)
+        }else if sender.tag == 1 {
+            emotionButtonClicked("countNum2", "좋아해", TextLabelCount2)
+        }else if sender.tag == 2 {
+            emotionButtonClicked("countNum3", "사랑해", TextLabelCount3)
+        }else if sender.tag == 3 {
+            emotionButtonClicked("countNum4", "심술나", TextLabelCount4)
+        }else if sender.tag == 4 {
+            emotionButtonClicked("countNum5", "속상해", TextLabelCount5)
+        }else if sender.tag == 5 {
+            emotionButtonClicked("countNum6", "우울해", TextLabelCount6)
+        }else if sender.tag == 6 {
+            emotionButtonClicked("countNum7", "심심해", TextLabelCount7)
+        }else if sender.tag == 7 {
+            emotionButtonClicked("countNum8", "당황해", TextLabelCount8)
+        }else if sender.tag == 8 {
+            emotionButtonClicked("countNum9", "눈물나", TextLabelCount9)
+        }
     }
     func emotionButtonClicked(_ target: String, _ text: String, _ number: UILabel) {
         let countNum = UserDefaults.standard.integer(forKey: target)

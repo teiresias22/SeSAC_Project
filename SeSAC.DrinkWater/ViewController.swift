@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         
         ImageChange()
         
+        nowDrinkingWater.placeholder = "ml"
+        
         drinkWaterSave.setTitle("물마시기", for: .normal)
         drinkWaterSave.setTitleColor(customGreen, for: .normal)
         drinkWaterSave.backgroundColor = .white

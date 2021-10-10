@@ -15,6 +15,7 @@
 		75227AEA2711401E00F4C376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75227AE92711401E00F4C376 /* Assets.xcassets */; };
 		75227AED2711401E00F4C376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75227AEB2711401E00F4C376 /* LaunchScreen.storyboard */; };
 		75227AF52711433500F4C376 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75227AF42711433500F4C376 /* ProfileViewController.swift */; };
+		75239471271358720071A15D /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 75239470271358720071A15D /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75239471271358720071A15D /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = SeSAC.DrinkWater;
+			packageProductDependencies = (
+				75239470271358720071A15D /* TextFieldEffects */,
+			);
 			productName = SeSAC.DrinkWater;
 			productReference = 75227ADA2711401E00F4C376 /* SeSAC.DrinkWater.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 75227AD12711401E00F4C376;
+			packageReferences = (
+				7523946F271358720071A15D /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+			);
 			productRefGroup = 75227ADB2711401E00F4C376 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7523946F271358720071A15D /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75239470271358720071A15D /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7523946F271358720071A15D /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		75227AE62711401E00F4C376 /* SeSAC_DrinkWater.xcdatamodeld */ = {

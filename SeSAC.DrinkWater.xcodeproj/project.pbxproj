@@ -14,6 +14,7 @@
 		75227AE82711401E00F4C376 /* SeSAC_DrinkWater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75227AE62711401E00F4C376 /* SeSAC_DrinkWater.xcdatamodeld */; };
 		75227AEA2711401E00F4C376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75227AE92711401E00F4C376 /* Assets.xcassets */; };
 		75227AED2711401E00F4C376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75227AEB2711401E00F4C376 /* LaunchScreen.storyboard */; };
+		75227AF52711433500F4C376 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75227AF42711433500F4C376 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		75227AE92711401E00F4C376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75227AEC2711401E00F4C376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75227AEE2711401E00F4C376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75227AF42711433500F4C376 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				75227ADD2711401E00F4C376 /* AppDelegate.swift */,
 				75227ADF2711401E00F4C376 /* SceneDelegate.swift */,
 				75227AE12711401E00F4C376 /* ViewController.swift */,
+				75227AF42711433500F4C376 /* ProfileViewController.swift */,
 				75227AE32711401E00F4C376 /* Main.storyboard */,
 				75227AE92711401E00F4C376 /* Assets.xcassets */,
 				75227AEB2711401E00F4C376 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				75227AE22711401E00F4C376 /* ViewController.swift in Sources */,
 				75227ADE2711401E00F4C376 /* AppDelegate.swift in Sources */,
+				75227AF52711433500F4C376 /* ProfileViewController.swift in Sources */,
 				75227AE82711401E00F4C376 /* SeSAC_DrinkWater.xcdatamodeld in Sources */,
 				75227AE02711401E00F4C376 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,6 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 83R5US8PK8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC.DrinkWater/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,6 +325,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 83R5US8PK8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC.DrinkWater/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

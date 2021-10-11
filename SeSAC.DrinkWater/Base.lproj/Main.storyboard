@@ -95,6 +95,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QtL-Vp-1Uf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="06V-ug-7dH"/>
                             <constraint firstItem="do6-d0-3cX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="091-js-DAE"/>
@@ -113,6 +114,9 @@
                             <constraint firstItem="07y-Bj-b9b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1n-G4-4vv"/>
                             <constraint firstItem="luQ-EP-DsG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oph-gs-gWF"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Xga-3o-dkS" appends="YES" id="nhm-7L-7IL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="5Uu-gB-8XU">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="SUv-Bc-h91">
@@ -139,13 +143,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Xga-3o-dkS">
+                    <connections>
+                        <action selector="tapGestureKeyboardHide:" destination="BYZ-38-t0r" id="fBx-Kq-Lka"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="O50-ZN-ssa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7jY-af-CAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="J9Y-FP-b17" customClass="ProfileViewController" customModule="SeSAC_DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Vk-Es-jWg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -236,6 +244,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fmE-8K-Nuo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sgE-Eb-l1O" firstAttribute="top" secondItem="kw0-EU-G4h" secondAttribute="bottom" constant="20" id="0KP-Qy-2ZK"/>
                             <constraint firstItem="a9Z-Kc-hAr" firstAttribute="top" secondItem="fmE-8K-Nuo" secondAttribute="top" constant="174" id="56J-Zl-33a"/>
@@ -248,6 +257,9 @@
                             <constraint firstItem="a9Z-Kc-hAr" firstAttribute="leading" secondItem="p9A-9x-4vA" secondAttribute="trailing" constant="20" id="old-NH-U7t"/>
                             <constraint firstItem="p9A-9x-4vA" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="wMl-W6-hhk"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ARj-ig-TN0" appends="YES" id="92N-Pr-F7B"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="YkK-eM-Yb6">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="eeZ-eV-pbX">
@@ -265,6 +277,12 @@
                         <outlet property="userWeight" destination="FTf-Eq-fWS" id="xhv-Te-MKs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jY-af-CAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ARj-ig-TN0">
+                    <connections>
+                        <action selector="tapGestureKybordHide:" destination="J9Y-FP-b17" id="e8O-Vw-goU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1986.9565217391305" y="115.84821428571428"/>
         </scene>
@@ -287,6 +305,20 @@
             <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="07y-Bj-b9b">
+            <size key="intrinsicContentSize" width="6" height="30.5"/>
+        </designable>
+        <designable name="FTf-Eq-fWS">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+        <designable name="kw0-EU-G4h">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+        <designable name="sgE-Eb-l1O">
+            <size key="intrinsicContentSize" width="5" height="21"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>

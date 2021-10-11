@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var userHight: UITextField!
     @IBOutlet var userWeight: UITextField!
     
+    //바탕 색상 설정, dlalwl fltmxm 
     let customGreen: UIColor = UIColor(red: 65/255, green: 148/255, blue: 144/255, alpha: 1)
     let imgList = ["1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-9"]
 
@@ -37,8 +38,13 @@ class ProfileViewController: UIViewController {
         userInformationSave.title = "저장"
         userInformationSave.tintColor = .white
         // Do any additional setup after loading the view.
-        
     }
+    
+    //텝키로 키보드 숨기기
+    @IBAction func tapGestureKybordHide(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     //세이브 버튼 클릭
     @IBAction func btnUserInformationSvae(_ sender: UIBarButtonItem) {
         setNickName("NickName")
@@ -51,6 +57,7 @@ class ProfileViewController: UIViewController {
     @IBAction func btnProfileImageChange(_ sender: UIButton) {
         imageChange("number")
     }
+    
     //프로필 이미지 교체
     func imageChange( _ key: String) {
         let countNum = UserDefaults.standard.integer(forKey: key)
@@ -83,6 +90,7 @@ class ProfileViewController: UIViewController {
         UserDefaults.standard.set(userWeightSet, forKey: key)
         userWeight.text = UserDefaults.standard.string(forKey: key)!
     }
+    
     //선택되어있는 이미지를 저장
     func setImage( _ key: String) {
         let imageNum = UserDefaults.standard.integer(forKey: "number")
@@ -90,12 +98,12 @@ class ProfileViewController: UIViewController {
         let updateImageNum = UserDefaults.standard.integer(forKey: key)
         profileImage.image = UIImage.init(named: imgList[updateImageNum])
     }
+    
     //Default이미지 설정
     func defaultImage() {
         let imageNum = UserDefaults.standard.integer(forKey: "ImgNum")
         if imageNum != 0 {
             profileImage.image = UIImage.init(named: imgList[imageNum])
-            
         }else {
             profileImage.image = UIImage.init(named: "1-1")
         }

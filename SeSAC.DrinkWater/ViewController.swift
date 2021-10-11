@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var userInfomationNotice: UILabel!
     @IBOutlet var drinkWaterSave: UIButton!
     
+    //바탕 색상 설정
     let customGreen: UIColor = UIColor(red: 65/255, green: 148/255, blue: 144/255, alpha: 1)
     
     
@@ -50,12 +51,17 @@ class ViewController: UIViewController {
         drinkWaterSave.setTitle("물마시기", for: .normal)
         drinkWaterSave.setTitleColor(customGreen, for: .normal)
         drinkWaterSave.backgroundColor = .white
-        
     }
+    
+    //페이지가 전환시 무조건 실행
     override func viewWillAppear(_ animated: Bool) {
         userName()
         PercentWater()
-        print("viewWillAppear")
+    }
+    
+    //텝키로 키보드 숨기기
+    @IBAction func tapGestureKeyboardHide(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
     //BarButton의 리셋버튼
@@ -116,21 +122,21 @@ class ViewController: UIViewController {
         let weight = Int(UserDefaults.standard.integer(forKey: "Weight"))
         
         if weight > 0 {
-            if water < 10{
+            if water < 11{
                 drinkWaterImageChange.image = UIImage.init(named: "1-1")
-            } else if water < 20{
+            } else if water < 22{
                 drinkWaterImageChange.image = UIImage.init(named: "1-2")
-            } else if water < 30{
+            } else if water < 33{
                 drinkWaterImageChange.image = UIImage.init(named: "1-3")
-            } else if water < 40{
+            } else if water < 44{
                 drinkWaterImageChange.image = UIImage.init(named: "1-4")
-            } else if water < 50{
+            } else if water < 55{
                 drinkWaterImageChange.image = UIImage.init(named: "1-5")
-            } else if water < 60{
+            } else if water < 66{
                 drinkWaterImageChange.image = UIImage.init(named: "1-6")
-            } else if water < 70{
+            } else if water < 77{
                 drinkWaterImageChange.image = UIImage.init(named: "1-7")
-            } else if water < 80{
+            } else if water < 88{
                 drinkWaterImageChange.image = UIImage.init(named: "1-8")
             } else {
                 drinkWaterImageChange.image = UIImage.init(named: "1-9")
@@ -149,7 +155,6 @@ class ViewController: UIViewController {
         }else {
             l.text = "\(dringkWater) ml"
         }
-        
     }
     
     // 마신 양을 합산하여 출력, - 값이 나온다면 0으로 변환
@@ -165,7 +170,6 @@ class ViewController: UIViewController {
         } else {
             l.text = String(updateDrinkWater) + " ml"
         }
-        //위의 함수를 통합하면 어떤일이 벌어질까?
     }
     
 }

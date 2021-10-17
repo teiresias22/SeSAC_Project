@@ -14,6 +14,14 @@
 		759BCBE7271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBE5271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld */; };
 		759BCBE9271BC38E00BE2F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759BCBE8271BC38E00BE2F65 /* Assets.xcassets */; };
 		759BCBEC271BC38E00BE2F65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759BCBEA271BC38E00BE2F65 /* LaunchScreen.storyboard */; };
+		759BCBF4271BCC8500BE2F65 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */; };
+		759BCBF6271BCCD300BE2F65 /* CastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */; };
+		759BCBF8271BCD6200BE2F65 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */; };
+		759BCBFA271BCEBC00BE2F65 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBF9271BCEBC00BE2F65 /* MainPageTableViewCell.swift */; };
+		759BCBFC271BCF3400BE2F65 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBFB271BCF3400BE2F65 /* SearchTableViewCell.swift */; };
+		759BCBFE271BCFD900BE2F65 /* CastListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */; };
+		759BCC02271BFBF600BE2F65 /* tvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCC01271BFBF600BE2F65 /* tvShow.swift */; };
+		759BCC08271C332B00BE2F65 /* tvShowInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCC07271C332B00BE2F65 /* tvShowInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		759BCBE8271BC38E00BE2F65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759BCBEB271BC38E00BE2F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		759BCBED271BC38E00BE2F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastListViewController.swift; sourceTree = "<group>"; };
+		759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		759BCBF9271BCEBC00BE2F65 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
+		759BCBFB271BCF3400BE2F65 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastListTableViewCell.swift; sourceTree = "<group>"; };
+		759BCC01271BFBF600BE2F65 /* tvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvShow.swift; sourceTree = "<group>"; };
+		759BCC07271C332B00BE2F65 /* tvShowInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvShowInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +77,16 @@
 				759BCBDC271BC38D00BE2F65 /* AppDelegate.swift */,
 				759BCBDE271BC38D00BE2F65 /* SceneDelegate.swift */,
 				759BCBE0271BC38D00BE2F65 /* ViewController.swift */,
+				759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */,
+				759BCBF9271BCEBC00BE2F65 /* MainPageTableViewCell.swift */,
+				759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */,
+				759BCBFB271BCF3400BE2F65 /* SearchTableViewCell.swift */,
+				759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */,
+				759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */,
 				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
 				759BCBE8271BC38E00BE2F65 /* Assets.xcassets */,
+				759BCC01271BFBF600BE2F65 /* tvShow.swift */,
+				759BCC07271C332B00BE2F65 /* tvShowInformation.swift */,
 				759BCBEA271BC38E00BE2F65 /* LaunchScreen.storyboard */,
 				759BCBED271BC38E00BE2F65 /* Info.plist */,
 				759BCBE5271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld */,
@@ -141,10 +165,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759BCBFC271BCF3400BE2F65 /* SearchTableViewCell.swift in Sources */,
+				759BCBF4271BCC8500BE2F65 /* SearchViewController.swift in Sources */,
+				759BCC02271BFBF600BE2F65 /* tvShow.swift in Sources */,
+				759BCBF8271BCD6200BE2F65 /* MainPageViewController.swift in Sources */,
 				759BCBE7271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld in Sources */,
+				759BCBFA271BCEBC00BE2F65 /* MainPageTableViewCell.swift in Sources */,
 				759BCBE1271BC38D00BE2F65 /* ViewController.swift in Sources */,
+				759BCBFE271BCFD900BE2F65 /* CastListTableViewCell.swift in Sources */,
+				759BCC08271C332B00BE2F65 /* tvShowInformation.swift in Sources */,
 				759BCBDD271BC38D00BE2F65 /* AppDelegate.swift in Sources */,
 				759BCBDF271BC38D00BE2F65 /* SceneDelegate.swift in Sources */,
+				759BCBF6271BCCD300BE2F65 /* CastListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

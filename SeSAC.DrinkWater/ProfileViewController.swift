@@ -58,6 +58,11 @@ class ProfileViewController: UIViewController {
         imageChange("number")
     }
     
+    //이미지를 순서대로 넘겨주고, 프로필을 저장할때 사용한 이미지를 저장해주려고 하는데
+    //이미지를 넘기다가 저장하지 않고 화면을 넘어갔다 오면 기본 이미지는 0번째 이미지가 표시되지만
+    //교체 버튼을 클릭하면 기존의 이미지 번호 +1이 됨.
+    //A1. Back버튼을 불러와서 그곳에 카운트 초기화를 시켜준다?
+    
     //프로필 이미지 교체
     func imageChange( _ key: String) {
         let countNum = UserDefaults.standard.integer(forKey: key)

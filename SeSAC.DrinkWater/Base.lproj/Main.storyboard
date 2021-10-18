@@ -65,7 +65,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,69 +166,86 @@
                                     <constraint firstAttribute="height" constant="160" id="pj6-A6-WDw"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kw0-EU-G4h" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="57" y="348" width="300" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-og-4z7">
+                                <rect key="frame" x="57" y="328" width="300" height="210"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kw0-EU-G4h" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="0vV-Oe-Lvn"/>
+                                            <constraint firstAttribute="width" constant="300" id="fJh-ou-7DF"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgE-Eb-l1O" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="75" width="300" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="6bl-H4-ee2"/>
+                                            <constraint firstAttribute="width" constant="300" id="I0M-vz-umk"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-Eq-fWS" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="150" width="300" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ixg-uS-Y6b"/>
+                                            <constraint firstAttribute="width" constant="300" id="lUU-JY-MIw"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="DRG-Yg-Fst"/>
-                                    <constraint firstAttribute="height" constant="60" id="RDu-Nz-U3H"/>
+                                    <constraint firstItem="kw0-EU-G4h" firstAttribute="leading" secondItem="OyA-og-4z7" secondAttribute="leading" id="0un-fD-mLC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kw0-EU-G4h" secondAttribute="trailing" id="1hz-to-9gY"/>
+                                    <constraint firstAttribute="height" constant="210" id="HPm-Tb-C5Q"/>
+                                    <constraint firstItem="FTf-Eq-fWS" firstAttribute="leading" secondItem="OyA-og-4z7" secondAttribute="leading" id="KVE-QE-Ltn"/>
+                                    <constraint firstAttribute="width" constant="300" id="KgD-jS-xUy"/>
+                                    <constraint firstAttribute="trailing" secondItem="FTf-Eq-fWS" secondAttribute="trailing" id="OPd-Zs-M1Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="FTf-Eq-fWS" secondAttribute="bottom" id="VpT-xc-Sgm"/>
+                                    <constraint firstItem="sgE-Eb-l1O" firstAttribute="leading" secondItem="OyA-og-4z7" secondAttribute="leading" id="WgN-Hn-9mg"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgE-Eb-l1O" secondAttribute="trailing" id="eRY-3x-Uvr"/>
+                                    <constraint firstItem="kw0-EU-G4h" firstAttribute="top" secondItem="OyA-og-4z7" secondAttribute="top" id="gJ8-ZM-eWX"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgE-Eb-l1O" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="57" y="428" width="300" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="O3G-PX-feC"/>
-                                    <constraint firstAttribute="height" constant="60" id="mgu-4A-F8b"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-Eq-fWS" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="57" y="508" width="300" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="1jx-gF-itA"/>
-                                    <constraint firstAttribute="height" constant="60" id="5on-lU-hqs"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-Kc-hAr">
                                 <rect key="frame" x="307" y="262" width="25" height="25"/>
                                 <constraints>
@@ -246,14 +263,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="sgE-Eb-l1O" firstAttribute="top" secondItem="kw0-EU-G4h" secondAttribute="bottom" constant="20" id="0KP-Qy-2ZK"/>
                             <constraint firstItem="a9Z-Kc-hAr" firstAttribute="top" secondItem="fmE-8K-Nuo" secondAttribute="top" constant="174" id="56J-Zl-33a"/>
-                            <constraint firstItem="FTf-Eq-fWS" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="5n5-C4-Oyl"/>
-                            <constraint firstItem="sgE-Eb-l1O" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="7Na-Iq-lCM"/>
-                            <constraint firstItem="FTf-Eq-fWS" firstAttribute="top" secondItem="sgE-Eb-l1O" secondAttribute="bottom" constant="20" id="Aem-CR-akn"/>
-                            <constraint firstItem="kw0-EU-G4h" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="LrX-FT-HMT"/>
+                            <constraint firstItem="OyA-og-4z7" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="CON-uC-QCe"/>
                             <constraint firstItem="p9A-9x-4vA" firstAttribute="top" secondItem="fmE-8K-Nuo" secondAttribute="top" constant="40" id="ewM-m1-yPF"/>
-                            <constraint firstItem="kw0-EU-G4h" firstAttribute="top" secondItem="p9A-9x-4vA" secondAttribute="bottom" constant="60" id="lP5-TP-99l"/>
+                            <constraint firstItem="OyA-og-4z7" firstAttribute="top" secondItem="p9A-9x-4vA" secondAttribute="bottom" constant="40" id="jbF-aG-esy"/>
                             <constraint firstItem="a9Z-Kc-hAr" firstAttribute="leading" secondItem="p9A-9x-4vA" secondAttribute="trailing" constant="20" id="old-NH-U7t"/>
                             <constraint firstItem="p9A-9x-4vA" firstAttribute="centerX" secondItem="4Vk-Es-jWg" secondAttribute="centerX" id="wMl-W6-hhk"/>
                         </constraints>

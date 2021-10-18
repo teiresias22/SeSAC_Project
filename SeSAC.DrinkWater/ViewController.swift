@@ -55,6 +55,8 @@ class ViewController: UIViewController {
     
     //페이지가 전환시 무조건 실행
     override func viewWillAppear(_ animated: Bool) {
+        //실행 전 부모 클래스의 메서드 부터 실행 **
+        super.viewWillAppear(animated)
         userName()
         PercentWater()
         viewWillAppearLoardRecordDate("NowDate")
@@ -175,31 +177,19 @@ class ViewController: UIViewController {
         }
     }
     
-    //24시가 되면 마신 물의 양을 초기화
-    //1. 물마시기를 클릭하면 클릭한 날짜를 저장
-    //2. 실행되면 저장된 날짜와 오늘의 날짜를 확인
-    //3. 날짜가 같으면 그대로 표기, 날짜가 다르면 물마신양을 초기화
+    //익스텐션과 컴포넌트를 활용하여 코드를 조금 더 단순하게 제작함.
+    //각각의 날짜를 저장하여 날짜가 달라지면 마신 물의 양을 초기화
     
     //물 마시기 버튼을 누를때, 오늘의 날짜를 저장
     func drinkWaterButtonClickedRecordDate( _ key: String){
-        let now = Date()
-        let date = DateFormatter()
-        date.locale = Locale(identifier: "ko_kr")
-        date.dateFormat = "yy-MM-dd"
-        let kr = date.string(from: now)
-        
-        UserDefaults.standard.set(kr, forKey: key)
+        let now = Date().day
+        UserDefaults.standard.set(now, forKey: key)
     }
     
     //화면이 실행될때 오늘의 날짜를 저장
     func viewWillAppearLoardRecordDate( _ key: String){
-        let now = Date()
-        let date = DateFormatter()
-        date.locale = Locale(identifier: "ko_kr")
-        date.dateFormat = "yy-MM-dd"
-        let kr = date.string(from: now)
-        
-        UserDefaults.standard.set(kr, forKey: key)
+        let now = Date().day
+        UserDefaults.standard.set(now, forKey: key)
     }
     
     //저장된 두 날짜를 비교하여 동일하면 그대로 출력, 다르면 리셋
@@ -214,6 +204,12 @@ class ViewController: UIViewController {
             DrinkButtonClicked(nowDrinkWater, "water")
         }
     }
-    
+    //Date의 시차 설정은 어케??
 }
 
+extension Date{
+    var day: Int {
+        let cal = Calendar.current
+        return cal.component(.day, from: self)
+    }
+}

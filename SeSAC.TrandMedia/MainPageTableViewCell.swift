@@ -18,6 +18,7 @@ class MainPageTableViewCell: UITableViewCell {
     @IBOutlet weak var lbMediaTitleKr: UILabel!
     @IBOutlet weak var lbMediaOpeningDate: UILabel!
     @IBOutlet weak var mediaView: UIView!
+    @IBOutlet weak var webViewLinkButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

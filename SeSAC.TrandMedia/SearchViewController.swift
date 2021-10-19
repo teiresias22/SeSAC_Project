@@ -49,6 +49,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as! CastListViewController
+        
+        let row = tvInformation.tvShow[indexPath.row]
+        vc.tvShow = row
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

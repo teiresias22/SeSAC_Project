@@ -42,7 +42,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         target.tintColor = color
     }
     
-    //상단영역 가운데 버튼 설정
+    //상단영역 3버튼 설정
     func setButton( _ target: UIButton, _ name: String, _ color: UIColor ){
         target.setImage(UIImage(systemName: name), for: .normal)
         target.setTitle("", for: .normal)
@@ -51,7 +51,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         target.contentHorizontalAlignment = .fill
     }
     
-    //상단영역 기본 세팅
+    //상단영역 3버튼 배경 설정
     func topViewSetting(){
         let layer = topView.layer
         

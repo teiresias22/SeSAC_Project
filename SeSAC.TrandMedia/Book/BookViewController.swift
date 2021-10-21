@@ -27,7 +27,6 @@ class BookViewController: UIViewController {
         bookCollectionView.collectionViewLayout = layout
     }
     
-
 }
 
 extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource{

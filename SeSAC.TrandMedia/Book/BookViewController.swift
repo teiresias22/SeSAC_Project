@@ -41,7 +41,10 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let item = tvInformation.tvShow[indexPath.item]
         
         cell.bookTitle.text = item.title
+        cell.bookTitle.textColor = .white
+        cell.bookTitle.font = .boldSystemFont(ofSize: 20)
         cell.bookRate.text = "\(item.rate)"
+        cell.bookRate.textColor = .white
         cell.bookCoverImage.image = UIImage(named: item.title)
         cell.backgroundColor = .systemMint
         cell.layer.cornerRadius = 16

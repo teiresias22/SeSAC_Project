@@ -62,6 +62,16 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     //e. 상단세팅
     
+    //테이블의 링크 버튼 클릭
+    @objc func linkButtonClicked(selectButton: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        
+        vc.tvShow = tvInformation.tvShow[selectButton.tag]
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //셀 갯수 설정
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvInformation.tvShow.count
@@ -88,6 +98,8 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.webViewLinkButton.tintColor = .white
         cell.webViewLinkButton.contentVerticalAlignment = .fill
         cell.webViewLinkButton.contentHorizontalAlignment = .fill
+        cell.webViewLinkButton.tag = indexPath.row
+        cell.webViewLinkButton.addTarget(self, action: #selector(linkButtonClicked(selectButton:)), for: .touchUpInside)
         
         cell.imgMediaImage.image = UIImage(data: data!)
         cell.imgMediaImage.layer.cornerRadius = 11
@@ -117,36 +129,31 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         vc.tvShow = row
         
         self.navigationController?.pushViewController(vc, animated: true)
+        //클릭하면 왜 두번 이동???????????
+        //1. 셀 안에 뷰가 하나 더 있어서 그런가??
     }
-    //클릭하면 왜 두번 이동???????????
-    //1. 셀 안에 뷰가 하나 더 있어서 그런가??
-    
-    
     //e. 테이블 뷰 세팅
     
     //검색 바버튼 클릭시 이동
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //e. 바버튼 클릭 세팅
-    
-    //셀의 버튼 클릭시 화면 이동
-    //배열의 순서는 어떻게 가져와야 하지?? indexPath.....??
-    @IBAction func linkButtonClicked(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        
-        let row = tvInformation.tvShow[0]
-        vc.tvShow = row
-        
+    @IBAction func MapBarButtonClicked(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
-    
-    
+    //e. 바버튼 클릭 세팅
 }
+
+/*
+    1. Main에서 CastList로 갈떄 두번 뜨는 현상 해결
+    6. BookCollection에서 색상 무작위 배치
+ 
+    7. MapView 핀 추가
+    8. MapView Alert에 따라 핀 정보 갱신, Label에 선택한 필터 표시
+*/

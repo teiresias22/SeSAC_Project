@@ -1,9 +1,3 @@
-//
-//  CastListTableViewCell.swift
-//  SeSAC.TrandMedia
-//
-//  Created by Joonhwan Jeon on 2021/10/17.
-//
 
 import UIKit
 

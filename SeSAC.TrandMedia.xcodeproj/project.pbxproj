@@ -10,6 +10,10 @@
 		751F128F271F1B0700F24BB7 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */; };
 		751F1290271F1B0700F24BB7 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */; };
 		751F1292271F1B2F00F24BB7 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F1291271F1B2F00F24BB7 /* BookViewController.swift */; };
+		753C83DB271FA21300CBD286 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C83DA271FA21300CBD286 /* OverviewTableViewCell.swift */; };
+		753C83E42720355900CBD286 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C83E32720355900CBD286 /* MapViewController.swift */; };
+		753C83E62720525400CBD286 /* TheatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C83E52720525400CBD286 /* TheatherInformation.swift */; };
+		753C83E8272053F800CBD286 /* Theather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C83E7272053F800CBD286 /* Theather.swift */; };
 		7542A664271DAF6500CB433D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7542A663271DAF6500CB433D /* Kingfisher */; };
 		7542A666271DD42D00CB433D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542A665271DD42D00CB433D /* WebViewController.swift */; };
 		759BCBDD271BC38D00BE2F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBDC271BC38D00BE2F65 /* AppDelegate.swift */; };
@@ -47,6 +51,10 @@
 		751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		751F1291271F1B2F00F24BB7 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		753C83DA271FA21300CBD286 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
+		753C83E32720355900CBD286 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		753C83E52720525400CBD286 /* TheatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheatherInformation.swift; sourceTree = "<group>"; };
+		753C83E7272053F800CBD286 /* Theather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theather.swift; sourceTree = "<group>"; };
 		7542A665271DD42D00CB433D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		759BCBD9271BC38D00BE2F65 /* SeSAC.TrandMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC.TrandMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759BCBDC271BC38D00BE2F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		753C83DC271FA23500CBD286 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				751F1291271F1B2F00F24BB7 /* BookViewController.swift */,
+				751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */,
+				751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		753C83DD271FA26200CBD286 /* SearchTable */ = {
+			isa = PBXGroup;
+			children = (
+				759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */,
+				759BCBFB271BCF3400BE2F65 /* SearchTableViewCell.swift */,
+			);
+			name = SearchTable;
+			sourceTree = "<group>";
+		};
+		753C83DE271FA29500CBD286 /* CastListTable */ = {
+			isa = PBXGroup;
+			children = (
+				759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */,
+				753C83DA271FA21300CBD286 /* OverviewTableViewCell.swift */,
+				759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */,
+			);
+			path = CastListTable;
+			sourceTree = "<group>";
+		};
+		753C83DF271FA2C100CBD286 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7542A665271DD42D00CB433D /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		753C83E22720352300CBD286 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				753C83E32720355900CBD286 /* MapViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		753C83E927207F8300CBD286 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				759BCC01271BFBF600BE2F65 /* tvShow.swift */,
+				759BCC07271C332B00BE2F65 /* tvShowInformation.swift */,
+				753C83E7272053F800CBD286 /* Theather.swift */,
+				753C83E52720525400CBD286 /* TheatherInformation.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		759BCBD0271BC38D00BE2F65 = {
 			isa = PBXGroup;
 			children = (
@@ -101,20 +165,16 @@
 				759BCBDC271BC38D00BE2F65 /* AppDelegate.swift */,
 				759BCBDE271BC38D00BE2F65 /* SceneDelegate.swift */,
 				759BCBE0271BC38D00BE2F65 /* ViewController.swift */,
+				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
 				759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */,
 				759BCBF9271BCEBC00BE2F65 /* MainPageTableViewCell.swift */,
-				759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */,
-				759BCBFB271BCF3400BE2F65 /* SearchTableViewCell.swift */,
-				759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */,
-				759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */,
-				7542A665271DD42D00CB433D /* WebViewController.swift */,
-				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
-				751F1291271F1B2F00F24BB7 /* BookViewController.swift */,
-				751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */,
-				751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */,
+				753C83E22720352300CBD286 /* MapView */,
+				753C83DF271FA2C100CBD286 /* WebView */,
+				753C83DD271FA26200CBD286 /* SearchTable */,
+				753C83DE271FA29500CBD286 /* CastListTable */,
+				753C83DC271FA23500CBD286 /* Book */,
+				753C83E927207F8300CBD286 /* Database */,
 				759BCBE8271BC38E00BE2F65 /* Assets.xcassets */,
-				759BCC01271BFBF600BE2F65 /* tvShow.swift */,
-				759BCC07271C332B00BE2F65 /* tvShowInformation.swift */,
 				759BCBEA271BC38E00BE2F65 /* LaunchScreen.storyboard */,
 				759BCBED271BC38E00BE2F65 /* Info.plist */,
 				759BCBE5271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld */,
@@ -201,6 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C83E8272053F800CBD286 /* Theather.swift in Sources */,
+				753C83DB271FA21300CBD286 /* OverviewTableViewCell.swift in Sources */,
+				753C83E62720525400CBD286 /* TheatherInformation.swift in Sources */,
 				759BCBFC271BCF3400BE2F65 /* SearchTableViewCell.swift in Sources */,
 				759BCBF4271BCC8500BE2F65 /* SearchViewController.swift in Sources */,
 				759BCC02271BFBF600BE2F65 /* tvShow.swift in Sources */,
@@ -216,6 +279,7 @@
 				751F1292271F1B2F00F24BB7 /* BookViewController.swift in Sources */,
 				7542A666271DD42D00CB433D /* WebViewController.swift in Sources */,
 				759BCBF6271BCCD300BE2F65 /* CastListViewController.swift in Sources */,
+				753C83E42720355900CBD286 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

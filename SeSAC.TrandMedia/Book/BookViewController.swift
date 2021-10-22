@@ -26,7 +26,6 @@ class BookViewController: UIViewController {
         
         bookCollectionView.collectionViewLayout = layout
     }
-    
 }
 
 extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -40,16 +39,26 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let item = tvInformation.tvShow[indexPath.item]
         
         cell.bookTitle.text = item.title
-        cell.bookTitle.textColor = .white
+        cell.bookTitle.textColor = .black
         cell.bookTitle.font = .boldSystemFont(ofSize: 20)
         cell.bookRate.text = "\(item.rate)"
-        cell.bookRate.textColor = .white
+        cell.bookRate.textColor = .black
         cell.bookCoverImage.image = UIImage(named: item.title)
-        cell.backgroundColor = .systemMint
+        cell.backgroundColor = setColorSet(item.genre)
         cell.layer.cornerRadius = 16
         
         return cell
     }
     
-    
+    func setColorSet(_ genre:String) -> UIColor {
+        if genre == "Mystery" || genre == "Crime" {
+            return UIColor.customRed ?? .clear
+        } else if genre == "Drama" || genre == "Comedy" {
+            return UIColor.customYellow ?? .clear
+        } else if genre == "Animation" {
+            return UIColor.customBlue ?? .clear
+        } else {
+            return UIColor.customGreen ?? .clear
+        }
+    }
 }

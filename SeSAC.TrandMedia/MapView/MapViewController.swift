@@ -24,7 +24,8 @@ class MapViewController: UIViewController {
         checkUserLocationServicesAithorization()
         
         movieTheatherLocationTitle.text = "영화관 정보"
-        movieTheatherFilter.setTitle("필터", for: .normal)
+        movieTheatherLocationTitle.textAlignment = .center
+        movieTheatherFilter.setTitle("Filter", for: .normal)
     }
     
     //필터 버튼 클릭시 alert 띄우기
@@ -47,7 +48,7 @@ class MapViewController: UIViewController {
             self.theatherAnnotations("롯데시네마")
             self.movieTheatherLocationTitle.text = "롯데시네마"
         }
-        let allTheater = UIAlertAction(title: "모든 극장", style: .default) { _ in
+        let allTheater = UIAlertAction(title: "모든 극장", style: .cancel) { _ in
             self.allAnnotations()
             self.movieTheatherLocationTitle.text = "모든 극장"
         }
@@ -60,8 +61,7 @@ class MapViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    //Map
-    
+    //MapSetting
     //1. 위치 서비스 확인, 14이전 버전 확인
     func checkUserLocationServicesAithorization() {
         let authorizationStatus: CLAuthorizationStatus
@@ -88,7 +88,6 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-    
     
     //3. 권환 확인, 사용자가 위치를 허용했는지, 안했는지, 거부한건지 권한 확인! (단, iOS 위치 서비스가 가능한지 확인)
     func checkLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
@@ -184,7 +183,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    //극장 핀정보
+    //핀정보 모든핀
     func allAnnotations() {
         let annotiations = mapView.annotations
         mapView.removeAnnotations(annotiations)
@@ -199,6 +198,7 @@ class MapViewController: UIViewController {
         }
     }
     
+    //핀정보 극장별핀
     func theatherAnnotations(_ type: String) {
         let annotiations = mapView.annotations
         mapView.removeAnnotations(annotiations)
@@ -217,9 +217,7 @@ class MapViewController: UIViewController {
 
 
 }
-//3
 extension MapViewController: CLLocationManagerDelegate{
-    
     //사용자가 위치 허용을 한 경우
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -250,6 +248,6 @@ extension MapViewController: CLLocationManagerDelegate{
 extension MapViewController: MKMapViewDelegate {
     //맵 어노테이션 클릭 시 이벤트 핸들링
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("가자")
+        print("Go")
     }
 }

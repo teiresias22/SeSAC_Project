@@ -85,6 +85,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
             let image = toggleButtonClick ? UIImage(systemName: "arrow.down.to.line.alt"): UIImage(systemName: "arrow.up.to.line.alt")
             
             cell.mediaOverviewSeeMoreButton.setImage(image, for: .normal)
+            cell.mediaOverviewSeeMoreButton.tintColor = .black
                         
             return cell
         } else {
@@ -105,7 +106,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            let cellSize:CGFloat = toggleButtonClick ? 100 : 160
+            let cellSize:CGFloat = toggleButtonClick ? 100 : 140
             return cellSize
         } else {
             return UIScreen.main.bounds.height / 10

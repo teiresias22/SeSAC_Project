@@ -23,14 +23,15 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         mediaTableView.dataSource = self
         
         lbWelcomeMessage.text = "OH JOON!"
+        lbWelcomeMessage.backgroundColor = .customRed ?? .red
         lbWelcomeMessage.textColor = .white
         
         setBarButton(btnMenuBarButton, "list.bullet", .black)
         setBarButton(btnSearchBarButton, "magnifyingglass", .black)
         
-        setButton(btnMovieButton, "film", .green)
-        setButton(btnTvSeriesButton, "tv", .yellow)
-        setButton(btnBookButton, "book.closed", .cyan)
+        setButton(btnMovieButton, "film", .customGreen ?? .green)
+        setButton(btnTvSeriesButton, "tv", .customYellow ?? .yellow)
+        setButton(btnBookButton, "book.closed", .customBlue ?? .cyan)
         
         topViewSetting()
     }
@@ -69,7 +70,8 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         vc.tvShow = tvInformation.tvShow[selectButton.tag]
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.showDetailViewController(vc, sender: self)
+        //pushViewController(vc, animated: true)
     }
     
     //셀 갯수 설정
@@ -82,7 +84,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainPageTableViewCell.identifier, for: indexPath) as? MainPageTableViewCell else {
             return UITableViewCell()
         }
-        
         let row = tvInformation.tvShow[indexPath.row]
         //url image 불러오기 [옵셔널 이게 맞나??)
         let data = try? Data(contentsOf: URL(string: row.backdropImage)!)
@@ -110,6 +111,8 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.lbMediaTitleKr.text = row.title
         cell.lbMediaOpeningDate.text = row.releaseDate
         cell.lbMediaRating.text = "\(row.rate)"
+        cell.rateExpactaion.textColor = .white
+        cell.rateExpactaion.backgroundColor = .customRed ?? .red
         
         return cell
     }
@@ -120,8 +123,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     //셀 클릭시 이동
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as! CastListViewController
         
@@ -129,8 +131,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         vc.tvShow = row
         
         self.navigationController?.pushViewController(vc, animated: true)
-        //클릭하면 왜 두번 이동???????????
-        //1. 셀 안에 뷰가 하나 더 있어서 그런가??
     }
     //e. 테이블 뷰 세팅
     
@@ -150,10 +150,15 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     //e. 바버튼 클릭 세팅
 }
 
+extension UIColor {
+    class var customGreen:UIColor? {return UIColor(named: "CustomGreen")}
+    class var customYellow:UIColor? {return UIColor(named: "CustomYellow")}
+    class var customBlue:UIColor? {return UIColor(named: "CustomBlue")}
+    class var customRed:UIColor? {return UIColor(named: "CustomRed")}
+}
+
+
 /*
-    1. Main에서 CastList로 갈떄 두번 뜨는 현상 해결
-    6. BookCollection에서 색상 무작위 배치
- 
-    7. MapView 핀 추가
-    8. MapView Alert에 따라 핀 정보 갱신, Label에 선택한 필터 표시
+    Have To!
+    9. 위치 권한 비허용시 허용 요청 알림 만들기
 */

@@ -18,6 +18,10 @@
 		756B5B5E272647AC00C52C60 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 756B5B5D272647AC00C52C60 /* SwiftyJSON */; };
 		7575A19E272792BA0076C6C4 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7575A19D272792BA0076C6C4 /* TranslateViewController.swift */; };
 		7575A1AB272830850076C6C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7575A1AA272830850076C6C4 /* Kingfisher */; };
+		757E08792728D1A30006AA14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E08782728D1A30006AA14 /* Constants.swift */; };
+		757E087B2728D3500006AA14 /* TranslatedAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E087A2728D3500006AA14 /* TranslatedAPIManager.swift */; };
+		757E087D2728E9C20006AA14 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E087C2728E9C10006AA14 /* VisionViewController.swift */; };
+		757E08812728EC990006AA14 /* VisionAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E08802728EC990006AA14 /* VisionAPIManager.swift */; };
 		758E09232726D58500846057 /* OpenWeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E09222726D58500846057 /* OpenWeatherMapViewController.swift */; };
 		758E09252726D59200846057 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E09242726D59200846057 /* LotteryViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +37,10 @@
 		756B5B502726445000C52C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756B5B522726445000C52C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7575A19D272792BA0076C6C4 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		757E08782728D1A30006AA14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		757E087A2728D3500006AA14 /* TranslatedAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedAPIManager.swift; sourceTree = "<group>"; };
+		757E087C2728E9C10006AA14 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		757E08802728EC990006AA14 /* VisionAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionAPIManager.swift; sourceTree = "<group>"; };
 		758E09222726D58500846057 /* OpenWeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapViewController.swift; sourceTree = "<group>"; };
 		758E09242726D59200846057 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,9 +82,13 @@
 				756B5B432726445000C52C60 /* SceneDelegate.swift */,
 				756B5B452726445000C52C60 /* ViewController.swift */,
 				756B5B472726445000C52C60 /* Main.storyboard */,
+				757E08802728EC990006AA14 /* VisionAPIManager.swift */,
+				757E087C2728E9C10006AA14 /* VisionViewController.swift */,
 				7575A19D272792BA0076C6C4 /* TranslateViewController.swift */,
+				757E087A2728D3500006AA14 /* TranslatedAPIManager.swift */,
 				758E09222726D58500846057 /* OpenWeatherMapViewController.swift */,
 				758E09242726D59200846057 /* LotteryViewController.swift */,
+				757E08782728D1A30006AA14 /* Constants.swift */,
 				756B5B4D2726445000C52C60 /* Assets.xcassets */,
 				756B5B4F2726445000C52C60 /* LaunchScreen.storyboard */,
 				756B5B522726445000C52C60 /* Info.plist */,
@@ -173,6 +185,10 @@
 				758E09252726D59200846057 /* LotteryViewController.swift in Sources */,
 				756B5B442726445000C52C60 /* SceneDelegate.swift in Sources */,
 				7575A19E272792BA0076C6C4 /* TranslateViewController.swift in Sources */,
+				757E087B2728D3500006AA14 /* TranslatedAPIManager.swift in Sources */,
+				757E087D2728E9C20006AA14 /* VisionViewController.swift in Sources */,
+				757E08812728EC990006AA14 /* VisionAPIManager.swift in Sources */,
+				757E08792728D1A30006AA14 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

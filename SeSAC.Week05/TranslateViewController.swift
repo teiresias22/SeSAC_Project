@@ -6,6 +6,11 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var sourceTextView: UITextView!
     @IBOutlet weak var targetTextView: UITextView!
     
+    var translateText: String = "" {
+        didSet {
+            targetTextView.text = translateText
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,33 +21,29 @@ class TranslateViewController: UIViewController {
     
     @IBAction func translateButtonClicked(_ sender: UIButton) {
         
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id":" CHfbyWsVTB6vKZOdPhrR",
-            "X-Naver-Client-Secret":"xayOzRnNQk"
-        ]
+        //1옵셔널 강제 해제
+        //TranslatedAPIManager.shared.fetchTranslateData(text: sourceTextView.text!)
         
-        let parameters = [
-            "source": "ko",
-            "target": "en",
-            "text": sourceTextView.text!
-        ]
+        //2 옵셔널 해제 if let
+        //if let value = sourceTextView.text {
+        //    TranslatedAPIManager.shared.fetchTranslateData(text: sourceTextView.text)
+        //}
         
-        
-        AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let translated = json["message"]["result"]["translatedText"].string
-                self.targetTextView.text = "\(translated!)"
-                
-            case .failure(let error):
-                print(error)
+        //3 옵셔널 해제 guard let
+        guard let text = sourceTextView.text else { return }
+        TranslatedAPIManager.shared.fetchTranslateData(text: text) { Code, json in
+            
+            switch Code {
+            case 200:
+                print(json)
+                self.translateText = json["message"]["result"]["translatedText"].stringValue
+            case 400:
+                print(json)
+                self.translateText = json["errorMessage"].stringValue
+            default:
+                print("ERROR")
             }
         }
-        
     }
     
 }

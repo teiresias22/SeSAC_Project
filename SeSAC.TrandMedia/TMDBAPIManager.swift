@@ -9,7 +9,7 @@ class TMDBAPIManager {
     
     typealias CompletionHandler = (JSON) -> ()
     
-    func fetchTranslateData(page: Int, mediaType: String, timeWindow: String, result: @escaping CompletionHandler ) {
+    func fetchTranslateData(page: Int, mediaType: String, timeWindow: String, result: @escaping CompletionHandler) {
         
         let url = Endpoint.TMDBTranding + "\(mediaType)/\(timeWindow)?api_key=\(APIkey.TMDB_ID)" + "&query=&page=\(page)"
         

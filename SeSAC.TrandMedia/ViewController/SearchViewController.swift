@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import SwiftUI
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     @IBOutlet weak var showSearchBar: UISearchBar!
@@ -9,6 +10,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var movieData: [MovieModel] = []
     var startPage = 1
+    var totalPageCount = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +21,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         showSearchBar.delegate = self
         showSearchBar.showsCancelButton = false
+        showSearchBar.placeholder = "검색어를 입력하세요"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(closeButtonClicked))
-        
-        //fetchMovieData()
-        
+        fetcMediaData()
     }
     //e. 뷰디드로드
 
@@ -37,21 +38,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else {
             return UITableViewCell()
         }
-        //let row = tvInformation.tvShow[indexPath.row]
-        //cell.imgMediaPoster.image = UIImage(named: row.title)
+        let row = movieData[indexPath.row]
         
-        let row2 = movieData[indexPath.row]
-        
-        if let url = URL(string: row2.imageData){
+        if let url = URL(string: row.imageData){
             cell.imgMediaPoster.kf.setImage(with: url)
         } else {
             cell.imgMediaPoster.image = UIImage(systemName: "star")
         }
-        
-        cell.lbSearchMediaTitle.text = row2.titleData
-        cell.lbSearchMediaSubTitle.text = row2.subTitleData
-        
-        cell.lbSearchMediaSynopsis.text = row2.subTitleData
+        cell.lbSearchMediaTitle.text = row.titleData
+        cell.lbSearchMediaSubTitle.text = row.subTitleData
+        cell.lbSearchMediaSynopsis.text = row.subTitleData
         
        return cell
     }
@@ -73,58 +69,39 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    // e. 테이블 셋팅
-    
     //상단에 닫기 네비게이션 버튼 생성
     @objc
     func closeButtonClicked(){
         self.navigationController?.popViewController(animated: true)
     }
-    //e. 네비게이션 버튼 설정
 
-    func fetchMovieData(query: String) {
-        
-        if let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=10&start=\(startPage)"
+    func fetcMediaData() {
+        let text = showSearchBar.text ?? "StarWars"
+        NaverAPIManager.shared.fetchMovieData(query: text, startPage: startPage) { json in
             
-            let header: HTTPHeaders = [
-                "X-Naver-Client-Id": "CHfbyWsVTB6vKZOdPhrR",
-                "X-Naver-Client-Secret": "xayOzRnNQk"
-            ]
-            
-            AF.request(url, method: .get, headers: header).validate().responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("JSON: \(json)")
-                    
-                    for item in json["items"].arrayValue {
-                        let value = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
-                        let image = item["image"].stringValue
-                        let link = item["link"].stringValue
-                        let userRating = item["userRating"].stringValue
-                        let subtitle = item["subtitle"].stringValue
-                        let actor = item["actor"].stringValue
-                        
-                        let data = MovieModel(titleData: value, imageData: image, linkData: link, userRatingData: userRating, subTitleData: subtitle, actorDate: actor)
-                        
-                        
-                        
-                        self.movieData.append(data)
-                    }
-                    self.searchTableView.reloadData()
-                    
-                case .failure(let error):
-                    print(error)
-                }
+            for item in json["items"].arrayValue {
+                let value = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
+                let image = item["image"].stringValue
+                let link = item["link"].stringValue
+                let userRating = item["userRating"].stringValue
+                let subtitle = item["subtitle"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
+                let actor = item["actor"].stringValue
+                
+                let data = MovieModel(titleData: value, imageData: image, linkData: link, userRatingData: userRating, subTitleData: subtitle, actorDate: actor)
+                
+                self.totalPageCount = json["total"].intValue
+                self.movieData.append(data)
             }
+            self.searchTableView.reloadData()
         }
+        
     }
+    
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if movieData.count - 1 == indexPath.row {
+            if movieData.count - 1 == indexPath.row && movieData.count < totalPageCount {
                 startPage += 10
-                fetchMovieData(query: showSearchBar.text ?? "")
+                fetcMediaData()
             }
         }
     }
@@ -139,17 +116,14 @@ extension SearchViewController : UISearchBarDelegate {
     
     //검색 버튼(키보드 리턴키)을 눌렀을 때 실행
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
-        if let text = showSearchBar.text {
-            movieData.removeAll()
-            startPage = 1
-            fetchMovieData(query: text)
-        }
+        movieData.removeAll()
+        startPage = 1
+        fetcMediaData()
     }
     
     //취소 버튼 눌렀을 때 실행
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
+        print("취소" + #function)
         movieData.removeAll()
         searchTableView.reloadData()
         showSearchBar.setShowsCancelButton(false, animated: true)
@@ -157,9 +131,7 @@ extension SearchViewController : UISearchBarDelegate {
     
     //서치바에 커서 깜박이기 시작할 때
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print(#function)
+        print("서치" + #function)
         showSearchBar.setShowsCancelButton(true, animated: true)
     }
 }
-
-//extension SearchViewController : UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {}

@@ -22,6 +22,7 @@
 		753C83E8272053F800CBD286 /* Theather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C83E7272053F800CBD286 /* Theather.swift */; };
 		7542A664271DAF6500CB433D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7542A663271DAF6500CB433D /* Kingfisher */; };
 		7542A666271DD42D00CB433D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7542A665271DD42D00CB433D /* WebViewController.swift */; };
+		756F2568272CEBBC004E05A9 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */; };
 		7575A1A127279D340076C6C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7575A1A027279D340076C6C4 /* Alamofire */; };
 		7575A1A427279D490076C6C4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7575A1A327279D490076C6C4 /* SwiftyJSON */; };
 		757E0883272913BF0006AA14 /* BoxofficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E0882272913BF0006AA14 /* BoxofficeViewController.swift */; };
@@ -75,6 +76,7 @@
 		753C83E52720525400CBD286 /* TheatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheatherInformation.swift; sourceTree = "<group>"; };
 		753C83E7272053F800CBD286 /* Theather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theather.swift; sourceTree = "<group>"; };
 		7542A665271DD42D00CB433D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		757E0882272913BF0006AA14 /* BoxofficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxofficeViewController.swift; sourceTree = "<group>"; };
 		757E0885272925360006AA14 /* BoxofficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxofficeTableViewCell.swift; sourceTree = "<group>"; };
 		757E0886272925360006AA14 /* BoxofficeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxofficeTableViewCell.xib; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				7533998E272C31A90067C3AC /* TMDBAPIManager.swift */,
 				75339992272C43920067C3AC /* TMDBCreditsAPIManager.swift */,
 				75339994272C556F0067C3AC /* TMDBVideosAPIManager.swift */,
+				756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */,
 			);
 			name = APIManager;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				753C83E8272053F800CBD286 /* Theather.swift in Sources */,
 				753C83DB271FA21300CBD286 /* OverviewTableViewCell.swift in Sources */,
 				753C83E62720525400CBD286 /* TheatherInformation.swift in Sources */,
+				756F2568272CEBBC004E05A9 /* NaverAPIManager.swift in Sources */,
 				75339995272C556F0067C3AC /* TMDBVideosAPIManager.swift in Sources */,
 				757E0883272913BF0006AA14 /* BoxofficeViewController.swift in Sources */,
 				759BCBFC271BCF3400BE2F65 /* SearchTableViewCell.swift in Sources */,

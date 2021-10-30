@@ -16,7 +16,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var mediaData: [MediaModel] = []
     var pageCount = 1
-    let totalPageCount = 100
+    var totalPageCount = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,7 +157,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if mediaData.count - 2 == indexPath.row {
+            if mediaData.count - 2 == indexPath.row && mediaData.count <= totalPageCount {
                 pageCount += 1
                 fetcMediaData()
             }
@@ -166,6 +166,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     
     func fetcMediaData() {
         TMDBAPIManager.shared.fetchTranslateData(page: pageCount, mediaType: "all", timeWindow: "week") { json in
+            
             for mediaItem in json["results"].arrayValue {
                 let original_title = mediaItem["original_title"].stringValue
                 let title = mediaItem["title"].stringValue
@@ -179,6 +180,8 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                 let id = mediaItem["id"].intValue
                 
                 let data = MediaModel(originalTitle: original_title, title: title, originalName: original_name, name: name, backdropPath: backdrop_path, voteAverage: vote_average, releaseDate: release_date, mediaType: media_type, id: id, overview: overview)
+                
+                self.totalPageCount = json["total_pages"].intValue
                 self.mediaData.append(data)
             }
             self.mediaTableView.reloadData()
@@ -190,8 +193,12 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     Have To!
     ***API KEY 숨기고 업로드 하기
     네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케함??
- 
- 
+    
+    도서 넘어가는 화면 고치기
+    
+    Castlist 에서 인물정보 넘어가기
+    메인 상단 3버튼중 TV버튼 누르면 넘어갈 데이터 만들기
+    
     9. 위치 권한 비허용시 허용 요청 알림 만들기
     10. 다크모드 적용시 문제점 해결
         1. 메인 바 버튼 검정 색상 -> 흰색상 변경

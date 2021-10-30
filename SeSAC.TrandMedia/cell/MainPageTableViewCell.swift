@@ -1,10 +1,3 @@
-//
-//  MainPageTableViewCell.swift
-//  SeSAC.TrandMedia
-//
-//  Created by Joonhwan Jeon on 2021/10/17.
-//
-
 import UIKit
 
 class MainPageTableViewCell: UITableViewCell {
@@ -19,6 +12,7 @@ class MainPageTableViewCell: UITableViewCell {
     @IBOutlet weak var lbMediaOpeningDate: UILabel!
     @IBOutlet weak var mediaView: UIView!
     @IBOutlet weak var webViewLinkButton: UIButton!
+    @IBOutlet weak var similarViewLinkButton: UIButton!
     @IBOutlet weak var rateExpactaion: UILabel!
     
     override func awakeFromNib() {
@@ -36,6 +30,9 @@ class MainPageTableViewCell: UITableViewCell {
         webViewLinkButton.contentVerticalAlignment = .fill
         webViewLinkButton.contentHorizontalAlignment = .fill
         
+        similarViewLinkButton.setTitle("비슷한 컨텐츠 찾기", for: .normal)
+        similarViewLinkButton.tintColor = .customRed
+        similarViewLinkButton.contentHorizontalAlignment = .left
         
         imgMediaImage.layer.cornerRadius = 11
         imgMediaImage.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -50,7 +47,11 @@ class MainPageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func webViewLinkButtonClicked(_ sender: UIButton) {
+        
+    }
+    @IBAction func similarViewLinkButtonClicked(_ sender: UIButton) {
         
     }
     

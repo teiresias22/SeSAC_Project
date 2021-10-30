@@ -2,20 +2,17 @@ import UIKit
 import Kingfisher
 
 class CastListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     @IBOutlet weak var mainMediaImage: UIImageView!
     @IBOutlet weak var mainMediaLabel: UILabel!
-    
     @IBOutlet weak var castListTableView: UITableView!
     
     //데이터 저장 공간 생성
     var mediaData: MediaModel?
     var movieData: MovieModel?
+    var castList: [castModel] = []
     
     //toggleButton 설정
     var toggleButtonClick:Bool = true
-    
-    var castList: [castModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +24,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
         
         //네비게이션 버튼 생성
         navigationItem.title = "상세정보"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main", style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(closeButtonClicked))
     }
     
     func haderViewSetting() {
@@ -115,7 +112,6 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
             return UIScreen.main.bounds.height / 10
         }
     }
-    //e. 테이블 설정
     
     func loadMediaCreditsData() {
         TMDBCreditsAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id) { json in

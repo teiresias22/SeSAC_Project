@@ -2,9 +2,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import SwiftUI
 
 class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
     @IBOutlet weak var btnMenuBarButton: UIBarButtonItem!
     @IBOutlet weak var btnSearchBarButton: UIBarButtonItem!
     @IBOutlet weak var lbWelcomeMessage: UILabel!
@@ -20,7 +20,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mediaTableView.delegate = self
         mediaTableView.dataSource = self
         mediaTableView.prefetchDataSource = self
@@ -83,6 +82,14 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         present(nav, animated: true, completion: nil)
     }
     
+    //비슷한 컨텐츠 찾기 버튼 클릭
+    @objc func similarViewLinkButtonClicked(selected: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SimilarMediaViewController") as? SimilarMediaViewController else { return }
+        vc.mediaData = mediaData[selected.tag]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //BarButton Right Clicked
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -120,23 +127,26 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
         
         cell.webViewLinkButton.tag = indexPath.row
         cell.webViewLinkButton.addTarget(self, action: #selector(webViewLinkButtonClicked(selected:)), for: .touchUpInside)
-        cell.lbMediaOpeningDate.text = row.releaseDate
+        cell.similarViewLinkButton.tag = indexPath.row
+        cell.similarViewLinkButton.addTarget(self, action: #selector(similarViewLinkButtonClicked(selected:)), for: .touchUpInside)
         cell.lbMediaRating.text = row.voteAverage
         cell.lbMediaTag.text = row.mediaType
         
         //메인 이미지가 없는 경우 시스템 아이콘 사용
-        if let url = URL(string: "https://image.tmdb.org/t/p/original\(row.backdropPath)"){
+        if let url = URL(string: Endpoint.TMDBImage + row.backdropPath){
             cell.imgMediaImage.kf.setImage(with: url)
         } else {
             cell.imgMediaImage.image = UIImage(systemName: "star")
         }
         //Movie와 Tv의 경우 이름이 다르게 적용됨
-        if row.originalTitle != "" {
+        if row.mediaType == "movie" {
             cell.lbMediaTitleEng.text = row.originalTitle
             cell.lbMediaTitleKr.text = row.title
+            cell.lbMediaOpeningDate.text = row.releaseDate
         } else {
             cell.lbMediaTitleEng.text = row.originalName
             cell.lbMediaTitleKr.text = row.name
+            cell.lbMediaOpeningDate.text = row.first_air_date
         }
         return cell
     }
@@ -175,11 +185,12 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                 let backdrop_path = mediaItem["backdrop_path"].stringValue
                 let vote_average = mediaItem["vote_average"].stringValue
                 let release_date = mediaItem["release_date"].stringValue
+                let first_air_date = mediaItem["first_air_date"].stringValue
                 let media_type = mediaItem["media_type"].stringValue
                 let overview = mediaItem["overview"].stringValue
                 let id = mediaItem["id"].intValue
                 
-                let data = MediaModel(originalTitle: original_title, title: title, originalName: original_name, name: name, backdropPath: backdrop_path, voteAverage: vote_average, releaseDate: release_date, mediaType: media_type, id: id, overview: overview)
+                let data = MediaModel(originalTitle: original_title, title: title, originalName: original_name, name: name, backdropPath: backdrop_path, voteAverage: vote_average, releaseDate: release_date, first_air_date: first_air_date, mediaType: media_type, id: id, overview: overview)
                 
                 self.totalPageCount = json["total_pages"].intValue
                 self.mediaData.append(data)
@@ -193,8 +204,9 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     Have To!
     ***API KEY 숨기고 업로드 하기
     네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케함??
-    
-    도서 넘어가는 화면 고치기
+    Search는 네이버에서 넘어가는 데이터를 어떻게 해야 하나??
+ 
+    도서 넘어가는 화면은 국립중앙도서관API 인증되면 재구성
     
     Castlist 에서 인물정보 넘어가기
     메인 상단 3버튼중 TV버튼 누르면 넘어갈 데이터 만들기

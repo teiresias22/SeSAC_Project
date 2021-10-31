@@ -15,6 +15,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var mediaTableView: UITableView!
     
     var mediaData: [MediaModel] = []
+    var mediaGenre: [GenreModel] = []
     var pageCount = 1
     var totalPageCount = 100
     
@@ -38,6 +39,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         //TMDB Data
         fetcMediaData()
+        featGenreData()
     }
     
     //네비게이션 버튼 설정
@@ -143,11 +145,14 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
             cell.lbMediaTitleEng.text = row.originalTitle
             cell.lbMediaTitleKr.text = row.title
             cell.lbMediaOpeningDate.text = row.releaseDate
+                        
+            print(row.genre_ids)
         } else {
             cell.lbMediaTitleEng.text = row.originalName
             cell.lbMediaTitleKr.text = row.name
             cell.lbMediaOpeningDate.text = row.first_air_date
         }
+        
         return cell
     }
     
@@ -189,14 +194,26 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                 let media_type = mediaItem["media_type"].stringValue
                 let overview = mediaItem["overview"].stringValue
                 let id = mediaItem["id"].intValue
+                let genre_ids = mediaItem["genre_ids"].arrayValue
                 
-                let data = MediaModel(originalTitle: original_title, title: title, originalName: original_name, name: name, backdropPath: backdrop_path, voteAverage: vote_average, releaseDate: release_date, first_air_date: first_air_date, mediaType: media_type, id: id, overview: overview)
+                let data = MediaModel(originalTitle: original_title, title: title, originalName: original_name, name: name, backdropPath: backdrop_path, voteAverage: vote_average, releaseDate: release_date, first_air_date: first_air_date, mediaType: media_type, id: id, genre_ids: genre_ids, overview: overview)
                 
                 self.totalPageCount = json["total_pages"].intValue
                 self.mediaData.append(data)
             }
-            
             self.mediaTableView.reloadData()
+        }
+    }
+    
+    func featGenreData() {
+        TMDBGenreAPIManager.shared.fetchTranslateData(mediaType: "movie") { json in
+            for mediaGenre in json["genres"].arrayValue {
+                let id = mediaGenre["id"].intValue
+                let name = mediaGenre["name"].stringValue
+                
+                let data = GenreModel(id: id, name: name)
+                self.mediaGenre.append(data)
+            }
         }
     }
 }

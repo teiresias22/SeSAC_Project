@@ -11,5 +11,6 @@ struct MediaModel {
     var first_air_date: String
     var mediaType: String
     var id: Int
+    var genre_ids: Array<Any>
     var overview : String
 }

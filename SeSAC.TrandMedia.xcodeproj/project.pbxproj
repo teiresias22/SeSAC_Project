@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		7516B0A5272EB88800EDA375 /* TMDBSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516B0A4272EB88800EDA375 /* TMDBSearchAPIManager.swift */; };
 		7516B0A7272ECD5C00EDA375 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516B0A6272ECD5C00EDA375 /* BookModel.swift */; };
-		7516B0A9272EF10900EDA375 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516B0A8272EF10900EDA375 /* GenreModel.swift */; };
+		7516B0AB272EFF2300EDA375 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516B0AA272EFF2300EDA375 /* GenreModel.swift */; };
+		7516B0AD272EFFCA00EDA375 /* TMDBGenreAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516B0AC272EFFCA00EDA375 /* TMDBGenreAPIManager.swift */; };
 		751F128F271F1B0700F24BB7 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */; };
 		751F1290271F1B0700F24BB7 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */; };
 		751F1292271F1B2F00F24BB7 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F1291271F1B2F00F24BB7 /* BookViewController.swift */; };
@@ -70,7 +71,8 @@
 /* Begin PBXFileReference section */
 		7516B0A4272EB88800EDA375 /* TMDBSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBSearchAPIManager.swift; sourceTree = "<group>"; };
 		7516B0A6272ECD5C00EDA375 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
-		7516B0A8272EF10900EDA375 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		7516B0AA272EFF2300EDA375 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		7516B0AC272EFFCA00EDA375 /* TMDBGenreAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBGenreAPIManager.swift; sourceTree = "<group>"; };
 		751F128D271F1B0700F24BB7 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		751F128E271F1B0700F24BB7 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		751F1291271F1B2F00F24BB7 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				7533998C272C2EDA0067C3AC /* Constance.swift */,
 				7533998E272C31A90067C3AC /* TMDBAPIManager.swift */,
 				756F2573272D4F86004E05A9 /* TMDBTypeAPIManager.swift */,
+				7516B0AC272EFFCA00EDA375 /* TMDBGenreAPIManager.swift */,
 				7516B0A4272EB88800EDA375 /* TMDBSearchAPIManager.swift */,
 				756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */,
 			);
@@ -159,7 +162,7 @@
 				75339996272C58430067C3AC /* MovieModel.swift */,
 				756F2575272D4F95004E05A9 /* SimilarModel.swift */,
 				7516B0A6272ECD5C00EDA375 /* BookModel.swift */,
-				7516B0A8272EF10900EDA375 /* GenreModel.swift */,
+				7516B0AA272EFF2300EDA375 /* GenreModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				753C83E8272053F800CBD286 /* Theather.swift in Sources */,
-				7516B0A9272EF10900EDA375 /* GenreModel.swift in Sources */,
+				7516B0AB272EFF2300EDA375 /* GenreModel.swift in Sources */,
 				753C83DB271FA21300CBD286 /* OverviewTableViewCell.swift in Sources */,
 				753C83E62720525400CBD286 /* TheatherInformation.swift in Sources */,
 				756F2568272CEBBC004E05A9 /* NaverAPIManager.swift in Sources */,
@@ -334,6 +337,7 @@
 				759BCBFA271BCEBC00BE2F65 /* MainPageTableViewCell.swift in Sources */,
 				759BCBE1271BC38D00BE2F65 /* ViewController.swift in Sources */,
 				7533998F272C31A90067C3AC /* TMDBAPIManager.swift in Sources */,
+				7516B0AD272EFFCA00EDA375 /* TMDBGenreAPIManager.swift in Sources */,
 				7516B0A7272ECD5C00EDA375 /* BookModel.swift in Sources */,
 				759BCBFE271BCFD900BE2F65 /* CastListTableViewCell.swift in Sources */,
 				759BCC08271C332B00BE2F65 /* tvShowInformation.swift in Sources */,

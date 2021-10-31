@@ -9,9 +9,9 @@ class TMDBTypeAPIManager {
     
     typealias CompletionHandler = (JSON) -> ()
     
-    func fetchTranslateData(mediaType: String, mediaID: Int, APIType: String, result: @escaping CompletionHandler ) {
+    func fetchTranslateData(mediaType: String, mediaID: Int, APIType: String, startPage: Int,  result: @escaping CompletionHandler ) {
 
-        let url = Endpoint.TMDBType + "\(mediaType)/\(mediaID)/\(APIType)?api_key=\(APIkey.TMDB_ID)"
+        let url = Endpoint.TMDBType + "\(mediaType)/\(mediaID)/\(APIType)?api_key=\(APIkey.TMDB_ID)&page=\(startPage)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

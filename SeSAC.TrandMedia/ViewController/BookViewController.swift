@@ -6,15 +6,15 @@ class BookViewController: UIViewController {
     
     var bookData: [BookModel] = []
     var startPage = 1
-    var totoalPageCount = 100
+    var totalPageCount = 100
     var service = "book"
     var query = "해리포터"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
+        bookCollectionView.prefetchDataSource = self
         
         let nibName = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         bookCollectionView.register(nibName, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
@@ -51,8 +51,7 @@ class BookViewController: UIViewController {
                 
                 let data = BookModel(title: title, link: link, image: image, author: author, price: price, pubdate: pubdate, description: description, isbn: isbn)
                 
-                self.totoalPageCount = json["total"].intValue
-                self.startPage = json["start"].intValue
+                self.totalPageCount = json["total"].intValue
                 self.bookData.append(data)
             }
             self.bookCollectionView.reloadData()
@@ -60,7 +59,7 @@ class BookViewController: UIViewController {
     }
 }
 
-extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bookData.count
     }
@@ -82,5 +81,18 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if bookData.count - 2 == indexPath.item && bookData.count < totalPageCount {
+                startPage += 20
+                fetcBookData()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        print("취소")
     }
 }

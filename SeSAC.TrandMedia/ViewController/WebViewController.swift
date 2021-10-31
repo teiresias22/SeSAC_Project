@@ -8,6 +8,7 @@ class WebViewController: UIViewController{
     
     static let identifier = "WebViewController"
     
+    var startPage = 1
     var mediaData: MediaModel?
     var mediaURL: String = "" {
         didSet {
@@ -30,7 +31,7 @@ class WebViewController: UIViewController{
         print(mediaData!.id)
     }
     func fetcMediaData() {
-        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "videos") { json in
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "videos", startPage: startPage) { json in
             self.mediaURL = json["results"][0]["key"].stringValue
             print("url\(self.mediaURL)")
         }

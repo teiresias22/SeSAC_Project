@@ -195,6 +195,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                 self.totalPageCount = json["total_pages"].intValue
                 self.mediaData.append(data)
             }
+            
             self.mediaTableView.reloadData()
         }
     }
@@ -202,9 +203,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
 
 /*
     Have To!
-    ***API KEY 숨기고 업로드 하기
     네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케함??
-    Search는 네이버에서 넘어가는 데이터를 어떻게 해야 하나??
     
     Castlist 에서 인물정보 넘어가기
     메인 상단 3버튼중 TV버튼 누르면 넘어갈 데이터 만들기

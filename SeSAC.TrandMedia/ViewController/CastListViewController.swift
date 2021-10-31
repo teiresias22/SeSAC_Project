@@ -10,6 +10,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     var mediaData: MediaModel?
     var movieData: MovieModel?
     var castList: [castModel] = []
+    var startpage = 1
     
     //toggleButton 설정
     var toggleButtonClick:Bool = true
@@ -114,7 +115,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func loadMediaCreditsData() {
-        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "credits") { json in
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "credits", startPage: startpage) { json in
             for cast in json["cast"].arrayValue {
                 let name = cast["name"].stringValue
                 let character = cast["character"].stringValue

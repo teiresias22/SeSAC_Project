@@ -30,7 +30,7 @@ class WebViewController: UIViewController{
         print(mediaData!.id)
     }
     func fetcMediaData() {
-        TMDBVideosAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id) { json in
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "videos") { json in
             self.mediaURL = json["results"][0]["key"].stringValue
             print("url\(self.mediaURL)")
         }

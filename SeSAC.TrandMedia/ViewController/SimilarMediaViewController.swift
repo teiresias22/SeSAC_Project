@@ -21,6 +21,7 @@ class SimilarMediaViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     func collectionViewSet() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 16
@@ -33,7 +34,7 @@ class SimilarMediaViewController: UIViewController {
         
         SimilarCollectionView.collectionViewLayout = layout
         
-        //네비게이션 타이틀에 넣을때 글자수를 제한해야 할듯함
+        //네비게이션 타이틀에 넣을때 글자수가 너무 많은경우가 있어 라벨로 일단 표시, title의 적절한 표시가 필요함
         if mediaData!.title != "" {
             similarMediaLabrl.text = mediaData!.title + "과 유사한 컨텐츠"
         } else if mediaData!.name != "" {
@@ -47,7 +48,7 @@ class SimilarMediaViewController: UIViewController {
     }
     
     func loadMediaData() {
-        TMDBSimilarAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id) { json in
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "similar") { json in
             for similar in json["results"].arrayValue {
                 let title = similar["title"].stringValue
                 let name = similar["name"].stringValue
@@ -104,7 +105,17 @@ extension SimilarMediaViewController: UICollectionViewDelegate, UICollectionView
         
         return cell
     }
-    
+    /* 선택하면 CastList로 넘어가고 싶은데 데이터를 어떻게 연동시켜야 할까????
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as? CastListViewController else { return }
+        
+        let item = similarData[indexPath.item]
+        vc.similarData = item
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    */
     //장르를 대분류해 색상을 부여할것
     func setColor(_ genre: String) -> UIColor {
         if genre == "" {

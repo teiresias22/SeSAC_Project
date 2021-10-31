@@ -114,7 +114,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func loadMediaCreditsData() {
-        TMDBCreditsAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id) { json in
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "credits") { json in
             for cast in json["cast"].arrayValue {
                 let name = cast["name"].stringValue
                 let character = cast["character"].stringValue

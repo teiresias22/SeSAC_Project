@@ -4,7 +4,11 @@ class BookViewController: UIViewController {
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
     
-    let tvInformation = tvShowInformation()
+    var bookData: [BookModel] = []
+    var startPage = 1
+    var totoalPageCount = 100
+    var service = "book"
+    var query = "해리포터"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,50 +19,68 @@ class BookViewController: UIViewController {
         let nibName = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         bookCollectionView.register(nibName, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         
+        collectionViewSet()
+        fetcBookData()
+    }
+    
+    func collectionViewSet() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 16
         let width = UIScreen.main.bounds.width - (spacing * 3)
-        layout.itemSize = CGSize(width: width / 2 , height: width / 2  )
+        layout.itemSize = CGSize(width: width / 2 , height: width / 1.2  )
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
         layout.scrollDirection = .vertical
         
         bookCollectionView.collectionViewLayout = layout
+        navigationItem.title = query
+    }
+    
+    func fetcBookData() {
+        NaverAPIManager.shared.fetchMovieData(serviceType: service, query: query, startPage: startPage) { json in
+            for item in json["items"].arrayValue {
+                let title = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
+                let link = item["link"].stringValue
+                let image = item["image"].stringValue
+                let author = item["author"].stringValue
+                let price = item["price"].stringValue
+                let pubdate = item["pubdate"].stringValue
+                let description = item["description"].stringValue
+                let isbn = item["isbn"].stringValue
+                
+                let data = BookModel(title: title, link: link, image: image, author: author, price: price, pubdate: pubdate, description: description, isbn: isbn)
+                
+                self.totoalPageCount = json["total"].intValue
+                self.startPage = json["start"].intValue
+                self.bookData.append(data)
+            }
+            self.bookCollectionView.reloadData()
+        }
     }
 }
 
 extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tvInformation.tvShow.count
+        return bookData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
         
-        let item = tvInformation.tvShow[indexPath.item]
+        let item = bookData[indexPath.item]
         
         cell.bookTitle.text = item.title
-        cell.bookTitle.textColor = .black
-        cell.bookTitle.font = .boldSystemFont(ofSize: 20)
-        cell.bookRate.text = "\(item.rate)"
-        cell.bookRate.textColor = .black
-        cell.bookCoverImage.image = UIImage(named: item.title)
-        cell.backgroundColor = setColorSet(item.genre)
-        cell.layer.cornerRadius = 16
+        cell.bookAuthor.text = item.author
+        cell.bookPrice.text = "금액: " + item.price + " 원"
+        cell.bookPubDate.text = "출판일: " + item.pubdate
+        
+        if let url = URL(string: item.image) {
+            cell.bookCoverImage.kf.setImage(with: url)
+        } else {
+            cell.bookCoverImage.image = UIImage(systemName: "star")
+        }
         
         return cell
-    }
-    
-    func setColorSet(_ genre:String) -> UIColor {
-        if genre == "Mystery" || genre == "Crime" {
-            return UIColor.customRed ?? .clear
-        } else if genre == "Drama" || genre == "Comedy" {
-            return UIColor.customYellow ?? .clear
-        } else if genre == "Animation" {
-            return UIColor.customBlue ?? .clear
-        } else {
-            return UIColor.customGreen ?? .clear
-        }
     }
 }

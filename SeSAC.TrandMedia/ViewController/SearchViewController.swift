@@ -11,6 +11,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var movieData: [MovieModel] = []
     var startPage = 1
     var totalPageCount = 100
+    var mediaType = "movie"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,22 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         let row = movieData[indexPath.row]
         
-        if let url = URL(string: row.imageData){
+        if row.poster_path != ""{
+            let url = URL(string: Endpoint.TMDBImage + row.poster_path)
             cell.imgMediaPoster.kf.setImage(with: url)
         } else {
             cell.imgMediaPoster.image = UIImage(systemName: "star")
         }
-        cell.lbSearchMediaTitle.text = row.titleData
-        cell.lbSearchMediaSubTitle.text = row.subTitleData
-        cell.lbSearchMediaSynopsis.text = row.subTitleData
+        
+        if row.original_title != "" {
+            cell.lbSearchMediaTitle.text = row.original_title
+            cell.lbSearchMediaSubTitle.text = row.release_date
+        } else {
+            cell.lbSearchMediaTitle.text = row.original_name
+            cell.lbSearchMediaSubTitle.text = row.first_air_date
+        }
+        cell.lbSearchMediaSynopsis.text = row.overview
+        
         
        return cell
     }
@@ -77,24 +86,24 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func fetcMediaData() {
         let text = showSearchBar.text ?? "StarWars"
-        NaverAPIManager.shared.fetchMovieData(query: text, startPage: startPage) { json in
-            
-            for item in json["items"].arrayValue {
-                let value = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
-                let image = item["image"].stringValue
-                let link = item["link"].stringValue
-                let userRating = item["userRating"].stringValue
-                let subtitle = item["subtitle"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
-                let actor = item["actor"].stringValue
+        TMDBSearchAPIManager.shared.fetchTranslateData(mediaType: mediaType, text: text, startPage: startPage) { json in
+            for item in json["results"].arrayValue {
+                let poster_path = item["poster_path"].stringValue
+                let genre_ids = item["genre_ids"].stringValue
+                let id = item["id"].intValue
+                let original_title = item["original_title"].stringValue
+                let original_name = item["original_name"].stringValue
+                let overview = item["overview"].stringValue
+                let release_date = item["release_date"].stringValue
+                let first_air_date = item["first_air_date"].stringValue
                 
-                let data = MovieModel(titleData: value, imageData: image, linkData: link, userRatingData: userRating, subTitleData: subtitle, actorDate: actor)
+                let data = MovieModel(poster_path: poster_path, genre_ids: genre_ids, id: id, original_title: original_title, original_name: original_name, overview: overview, release_date: release_date, first_air_date: first_air_date)
                 
-                self.totalPageCount = json["total"].intValue
+                self.totalPageCount = json["total_results"].intValue
                 self.movieData.append(data)
             }
             self.searchTableView.reloadData()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {

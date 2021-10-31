@@ -9,10 +9,10 @@ class NaverAPIManager {
     
     typealias CompletionHandler = (JSON) -> ()
     
-    func fetchMovieData(query: String, startPage: Int, result: @escaping CompletionHandler) {
+    func fetchMovieData(serviceType: String, query: String, startPage: Int, result: @escaping CompletionHandler) {
         
         if let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            let url = Endpoint.NaverSearcj + "\(query)&display=10&start=\(startPage)"
+            let url = Endpoint.NaverSearch + "\(serviceType).json?query=\(query)&display=20&start=\(startPage)"
             
             let header: HTTPHeaders = [
                 "X-Naver-Client-Id": APIkey.Naver_ID,

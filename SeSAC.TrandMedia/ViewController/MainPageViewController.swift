@@ -220,7 +220,8 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
 
 /*
     Have To!
-    네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케함??
+    네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케하지??
+    장르 불러오기 어렵네 장르를 불러와서 배열을 만들고, 그 배열의 인덱스 값별로 장르데이터 값과 비교해서 name값을 불러온다?
     
     Castlist 에서 인물정보 넘어가기
     메인 상단 3버튼중 TV버튼 누르면 넘어갈 데이터 만들기

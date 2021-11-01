@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75D9C50B272FF62700C7A318 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C50D272FF62700C7A318 /* Localizable.strings */; };
+		75D9C5102730173000C7A318 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C50F2730173000C7A318 /* Home.storyboard */; };
+		75D9C5122730173700C7A318 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C5112730173700C7A318 /* Content.storyboard */; };
+		75D9C5142730174000C7A318 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C5132730174000C7A318 /* Calendar.storyboard */; };
+		75D9C5162730174D00C7A318 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C5152730174D00C7A318 /* Search.storyboard */; };
+		75D9C5182730175400C7A318 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C5172730175400C7A318 /* Setting.storyboard */; };
+		75D9C51A273017AC00C7A318 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C519273017AC00C7A318 /* HomeViewController.swift */; };
+		75D9C51C273017B400C7A318 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C51B273017B400C7A318 /* ContentViewController.swift */; };
+		75D9C51E273017C300C7A318 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C51D273017C300C7A318 /* CalendarViewController.swift */; };
+		75D9C520273017CC00C7A318 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C51F273017CC00C7A318 /* SearchViewController.swift */; };
+		75D9C522273017D700C7A318 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C521273017D700C7A318 /* SettingViewController.swift */; };
+		75D9C526273042E200C7A318 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9C524273042E200C7A318 /* SearchTableViewCell.swift */; };
+		75D9C527273042E200C7A318 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D9C525273042E200C7A318 /* SearchTableViewCell.xib */; };
 		75DCC676272FE9DC0067B780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCC675272FE9DC0067B780 /* AppDelegate.swift */; };
 		75DCC678272FE9DC0067B780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCC677272FE9DC0067B780 /* SceneDelegate.swift */; };
 		75DCC67A272FE9DC0067B780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCC679272FE9DC0067B780 /* ViewController.swift */; };
@@ -14,9 +27,27 @@
 		75DCC680272FE9DC0067B780 /* SeSAC_Week06.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75DCC67E272FE9DC0067B780 /* SeSAC_Week06.xcdatamodeld */; };
 		75DCC682272FE9DD0067B780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75DCC681272FE9DD0067B780 /* Assets.xcassets */; };
 		75DCC685272FE9DD0067B780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DCC683272FE9DD0067B780 /* LaunchScreen.storyboard */; };
+		75DCC692272FEB7A0067B780 /* SCDream8.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75DCC68F272FEB7A0067B780 /* SCDream8.otf */; };
+		75DCC693272FEB7A0067B780 /* SCDream5.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75DCC690272FEB7A0067B780 /* SCDream5.otf */; };
+		75DCC694272FEB7A0067B780 /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75DCC691272FEB7A0067B780 /* SCDream2.otf */; };
+		75DCC697272FEEC70067B780 /* Font + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCC696272FEEC70067B780 /* Font + Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75D9C50C272FF62700C7A318 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		75D9C50E272FF67D00C7A318 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		75D9C50F2730173000C7A318 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		75D9C5112730173700C7A318 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		75D9C5132730174000C7A318 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		75D9C5152730174D00C7A318 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		75D9C5172730175400C7A318 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		75D9C519273017AC00C7A318 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		75D9C51B273017B400C7A318 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		75D9C51D273017C300C7A318 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		75D9C51F273017CC00C7A318 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		75D9C521273017D700C7A318 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		75D9C524273042E200C7A318 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		75D9C525273042E200C7A318 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		75DCC672272FE9DC0067B780 /* SeSAC.Week06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC.Week06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DCC675272FE9DC0067B780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DCC677272FE9DC0067B780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +57,11 @@
 		75DCC681272FE9DD0067B780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75DCC684272FE9DD0067B780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75DCC686272FE9DD0067B780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DCC68F272FEB7A0067B780 /* SCDream8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream8.otf; sourceTree = "<group>"; };
+		75DCC690272FEB7A0067B780 /* SCDream5.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream5.otf; sourceTree = "<group>"; };
+		75DCC691272FEB7A0067B780 /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
+		75DCC696272FEEC70067B780 /* Font + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extention.swift"; sourceTree = "<group>"; };
+		75DCC698272FF2430067B780 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75D9C508272FF57900C7A318 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				75D9C50D272FF62700C7A318 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		75D9C523273042B600C7A318 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				75D9C524273042E200C7A318 /* SearchTableViewCell.swift */,
+				75D9C525273042E200C7A318 /* SearchTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		75DCC669272FE9DC0067B780 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +111,64 @@
 		75DCC674272FE9DC0067B780 /* SeSAC.Week06 */ = {
 			isa = PBXGroup;
 			children = (
+				75D9C508272FF57900C7A318 /* Localization */,
+				75DCC695272FEE790067B780 /* Extention */,
+				75DCC68C272FEA0F0067B780 /* Font */,
+				75DCC68D272FEA150067B780 /* Storybord */,
+				75DCC68E272FEA2B0067B780 /* ViewController */,
+				75D9C523273042B600C7A318 /* cell */,
 				75DCC675272FE9DC0067B780 /* AppDelegate.swift */,
 				75DCC677272FE9DC0067B780 /* SceneDelegate.swift */,
-				75DCC679272FE9DC0067B780 /* ViewController.swift */,
-				75DCC67B272FE9DC0067B780 /* Main.storyboard */,
 				75DCC681272FE9DD0067B780 /* Assets.xcassets */,
 				75DCC683272FE9DD0067B780 /* LaunchScreen.storyboard */,
 				75DCC686272FE9DD0067B780 /* Info.plist */,
 				75DCC67E272FE9DC0067B780 /* SeSAC_Week06.xcdatamodeld */,
 			);
 			path = SeSAC.Week06;
+			sourceTree = "<group>";
+		};
+		75DCC68C272FEA0F0067B780 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				75DCC691272FEB7A0067B780 /* SCDream2.otf */,
+				75DCC690272FEB7A0067B780 /* SCDream5.otf */,
+				75DCC68F272FEB7A0067B780 /* SCDream8.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		75DCC68D272FEA150067B780 /* Storybord */ = {
+			isa = PBXGroup;
+			children = (
+				75DCC67B272FE9DC0067B780 /* Main.storyboard */,
+				75D9C50F2730173000C7A318 /* Home.storyboard */,
+				75D9C5112730173700C7A318 /* Content.storyboard */,
+				75D9C5152730174D00C7A318 /* Search.storyboard */,
+				75D9C5132730174000C7A318 /* Calendar.storyboard */,
+				75D9C5172730175400C7A318 /* Setting.storyboard */,
+			);
+			path = Storybord;
+			sourceTree = "<group>";
+		};
+		75DCC68E272FEA2B0067B780 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75DCC679272FE9DC0067B780 /* ViewController.swift */,
+				75D9C519273017AC00C7A318 /* HomeViewController.swift */,
+				75D9C51B273017B400C7A318 /* ContentViewController.swift */,
+				75D9C51F273017CC00C7A318 /* SearchViewController.swift */,
+				75D9C51D273017C300C7A318 /* CalendarViewController.swift */,
+				75D9C521273017D700C7A318 /* SettingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		75DCC695272FEE790067B780 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				75DCC696272FEEC70067B780 /* Font + Extention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +213,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 75DCC669272FE9DC0067B780;
 			productRefGroup = 75DCC673272FE9DC0067B780 /* Products */;
@@ -128,9 +230,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DCC694272FEB7A0067B780 /* SCDream2.otf in Resources */,
+				75DCC693272FEB7A0067B780 /* SCDream5.otf in Resources */,
 				75DCC685272FE9DD0067B780 /* LaunchScreen.storyboard in Resources */,
+				75D9C50B272FF62700C7A318 /* Localizable.strings in Resources */,
 				75DCC682272FE9DD0067B780 /* Assets.xcassets in Resources */,
+				75D9C5122730173700C7A318 /* Content.storyboard in Resources */,
+				75DCC692272FEB7A0067B780 /* SCDream8.otf in Resources */,
+				75D9C5162730174D00C7A318 /* Search.storyboard in Resources */,
 				75DCC67D272FE9DC0067B780 /* Main.storyboard in Resources */,
+				75D9C5142730174000C7A318 /* Calendar.storyboard in Resources */,
+				75D9C5102730173000C7A318 /* Home.storyboard in Resources */,
+				75D9C5182730175400C7A318 /* Setting.storyboard in Resources */,
+				75D9C527273042E200C7A318 /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,20 +253,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D9C51E273017C300C7A318 /* CalendarViewController.swift in Sources */,
 				75DCC67A272FE9DC0067B780 /* ViewController.swift in Sources */,
 				75DCC680272FE9DC0067B780 /* SeSAC_Week06.xcdatamodeld in Sources */,
+				75D9C520273017CC00C7A318 /* SearchViewController.swift in Sources */,
+				75D9C526273042E200C7A318 /* SearchTableViewCell.swift in Sources */,
+				75DCC697272FEEC70067B780 /* Font + Extention.swift in Sources */,
+				75D9C522273017D700C7A318 /* SettingViewController.swift in Sources */,
 				75DCC676272FE9DC0067B780 /* AppDelegate.swift in Sources */,
 				75DCC678272FE9DC0067B780 /* SceneDelegate.swift in Sources */,
+				75D9C51A273017AC00C7A318 /* HomeViewController.swift in Sources */,
+				75D9C51C273017B400C7A318 /* ContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		75D9C50D272FF62700C7A318 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75D9C50C272FF62700C7A318 /* en */,
+				75D9C50E272FF67D00C7A318 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		75DCC67B272FE9DC0067B780 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				75DCC67C272FE9DC0067B780 /* Base */,
+				75DCC698272FF2430067B780 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -174,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -235,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

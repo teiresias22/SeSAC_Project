@@ -16,39 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LI6-IY-NWh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="y4w-7r-Egk">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="c2e-AO-qVY">
-                                            <connections>
-                                                <action selector="closeButtonClicked:" destination="Y6W-OH-hqX" id="tLo-vP-QcU"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="3dW-cW-47K">
-                                            <connections>
-                                                <action selector="saveButtonClicked:" destination="Y6W-OH-hqX" id="T43-CW-9Is"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3E-Tl-DjO">
-                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="i3E-Tl-DjO" secondAttribute="height" id="8cO-Sa-0E1"/>
+                                    <constraint firstAttribute="width" secondItem="i3E-Tl-DjO" secondAttribute="height" multiplier="1:1" id="Cka-2K-TL7"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gH5-qg-M0q">
-                                <rect key="frame" x="16" y="518" width="382" height="40"/>
+                                <rect key="frame" x="16" y="494" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Md-Ve-n5b"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="c6i-E3-65x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpt-3u-qkF">
-                                <rect key="frame" x="16" y="574" width="382" height="40"/>
+                                <rect key="frame" x="16" y="554" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZNY-ic-BJW"/>
                                 </constraints>
@@ -56,7 +40,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-uc-Sg9">
-                                <rect key="frame" x="16" y="630" width="382" height="167"/>
+                                <rect key="frame" x="16" y="614" width="382" height="179"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -67,29 +51,28 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="5Kx-J2-xLo"/>
-                            <constraint firstItem="LI6-IY-NWh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6o6-gU-7JS"/>
-                            <constraint firstItem="gH5-qg-M0q" firstAttribute="top" secondItem="i3E-Tl-DjO" secondAttribute="bottom" constant="16" id="CR2-3j-3PD"/>
-                            <constraint firstItem="ZcW-uc-Sg9" firstAttribute="top" secondItem="kpt-3u-qkF" secondAttribute="bottom" constant="16" id="Cdl-aG-VMe"/>
-                            <constraint firstItem="LI6-IY-NWh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="EIN-Jb-Jlu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gH5-qg-M0q" secondAttribute="trailing" constant="16" id="8YF-EA-tcv"/>
+                            <constraint firstItem="ZcW-uc-Sg9" firstAttribute="top" secondItem="kpt-3u-qkF" secondAttribute="bottom" constant="20" id="Cdl-aG-VMe"/>
+                            <constraint firstItem="gH5-qg-M0q" firstAttribute="top" secondItem="i3E-Tl-DjO" secondAttribute="bottom" constant="20" id="GvK-0j-ByQ"/>
                             <constraint firstItem="ZcW-uc-Sg9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="J9I-LM-sKO"/>
-                            <constraint firstItem="kpt-3u-qkF" firstAttribute="top" secondItem="gH5-qg-M0q" secondAttribute="bottom" constant="16" id="M3Z-2m-vKp"/>
+                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Kcg-KQ-LVF"/>
+                            <constraint firstItem="kpt-3u-qkF" firstAttribute="top" secondItem="gH5-qg-M0q" secondAttribute="bottom" constant="20" id="M3Z-2m-vKp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gH5-qg-M0q" secondAttribute="trailing" constant="16" id="NBq-D4-7Vx"/>
-                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Scx-iT-vSZ"/>
-                            <constraint firstItem="LI6-IY-NWh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Tw6-qc-Pav"/>
+                            <constraint firstItem="gH5-qg-M0q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VFc-tN-6sT"/>
                             <constraint firstItem="gH5-qg-M0q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Yt9-Hc-Oes"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kpt-3u-qkF" secondAttribute="trailing" constant="16" id="cav-Ua-gOg"/>
-                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="top" secondItem="LI6-IY-NWh" secondAttribute="bottom" id="jv3-nc-Hyb"/>
+                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="cwG-0s-p8m"/>
+                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="fge-fw-lq4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZcW-uc-Sg9" secondAttribute="trailing" constant="16" id="qDY-QI-Mc2"/>
                             <constraint firstItem="kpt-3u-qkF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="rDG-bS-2My"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZcW-uc-Sg9" secondAttribute="bottom" constant="16" id="rqg-sQ-05d"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZcW-uc-Sg9" secondAttribute="bottom" constant="20" id="rqg-sQ-05d"/>
+                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="u9d-b9-o2J"/>
+                            <constraint firstItem="i3E-Tl-DjO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="vUG-qU-IhU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="item" id="mBh-SV-nqW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addButton" destination="3dW-cW-47K" id="uRO-co-ATh"/>
-                        <outlet property="closeButton" destination="c2e-AO-qVY" id="Uk4-YM-vBM"/>
                         <outlet property="dateSetButton" destination="kpt-3u-qkF" id="3FB-IX-3ft"/>
                         <outlet property="imageView" destination="i3E-Tl-DjO" id="3Mr-rm-1Lw"/>
                         <outlet property="mainTextView" destination="ZcW-uc-Sg9" id="FiU-rg-AAG"/>

@@ -11,7 +11,7 @@ class shoppingList: Object {
     convenience init(title: String) {
         self.init()
         self.title = title
-        self.favorite = favorite
-        self.complete = complete
+        self.favorite = false
+        self.complete = false
     }
 }

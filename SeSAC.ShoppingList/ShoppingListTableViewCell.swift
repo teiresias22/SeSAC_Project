@@ -18,6 +18,7 @@ class ShoppingListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,5 +26,15 @@ class ShoppingListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func checkBoxButtonClicked(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func favoritesButtonClicked(_ sender: UIButton) {
+        
+    }
+    
+    
+    
 }

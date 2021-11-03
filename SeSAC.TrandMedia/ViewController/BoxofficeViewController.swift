@@ -1,26 +1,67 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
+import SwiftUI
 
 class BoxofficeViewController: UIViewController {
-
-    var boxofficeData: [BoxofficeModel] = []
-    
     @IBOutlet weak var boxofficeTitleLabel: UILabel!
     @IBOutlet weak var boxofficeTableView: UITableView!
+    @IBOutlet weak var boxofficeDatePicker: UIDatePicker!
+    
+    var boxofficeData: [BoxofficeModel] = []
+    var setDate = "20211027"
+    
+    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         boxofficeTableView.delegate = self
         boxofficeTableView.dataSource = self
         
-        boxofficeTitleLabel.text = "박스오피스 \(Date().month)월 \(Date().day - 1)일 "
+        boxofficeTitleLabel.text = "박스오피스 10월 27일 "
         
         let nibName = UINib(nibName: BoxofficeTableViewCell.identifier, bundle: nil)
         boxofficeTableView.register(nibName, forCellReuseIdentifier: BoxofficeTableViewCell.identifier)
         
         BoxOfficeDataSetting()
+        setAttributes()
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
     }
+    
+    func setAttributes() {
+        boxofficeDatePicker.preferredDatePickerStyle = .automatic
+        boxofficeDatePicker.datePickerMode = .date
+        boxofficeDatePicker.locale = Locale(identifier: "ko-KR")
+        boxofficeDatePicker.timeZone = .autoupdatingCurrent
+        boxofficeDatePicker.date = Date(timeIntervalSinceNow: -3600 * 24 * 1)
+        
+        var components = DateComponents()
+        components.day = -1
+        let maxDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+        components.day = -1000
+        let minDate = Calendar.autoupdatingCurrent.date(byAdding: components, to: Date())
+        boxofficeDatePicker.maximumDate = maxDate
+        boxofficeDatePicker.minimumDate = minDate
+        
+        boxofficeDatePicker.addTarget(self, action: #selector(handleDatePicker(_:)), for: .valueChanged)
+    }
+    
+    @objc
+    func handleDatePicker(_ sender: UIDatePicker) {
+        setDate = setDateString(boxofficeDatePicker.date)
+        BoxOfficeDataSetting()
+    }
+    
+    func setDateString(_ data: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let str = dateFormatter.string(from: data)
+        return str
+    }
+    
+    
 }
 
 extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -67,8 +108,6 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func BoxOfficeDataSetting() {
-        let setDate = "\(Date().year)\(Date().month)\(Date().day - 1)"
-        print("setDate\(setDate)")
         
         let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=\(setDate)"
         
@@ -98,6 +137,12 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+extension DatePicker {
+    
+}
+
+
 extension Date{
     var year: Int {
         let cal = Calendar.current

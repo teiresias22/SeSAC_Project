@@ -105,8 +105,6 @@ extension SimilarMediaViewController: UICollectionViewDelegate, UICollectionView
         //장르 표시
         cell.genreLabel.text = ""
         cell.overViewLabel.text = item.overview
-        //장르별 백그라운드 설정
-        cell.backgroundColor = .customYellow
         
         return cell
     }

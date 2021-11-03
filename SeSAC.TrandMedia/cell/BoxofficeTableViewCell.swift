@@ -13,6 +13,9 @@ class BoxofficeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        audiAccLabel.textColor = .customGreen
+        rankLabel.textAlignment = .center
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

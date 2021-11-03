@@ -611,16 +611,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일별 박스오피스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXt-aj-2zL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="248.5" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="noe-mL-fBj"/>
+                                    <constraint firstAttribute="height" constant="80" id="0eU-G9-gYz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4vU-do-vf4">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoxofficeTableViewCell" id="HJb-q0-Zj2">
@@ -633,28 +633,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="5t8-b3-znT">
+                                <rect key="frame" x="248.5" y="88" width="165.5" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ayu-aX-g2q"/>
+                                </constraints>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ar0-Tb-7x9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ar0-Tb-7x9" firstAttribute="trailing" secondItem="4vU-do-vf4" secondAttribute="trailing" id="9vr-9Q-9DR"/>
-                            <constraint firstItem="4vU-do-vf4" firstAttribute="leading" secondItem="Ar0-Tb-7x9" secondAttribute="leading" id="CQk-dP-vBw"/>
-                            <constraint firstItem="Ar0-Tb-7x9" firstAttribute="trailing" secondItem="tXt-aj-2zL" secondAttribute="trailing" id="E9t-1J-dfE"/>
-                            <constraint firstItem="tXt-aj-2zL" firstAttribute="top" secondItem="Ar0-Tb-7x9" secondAttribute="top" id="FLd-sM-FYr"/>
-                            <constraint firstItem="Ar0-Tb-7x9" firstAttribute="bottom" secondItem="4vU-do-vf4" secondAttribute="bottom" id="Uya-Ci-fzG"/>
-                            <constraint firstItem="4vU-do-vf4" firstAttribute="top" secondItem="tXt-aj-2zL" secondAttribute="bottom" id="pe4-Q3-lGl"/>
-                            <constraint firstItem="tXt-aj-2zL" firstAttribute="leading" secondItem="Ar0-Tb-7x9" secondAttribute="leading" id="t5Y-ue-jXG"/>
+                            <constraint firstItem="tXt-aj-2zL" firstAttribute="leading" secondItem="Ar0-Tb-7x9" secondAttribute="leading" id="6Id-GK-SUi"/>
+                            <constraint firstItem="tXt-aj-2zL" firstAttribute="top" secondItem="Ar0-Tb-7x9" secondAttribute="top" id="L0R-R2-tCV"/>
+                            <constraint firstItem="5t8-b3-znT" firstAttribute="top" secondItem="Ar0-Tb-7x9" secondAttribute="top" id="NPJ-9u-d4m"/>
+                            <constraint firstItem="4vU-do-vf4" firstAttribute="trailing" secondItem="Ar0-Tb-7x9" secondAttribute="trailing" id="PDV-eX-UKN"/>
+                            <constraint firstItem="4vU-do-vf4" firstAttribute="leading" secondItem="Ar0-Tb-7x9" secondAttribute="leading" id="bdf-52-hgi"/>
+                            <constraint firstItem="5t8-b3-znT" firstAttribute="trailing" secondItem="Ar0-Tb-7x9" secondAttribute="trailing" id="fy0-NJ-hh8"/>
+                            <constraint firstItem="5t8-b3-znT" firstAttribute="width" secondItem="0nk-HM-r0Z" secondAttribute="width" multiplier="0.4" id="lvZ-Vc-cuy"/>
+                            <constraint firstItem="tXt-aj-2zL" firstAttribute="width" secondItem="0nk-HM-r0Z" secondAttribute="width" multiplier="0.6" id="moX-Ae-ZZd"/>
+                            <constraint firstItem="4vU-do-vf4" firstAttribute="bottom" secondItem="Ar0-Tb-7x9" secondAttribute="bottom" id="rVC-X5-w2b"/>
+                            <constraint firstItem="4vU-do-vf4" firstAttribute="top" secondItem="tXt-aj-2zL" secondAttribute="bottom" id="yrk-oR-twe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rZQ-4d-3n5"/>
                     <connections>
+                        <outlet property="boxofficeDatePicker" destination="5t8-b3-znT" id="abE-If-2RV"/>
                         <outlet property="boxofficeTableView" destination="4vU-do-vf4" id="wO5-Yg-15F"/>
                         <outlet property="boxofficeTitleLabel" destination="tXt-aj-2zL" id="Vk1-sL-ACV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z92-yz-duq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="864"/>
+            <point key="canvasLocation" x="131.8840579710145" y="863.83928571428567"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="ddN-4M-BUw">

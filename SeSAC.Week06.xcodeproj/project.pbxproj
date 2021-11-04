@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7522910B27336DC5000AC604 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 7522910A27336DC5000AC604 /* Zip */; };
 		7527DA4D2730FD7F0048FF87 /* realmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527DA4C2730FD7F0048FF87 /* realmModel.swift */; };
 		7527DA502730FDB80048FF87 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7527DA4F2730FDB80048FF87 /* Realm */; };
 		7527DA522730FDB80048FF87 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7527DA512730FDB80048FF87 /* RealmSwift */; };
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7522910B27336DC5000AC604 /* Zip in Frameworks */,
 				7527DA522730FDB80048FF87 /* RealmSwift in Frameworks */,
 				7527DA502730FDB80048FF87 /* Realm in Frameworks */,
 			);
@@ -205,6 +207,7 @@
 			packageProductDependencies = (
 				7527DA4F2730FDB80048FF87 /* Realm */,
 				7527DA512730FDB80048FF87 /* RealmSwift */,
+				7522910A27336DC5000AC604 /* Zip */,
 			);
 			productName = SeSAC.Week06;
 			productReference = 75DCC672272FE9DC0067B780 /* SeSAC.Week06.app */;
@@ -237,6 +240,7 @@
 			mainGroup = 75DCC669272FE9DC0067B780;
 			packageReferences = (
 				7527DA4E2730FDB80048FF87 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				7522910927336DC5000AC604 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 75DCC673272FE9DC0067B780 /* Products */;
 			projectDirPath = "";
@@ -518,6 +522,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7522910927336DC5000AC604 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		7527DA4E2730FDB80048FF87 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -529,6 +541,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7522910A27336DC5000AC604 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7522910927336DC5000AC604 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
 		7527DA4F2730FDB80048FF87 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7527DA4E2730FDB80048FF87 /* XCRemoteSwiftPackageReference "realm-cocoa" */;

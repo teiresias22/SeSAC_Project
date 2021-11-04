@@ -14,12 +14,12 @@ class SimilarMediaCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        TitleLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        TitleLabel.font = UIFont().mainMedium
         genreLabel.textColor = .systemGray
-        genreLabel.font = .systemFont(ofSize: 14)
+        genreLabel.font = UIFont().mainLight
         releaseDateLabel.textColor = .systemGray
-        releaseDateLabel.font = .systemFont(ofSize: 14)
-        overViewLabel.font = .systemFont(ofSize: 14)
+        releaseDateLabel.font = UIFont().mainLight
+        overViewLabel.font = UIFont().mainLight
         overViewLabel.numberOfLines = 3
         self.layer.cornerRadius = 8
         

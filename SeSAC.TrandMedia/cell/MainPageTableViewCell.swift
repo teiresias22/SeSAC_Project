@@ -39,6 +39,12 @@ class MainPageTableViewCell: UITableViewCell {
         
         rateExpactaion.textColor = .white
         rateExpactaion.backgroundColor = .customRed ?? .red
+        rateExpactaion.font = UIFont().mainLight
+        
+        lbMediaTag.font = UIFont().mainLight
+        lbMediaTitleEng.font = UIFont().mainMedium
+        lbMediaTitleKr.font = UIFont().mainMedium
+        lbMediaOpeningDate.font = UIFont().mainLight
         // Initialization code
     }
 

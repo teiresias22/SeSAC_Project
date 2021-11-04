@@ -12,6 +12,9 @@ class CastListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        lbActorName.font = UIFont().mainMedium
+        lbCastName.font = UIFont().mainLight
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

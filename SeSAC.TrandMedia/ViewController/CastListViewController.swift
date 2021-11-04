@@ -41,7 +41,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         mainMediaLabel.textAlignment = .center
         mainMediaLabel.textColor = .white
-        mainMediaLabel.font = .boldSystemFont(ofSize: 24)
+        mainMediaLabel.font = UIFont().mainBold
     }
     //e. 뷰디드로드
     

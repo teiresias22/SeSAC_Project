@@ -61,6 +61,8 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     func topViewSetting(){
         let layer = topView.layer
         
+        title = "TREND MEDIA"
+        
         layer.cornerRadius = 10
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.4
@@ -69,6 +71,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         lbWelcomeMessage.text = "Welcome Trand!"
         lbWelcomeMessage.backgroundColor = .customRed ?? .red
         lbWelcomeMessage.textColor = .white
+        lbWelcomeMessage.font = UIFont().mainBold
     }
     
     //웹뷰 링크 버튼 클릭    
@@ -132,6 +135,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
         cell.similarViewLinkButton.tag = indexPath.row
         cell.similarViewLinkButton.addTarget(self, action: #selector(similarViewLinkButtonClicked(selected:)), for: .touchUpInside)
         cell.lbMediaRating.text = row.voteAverage
+        cell.lbMediaRating.font = UIFont().mainLight
         cell.lbMediaTag.text = row.mediaType
         
         //메인 이미지가 없는 경우 시스템 아이콘 사용
@@ -148,8 +152,8 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                         
             print(row.genre_ids)
         } else {
-            cell.lbMediaTitleEng.text = row.originalName
-            cell.lbMediaTitleKr.text = row.name
+            cell.lbMediaTitleEng.text = row.name
+            cell.lbMediaTitleKr.text = row.originalName
             cell.lbMediaOpeningDate.text = row.first_air_date
         }
         

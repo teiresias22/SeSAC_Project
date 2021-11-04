@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class BoxofficeLank: Object {
+class BoxofficeRank: Object {
     @Persisted var rankData: String
     @Persisted var movieNmData: String
     @Persisted var openDtData: String

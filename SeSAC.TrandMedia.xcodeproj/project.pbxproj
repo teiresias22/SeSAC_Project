@@ -60,6 +60,7 @@
 		759BCBFE271BCFD900BE2F65 /* CastListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */; };
 		759BCC02271BFBF600BE2F65 /* tvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCC01271BFBF600BE2F65 /* tvShow.swift */; };
 		759BCC08271C332B00BE2F65 /* tvShowInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCC07271C332B00BE2F65 /* tvShowInformation.swift */; };
+		75BFE4B22734EF9600D505A0 /* KobisAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -127,6 +128,7 @@
 		759BCBFD271BCFD900BE2F65 /* CastListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastListTableViewCell.swift; sourceTree = "<group>"; };
 		759BCC01271BFBF600BE2F65 /* tvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvShow.swift; sourceTree = "<group>"; };
 		759BCC07271C332B00BE2F65 /* tvShowInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvShowInformation.swift; sourceTree = "<group>"; };
+		75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				7516B0AC272EFFCA00EDA375 /* TMDBGenreAPIManager.swift */,
 				7516B0A4272EB88800EDA375 /* TMDBSearchAPIManager.swift */,
 				756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */,
+				75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */,
 			);
 			name = APIManager;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				759BCBDF271BC38D00BE2F65 /* SceneDelegate.swift in Sources */,
 				7516B0A5272EB88800EDA375 /* TMDBSearchAPIManager.swift in Sources */,
 				751F128F271F1B0700F24BB7 /* BookCollectionViewCell.swift in Sources */,
+				75BFE4B22734EF9600D505A0 /* KobisAPIManager.swift in Sources */,
 				751F1292271F1B2F00F24BB7 /* BookViewController.swift in Sources */,
 				756F2576272D4F95004E05A9 /* SimilarModel.swift in Sources */,
 				7542A666271DD42D00CB433D /* WebViewController.swift in Sources */,

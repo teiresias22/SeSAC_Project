@@ -2,15 +2,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TMDBAPIManager {
+class KobisAPIManager {
     
-    static let shared = TMDBAPIManager()
+    static let shared = KobisAPIManager()
     
     typealias CompletionHandler = (JSON) -> ()
     
-    func fetchTranslateData(page: Int, mediaType: String, timeWindow: String, result: @escaping CompletionHandler) {
+    func fetchBoxofficeData(nowDate: String, result: @escaping CompletionHandler) {
         
-        let url = Endpoint.TMDBTranding + "\(mediaType)/\(timeWindow)?api_key=\(APIkey.TMDB_ID)&language=ko-KR" + "&query=&page=\(page)"
+        let url = Endpoint.KobisURL + nowDate
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

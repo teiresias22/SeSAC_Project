@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -11,7 +10,7 @@ class TMDBTypeAPIManager {
     
     func fetchTranslateData(mediaType: String, mediaID: Int, APIType: String, startPage: Int, result: @escaping CompletionHandler ) {
 
-        let url = Endpoint.TMDBType + "\(mediaType)/\(mediaID)/\(APIType)?api_key=\(APIkey.TMDB_ID)&page=\(startPage)"
+        let url = Endpoint.TMDBType + "\(mediaType)/\(mediaID)/\(APIType)?api_key=\(APIkey.TMDB_ID)&language=ko-KR&page=\(startPage)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

@@ -17,25 +17,22 @@ class BoxofficeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         boxofficeTableView.delegate = self
         boxofficeTableView.dataSource = self
         
         let nibName = UINib(nibName: BoxofficeTableViewCell.identifier, bundle: nil)
         boxofficeTableView.register(nibName, forCellReuseIdentifier: BoxofficeTableViewCell.identifier)
         
-        fetcMediaData()
         setAttributes()
         
-        print("Realm is located at:", localRealm.configuration.fileURL!)
         taskList = localRealm.objects(BoxofficeRank.self)
+        print("Realm is located at:", localRealm.configuration.fileURL!)
         
-    }
-    
-    func checkRealmData() {
         let predicate = NSPredicate(format: "nowData == %@", setDate)
         
         if taskList.filter(predicate).count == 0 {
-            fetcMediaData()
+            fetcMediaData(nowDate: setDate)
             print("처음 불러옴")
         } else {
             let filter = taskList.filter(predicate)
@@ -44,7 +41,6 @@ class BoxofficeViewController: UIViewController {
             
             boxofficeData = []
             
-            print("두번째 불러옴")
             for i in 0...9 {
                 let rankData = filterList.first?.rankArray[i]
                 let movieNmData = filterList.first?.movieNmArray[i]
@@ -56,6 +52,9 @@ class BoxofficeViewController: UIViewController {
                 boxofficeData.append(data)
             }
         }
+    }
+    
+    func checkRealmData() {
     }
     
     
@@ -86,11 +85,11 @@ class BoxofficeViewController: UIViewController {
     @objc
     func handleDatePicker(_ sender: UIDatePicker) {
         setDate = Date().setDateString(boxofficeDatePicker.date)
-        fetcMediaData()
+        fetcMediaData(nowDate: setDate)
         boxofficeTitleLabel.text = "\(Date().setYearString(boxofficeDatePicker.date))년 \(Date().setMonthString(boxofficeDatePicker.date))월 \(Date().setDayString(boxofficeDatePicker.date))일 박스오피스"
     }
     
-    func saveRealm(data: [BoxofficeModel]) {
+    func saveRealm(data: [BoxofficeModel], nowDate: String) {
         var rankData: [String] = []
         var movieNmData: [String] = []
         var openDtDate: [String] = []
@@ -112,11 +111,6 @@ class BoxofficeViewController: UIViewController {
         
         self.boxofficeTableView.reloadData()
     }
-    
-    
-    
-    
-    
 }
 
 extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -184,7 +178,7 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func fetcMediaData() {
+    func fetcMediaData(nowDate: String) {
         
         boxofficeData = []
         
@@ -197,9 +191,9 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
                 let rankOldAndNew = movie["rankOldAndNew"].stringValue
                 
                 let data = BoxofficeModel(rankData: rank, movieNmData: movieNm, openDtData: openDt, rankOldAndNewData: rankOldAndNew, audiAccData: audiAcc)
-                
                 self.boxofficeData.append(data)
             }
+            self.saveRealm(data: self.boxofficeData, nowDate: self.setDate)
             self.boxofficeTableView.reloadData()
         }
     }

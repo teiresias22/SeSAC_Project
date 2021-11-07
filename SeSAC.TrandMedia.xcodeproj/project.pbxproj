@@ -194,6 +194,7 @@
 		753C83DF271FA2C100CBD286 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7527DA5B273179270048FF87 /* RealmModel.swift */,
 				757E088B2729C4780006AA14 /* MediaModel.swift */,
 				757E088927293E490006AA14 /* BoxofficeModel.swift */,
 				75339990272C40930067C3AC /* CastModel.swift */,
@@ -201,7 +202,6 @@
 				756F2575272D4F95004E05A9 /* SimilarModel.swift */,
 				7516B0A6272ECD5C00EDA375 /* BookModel.swift */,
 				7516B0AA272EFF2300EDA375 /* GenreModel.swift */,
-				7527DA5B273179270048FF87 /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

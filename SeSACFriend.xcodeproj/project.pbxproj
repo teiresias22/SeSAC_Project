@@ -10,16 +10,42 @@
 		75909747279517D80063E31B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909746279517D80063E31B /* AppDelegate.swift */; };
 		75909749279517D80063E31B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909748279517D80063E31B /* SceneDelegate.swift */; };
 		7590974B279517D80063E31B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590974A279517D80063E31B /* ViewController.swift */; };
-		7590974E279517D80063E31B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7590974C279517D80063E31B /* Main.storyboard */; };
 		75909750279517D90063E31B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7590974F279517D90063E31B /* Assets.xcassets */; };
 		75909753279517D90063E31B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75909751279517D90063E31B /* LaunchScreen.storyboard */; };
 		7590975C279525C10063E31B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7590975B279525C10063E31B /* SnapKit */; };
-		7590975E279527290063E31B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7590975D279527290063E31B /* GoogleService-Info.plist */; };
 		75909761279528140063E31B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 75909760279528140063E31B /* FirebaseAnalytics */; };
 		75909763279528140063E31B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 75909762279528140063E31B /* FirebaseAuth */; };
 		75909765279528140063E31B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 75909764279528140063E31B /* FirebaseCrashlytics */; };
 		75909767279528140063E31B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 75909766279528140063E31B /* FirebaseDatabase */; };
 		75909769279528140063E31B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 75909768279528140063E31B /* FirebaseMessaging */; };
+		75909772279583ED0063E31B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909771279583ED0063E31B /* CustomButton.swift */; };
+		7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097792795852A0063E31B /* SignUpViewModel.swift */; };
+		7590977C279585370063E31B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590977B279585370063E31B /* SignUpViewController.swift */; };
+		7590977E2795853E0063E31B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590977D2795853E0063E31B /* SignUpView.swift */; };
+		7590978027958E4A0063E31B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590977F27958E4A0063E31B /* BaseViewController.swift */; };
+		75909782279592B80063E31B /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909781279592B80063E31B /* ViewRepresentable.swift */; };
+		759097862795B9830063E31B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097852795B9830063E31B /* Observable.swift */; };
+		759097882795CB1E0063E31B /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097872795CB1E0063E31B /* Validation.swift */; };
+		7590978A279657550063E31B /* Color+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909789279657550063E31B /* Color+Extention.swift */; };
+		7590978D2796629C0063E31B /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 7590978C2796629C0063E31B /* TextFieldEffects */; };
+		7590978F2796D1210063E31B /* SignUpCodeCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590978E2796D1210063E31B /* SignUpCodeCheckView.swift */; };
+		7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590979027972F1B0063E31B /* SignUpCodeCheckViewController.swift */; };
+		75909793279847150063E31B /* SignUpNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909792279847150063E31B /* SignUpNicknameView.swift */; };
+		759097952798DEBB0063E31B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097942798DEBB0063E31B /* APIService.swift */; };
+		7590979727995BCB0063E31B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7590979627995BCB0063E31B /* GoogleService-Info.plist */; };
+		75909799279A6D7C0063E31B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909798279A6D7C0063E31B /* Endpoint.swift */; };
+		7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590979A279AC59A0063E31B /* SignUpNicknameViewController.swift */; };
+		7590979D279AC5BB0063E31B /* SignUpBDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590979C279AC5BB0063E31B /* SignUpBDViewController.swift */; };
+		7590979F279AC5CE0063E31B /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590979E279AC5CE0063E31B /* SignUpEmailViewController.swift */; };
+		759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A0279AC5DA0063E31B /* SignUpGenderViewController.swift */; };
+		759097A4279AFFCB0063E31B /* ToastMessage + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A3279AFFCB0063E31B /* ToastMessage + Extention.swift */; };
+		759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A5279B03B80063E31B /* SignUpBDView.swift */; };
+		759097A8279C005B0063E31B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A7279C005B0063E31B /* CustomLabel.swift */; };
+		759097AA279D8DBE0063E31B /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A9279D8DBE0063E31B /* SignUpEmailView.swift */; };
+		759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097AB279DB5590063E31B /* SignUpGenderView.swift */; };
+		759097AE279DBBF00063E31B /* CustomGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097AD279DBBF00063E31B /* CustomGenderView.swift */; };
+		759097B1279DE3450063E31B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 759097B0279DE3450063E31B /* Alamofire */; };
+		759097B4279DE3930063E31B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 759097B3279DE3930063E31B /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +53,35 @@
 		75909746279517D80063E31B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75909748279517D80063E31B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7590974A279517D80063E31B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7590974D279517D80063E31B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7590974F279517D90063E31B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75909752279517D90063E31B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75909754279517D90063E31B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7590975D279527290063E31B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7590976A2795409C0063E31B /* SeSACFriend.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSACFriend.entitlements; sourceTree = "<group>"; };
+		75909771279583ED0063E31B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		759097792795852A0063E31B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		7590977B279585370063E31B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7590977D2795853E0063E31B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7590977F27958E4A0063E31B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		75909781279592B80063E31B /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		759097852795B9830063E31B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		759097872795CB1E0063E31B /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		75909789279657550063E31B /* Color+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extention.swift"; sourceTree = "<group>"; };
+		7590978E2796D1210063E31B /* SignUpCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCodeCheckView.swift; sourceTree = "<group>"; };
+		7590979027972F1B0063E31B /* SignUpCodeCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCodeCheckViewController.swift; sourceTree = "<group>"; };
+		75909792279847150063E31B /* SignUpNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameView.swift; sourceTree = "<group>"; };
+		759097942798DEBB0063E31B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		7590979627995BCB0063E31B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../SeSAC_SPL/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75909798279A6D7C0063E31B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7590979A279AC59A0063E31B /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
+		7590979C279AC5BB0063E31B /* SignUpBDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBDViewController.swift; sourceTree = "<group>"; };
+		7590979E279AC5CE0063E31B /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		759097A0279AC5DA0063E31B /* SignUpGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGenderViewController.swift; sourceTree = "<group>"; };
+		759097A3279AFFCB0063E31B /* ToastMessage + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastMessage + Extention.swift"; sourceTree = "<group>"; };
+		759097A5279B03B80063E31B /* SignUpBDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBDView.swift; sourceTree = "<group>"; };
+		759097A7279C005B0063E31B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		759097A9279D8DBE0063E31B /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		759097AB279DB5590063E31B /* SignUpGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGenderView.swift; sourceTree = "<group>"; };
+		759097AD279DBBF00063E31B /* CustomGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGenderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +89,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759097B4279DE3930063E31B /* SwiftyJSON in Frameworks */,
 				75909769279528140063E31B /* FirebaseMessaging in Frameworks */,
+				759097B1279DE3450063E31B /* Alamofire in Frameworks */,
 				75909767279528140063E31B /* FirebaseDatabase in Frameworks */,
 				75909761279528140063E31B /* FirebaseAnalytics in Frameworks */,
 				75909765279528140063E31B /* FirebaseCrashlytics in Frameworks */,
 				75909763279528140063E31B /* FirebaseAuth in Frameworks */,
 				7590975C279525C10063E31B /* SnapKit in Frameworks */,
+				7590978D2796629C0063E31B /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,16 +123,96 @@
 		75909745279517D80063E31B /* SeSACFriend */ = {
 			isa = PBXGroup;
 			children = (
+				759097A2279AFFAD0063E31B /* Extention */,
+				75909770279582A80063E31B /* Data */,
+				7590976F279582830063E31B /* Cell */,
+				7590976C279581A10063E31B /* V */,
+				7590976D279581AC0063E31B /* VM */,
+				7590976E279581E60063E31B /* VC */,
+				7590976B279581910063E31B /* Custom */,
+				7590976A2795409C0063E31B /* SeSACFriend.entitlements */,
 				75909746279517D80063E31B /* AppDelegate.swift */,
 				75909748279517D80063E31B /* SceneDelegate.swift */,
 				7590974A279517D80063E31B /* ViewController.swift */,
-				7590974C279517D80063E31B /* Main.storyboard */,
 				7590974F279517D90063E31B /* Assets.xcassets */,
 				75909751279517D90063E31B /* LaunchScreen.storyboard */,
 				75909754279517D90063E31B /* Info.plist */,
-				7590975D279527290063E31B /* GoogleService-Info.plist */,
+				7590979627995BCB0063E31B /* GoogleService-Info.plist */,
 			);
 			path = SeSACFriend;
+			sourceTree = "<group>";
+		};
+		7590976B279581910063E31B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				75909771279583ED0063E31B /* CustomButton.swift */,
+				759097A7279C005B0063E31B /* CustomLabel.swift */,
+				759097AD279DBBF00063E31B /* CustomGenderView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		7590976C279581A10063E31B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				7590977D2795853E0063E31B /* SignUpView.swift */,
+				7590978E2796D1210063E31B /* SignUpCodeCheckView.swift */,
+				75909792279847150063E31B /* SignUpNicknameView.swift */,
+				759097A5279B03B80063E31B /* SignUpBDView.swift */,
+				759097A9279D8DBE0063E31B /* SignUpEmailView.swift */,
+				759097AB279DB5590063E31B /* SignUpGenderView.swift */,
+				75909781279592B80063E31B /* ViewRepresentable.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		7590976D279581AC0063E31B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				759097792795852A0063E31B /* SignUpViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		7590976E279581E60063E31B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7590977B279585370063E31B /* SignUpViewController.swift */,
+				7590979027972F1B0063E31B /* SignUpCodeCheckViewController.swift */,
+				7590979A279AC59A0063E31B /* SignUpNicknameViewController.swift */,
+				7590979C279AC5BB0063E31B /* SignUpBDViewController.swift */,
+				7590979E279AC5CE0063E31B /* SignUpEmailViewController.swift */,
+				759097A0279AC5DA0063E31B /* SignUpGenderViewController.swift */,
+				7590977F27958E4A0063E31B /* BaseViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		7590976F279582830063E31B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		75909770279582A80063E31B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				759097852795B9830063E31B /* Observable.swift */,
+				759097872795CB1E0063E31B /* Validation.swift */,
+				759097942798DEBB0063E31B /* APIService.swift */,
+				75909798279A6D7C0063E31B /* Endpoint.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		759097A2279AFFAD0063E31B /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				75909789279657550063E31B /* Color+Extention.swift */,
+				759097A3279AFFCB0063E31B /* ToastMessage + Extention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +238,9 @@
 				75909764279528140063E31B /* FirebaseCrashlytics */,
 				75909766279528140063E31B /* FirebaseDatabase */,
 				75909768279528140063E31B /* FirebaseMessaging */,
+				7590978C2796629C0063E31B /* TextFieldEffects */,
+				759097B0279DE3450063E31B /* Alamofire */,
+				759097B3279DE3930063E31B /* SwiftyJSON */,
 			);
 			productName = SeSACFriend;
 			productReference = 75909743279517D80063E31B /* SeSACFriend.app */;
@@ -137,6 +273,9 @@
 			packageReferences = (
 				7590975A279525C10063E31B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7590975F279528140063E31B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7590978B2796629C0063E31B /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				759097AF279DE3450063E31B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				759097B2279DE3930063E31B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 75909744279517D80063E31B /* Products */;
 			projectDirPath = "";
@@ -153,9 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75909753279517D90063E31B /* LaunchScreen.storyboard in Resources */,
-				7590975E279527290063E31B /* GoogleService-Info.plist in Resources */,
 				75909750279517D90063E31B /* Assets.xcassets in Resources */,
-				7590974E279517D80063E31B /* Main.storyboard in Resources */,
+				7590979727995BCB0063E31B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +304,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759097952798DEBB0063E31B /* APIService.swift in Sources */,
+				7590978F2796D1210063E31B /* SignUpCodeCheckView.swift in Sources */,
+				7590979F279AC5CE0063E31B /* SignUpEmailViewController.swift in Sources */,
+				75909772279583ED0063E31B /* CustomButton.swift in Sources */,
+				7590978027958E4A0063E31B /* BaseViewController.swift in Sources */,
+				7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */,
+				7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */,
+				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
+				759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */,
+				759097AE279DBBF00063E31B /* CustomGenderView.swift in Sources */,
+				75909782279592B80063E31B /* ViewRepresentable.swift in Sources */,
 				7590974B279517D80063E31B /* ViewController.swift in Sources */,
+				7590978A279657550063E31B /* Color+Extention.swift in Sources */,
+				759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */,
+				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
+				759097A4279AFFCB0063E31B /* ToastMessage + Extention.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
+				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
+				759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */,
+				759097AA279D8DBE0063E31B /* SignUpEmailView.swift in Sources */,
+				7590977E2795853E0063E31B /* SignUpView.swift in Sources */,
+				7590979D279AC5BB0063E31B /* SignUpBDViewController.swift in Sources */,
+				759097862795B9830063E31B /* Observable.swift in Sources */,
+				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
+				7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */,
+				759097882795CB1E0063E31B /* Validation.swift in Sources */,
 				75909749279517D80063E31B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,14 +337,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7590974C279517D80063E31B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7590974D279517D80063E31B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75909751279517D90063E31B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -315,9 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSACFriend/SeSACFriend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83R5US8PK8;
+				DEVELOPMENT_TEAM = 2EZ5QWFYX2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACFriend/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -329,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.SeSAC.SeSACFriend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memolease.sesac1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,9 +497,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSACFriend/SeSACFriend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83R5US8PK8;
+				DEVELOPMENT_TEAM = 2EZ5QWFYX2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACFriend/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -356,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.SeSAC.SeSACFriend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memolease.sesac1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -404,6 +560,30 @@
 				kind = branch;
 			};
 		};
+		7590978B2796629C0063E31B /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		759097AF279DE3450063E31B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		759097B2279DE3930063E31B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -436,6 +616,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7590975F279528140063E31B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		7590978C2796629C0063E31B /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7590978B2796629C0063E31B /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		759097B0279DE3450063E31B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 759097AF279DE3450063E31B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		759097B3279DE3930063E31B /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 759097B2279DE3930063E31B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

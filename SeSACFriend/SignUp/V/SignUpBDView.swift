@@ -33,7 +33,7 @@ class SignUpBDView: UIView, ViewRepresentable {
     
     let inputYearTextField: HoshiTextField = {
         let textfield = HoshiTextField()
-        textfield.text = "1990"
+        textfield.placeholder = "1990"
         textfield.textAlignment = .center
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7
@@ -52,7 +52,7 @@ class SignUpBDView: UIView, ViewRepresentable {
     
     let inputMonthTextField: HoshiTextField = {
         let textfield = HoshiTextField()
-        textfield.text = "1"
+        textfield.placeholder = "1"
         textfield.textAlignment = .center
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7
@@ -71,7 +71,7 @@ class SignUpBDView: UIView, ViewRepresentable {
     
     let inputDayTextField: HoshiTextField = {
         let textfield = HoshiTextField()
-        textfield.text = "21"
+        textfield.placeholder = "21"
         textfield.textAlignment = .center
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7

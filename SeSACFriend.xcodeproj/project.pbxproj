@@ -43,9 +43,17 @@
 		759097A8279C005B0063E31B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A7279C005B0063E31B /* CustomLabel.swift */; };
 		759097AA279D8DBE0063E31B /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097A9279D8DBE0063E31B /* SignUpEmailView.swift */; };
 		759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097AB279DB5590063E31B /* SignUpGenderView.swift */; };
-		759097AE279DBBF00063E31B /* CustomGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097AD279DBBF00063E31B /* CustomGenderView.swift */; };
 		759097B1279DE3450063E31B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 759097B0279DE3450063E31B /* Alamofire */; };
 		759097B4279DE3930063E31B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 759097B3279DE3930063E31B /* SwiftyJSON */; };
+		759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097B7279E68AA0063E31B /* Font+Extention.swift */; };
+		759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C2279EF7EB0063E31B /* UserInfo.swift */; };
+		759097C5279EF82B0063E31B /* MainHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C4279EF82B0063E31B /* MainHomeView.swift */; };
+		759097C7279EF83A0063E31B /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C6279EF83A0063E31B /* MainHomeViewController.swift */; };
+		759097C9279F1D870063E31B /* SignUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C8279F1D870063E31B /* SignUpForm.swift */; };
+		759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CB279FC6C00063E31B /* OnboardingViewController.swift */; };
+		759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CD279FC6CB0063E31B /* OnboardingView.swift */; };
+		759097D0279FD1710063E31B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CF279FD1710063E31B /* LaunchScreenViewController.swift */; };
+		759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D1279FD7260063E31B /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +89,17 @@
 		759097A7279C005B0063E31B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		759097A9279D8DBE0063E31B /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		759097AB279DB5590063E31B /* SignUpGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGenderView.swift; sourceTree = "<group>"; };
-		759097AD279DBBF00063E31B /* CustomGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGenderView.swift; sourceTree = "<group>"; };
+		759097B5279E512A0063E31B /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Regular.otf"; path = "../../../Font/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		759097B6279E512A0063E31B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../Font/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		759097B7279E68AA0063E31B /* Font+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extention.swift"; sourceTree = "<group>"; };
+		759097C2279EF7EB0063E31B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		759097C4279EF82B0063E31B /* MainHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeView.swift; sourceTree = "<group>"; };
+		759097C6279EF83A0063E31B /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
+		759097C8279F1D870063E31B /* SignUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForm.swift; sourceTree = "<group>"; };
+		759097CB279FC6C00063E31B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		759097CD279FC6CB0063E31B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		759097CF279FD1710063E31B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		759097D1279FD7260063E31B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,17 +141,21 @@
 		75909745279517D80063E31B /* SeSACFriend */ = {
 			isa = PBXGroup;
 			children = (
+				759097BE279EB0890063E31B /* Main */,
+				759097BD279EB0130063E31B /* SignUp */,
 				759097A2279AFFAD0063E31B /* Extention */,
 				75909770279582A80063E31B /* Data */,
-				7590976F279582830063E31B /* Cell */,
-				7590976C279581A10063E31B /* V */,
-				7590976D279581AC0063E31B /* VM */,
-				7590976E279581E60063E31B /* VC */,
 				7590976B279581910063E31B /* Custom */,
 				7590976A2795409C0063E31B /* SeSACFriend.entitlements */,
 				75909746279517D80063E31B /* AppDelegate.swift */,
 				75909748279517D80063E31B /* SceneDelegate.swift */,
 				7590974A279517D80063E31B /* ViewController.swift */,
+				759097CD279FC6CB0063E31B /* OnboardingView.swift */,
+				759097CB279FC6C00063E31B /* OnboardingViewController.swift */,
+				759097D1279FD7260063E31B /* LaunchScreenView.swift */,
+				759097CF279FD1710063E31B /* LaunchScreenViewController.swift */,
+				759097B6279E512A0063E31B /* NotoSansKR-Medium.otf */,
+				759097B5279E512A0063E31B /* NotoSansKR-Regular.otf */,
 				7590974F279517D90063E31B /* Assets.xcassets */,
 				75909751279517D90063E31B /* LaunchScreen.storyboard */,
 				75909754279517D90063E31B /* Info.plist */,
@@ -147,7 +169,6 @@
 			children = (
 				75909771279583ED0063E31B /* CustomButton.swift */,
 				759097A7279C005B0063E31B /* CustomLabel.swift */,
-				759097AD279DBBF00063E31B /* CustomGenderView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -188,20 +209,15 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		7590976F279582830063E31B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		75909770279582A80063E31B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				759097852795B9830063E31B /* Observable.swift */,
-				759097872795CB1E0063E31B /* Validation.swift */,
+				759097C2279EF7EB0063E31B /* UserInfo.swift */,
+				759097C8279F1D870063E31B /* SignUpForm.swift */,
 				759097942798DEBB0063E31B /* APIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
+				759097852795B9830063E31B /* Observable.swift */,
+				759097872795CB1E0063E31B /* Validation.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -211,8 +227,52 @@
 			children = (
 				75909789279657550063E31B /* Color+Extention.swift */,
 				759097A3279AFFCB0063E31B /* ToastMessage + Extention.swift */,
+				759097B7279E68AA0063E31B /* Font+Extention.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		759097BD279EB0130063E31B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7590976C279581A10063E31B /* V */,
+				7590976D279581AC0063E31B /* VM */,
+				7590976E279581E60063E31B /* VC */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		759097BE279EB0890063E31B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				759097BF279EB0970063E31B /* V */,
+				759097C0279EB09D0063E31B /* VM */,
+				759097C1279EB13B0063E31B /* VC */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		759097BF279EB0970063E31B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				759097C4279EF82B0063E31B /* MainHomeView.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		759097C0279EB09D0063E31B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		759097C1279EB13B0063E31B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				759097C6279EF83A0063E31B /* MainHomeViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,28 +365,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				759097952798DEBB0063E31B /* APIService.swift in Sources */,
+				759097C5279EF82B0063E31B /* MainHomeView.swift in Sources */,
 				7590978F2796D1210063E31B /* SignUpCodeCheckView.swift in Sources */,
 				7590979F279AC5CE0063E31B /* SignUpEmailViewController.swift in Sources */,
+				759097D0279FD1710063E31B /* LaunchScreenViewController.swift in Sources */,
 				75909772279583ED0063E31B /* CustomButton.swift in Sources */,
 				7590978027958E4A0063E31B /* BaseViewController.swift in Sources */,
 				7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */,
 				7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */,
 				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
 				759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */,
-				759097AE279DBBF00063E31B /* CustomGenderView.swift in Sources */,
+				759097C9279F1D870063E31B /* SignUpForm.swift in Sources */,
 				75909782279592B80063E31B /* ViewRepresentable.swift in Sources */,
+				759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */,
 				7590974B279517D80063E31B /* ViewController.swift in Sources */,
+				759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */,
 				7590978A279657550063E31B /* Color+Extention.swift in Sources */,
 				759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */,
+				759097C7279EF83A0063E31B /* MainHomeViewController.swift in Sources */,
 				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
 				759097A4279AFFCB0063E31B /* ToastMessage + Extention.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
+				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
 				759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */,
 				759097AA279D8DBE0063E31B /* SignUpEmailView.swift in Sources */,
 				7590977E2795853E0063E31B /* SignUpView.swift in Sources */,
+				759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */,
 				7590979D279AC5BB0063E31B /* SignUpBDViewController.swift in Sources */,
 				759097862795B9830063E31B /* Observable.swift in Sources */,
+				759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */,
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
 				7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */,
 				759097882795CB1E0063E31B /* Validation.swift in Sources */,

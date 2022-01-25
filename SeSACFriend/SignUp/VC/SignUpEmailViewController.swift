@@ -1,5 +1,5 @@
 //
-//  SignUpGenderViewController.swift
+//  SignUpEmailViewController.swift
 //  SeSACFriend
 //
 //  Created by Joonhwan Jeon on 2022/01/21.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SignUpGenderViewController: BaseViewController {
+class SignUpEmailViewController: BaseViewController {
     let mainView = SignUpEmailView()
-    let viewModel = SignUpEmailViewModel()
+    let viewModel = SignUpViewModel()
     let validation = Validation()
         
     override func loadView() {
@@ -32,7 +32,7 @@ class SignUpGenderViewController: BaseViewController {
         if !validation.isValidEmail(email: viewModel.email.value) {
             self.toastMessage(message: "이메일 형식이 올바르지 않습니다.")
         } else {
-            self.navigationController?.pushViewController(SignUpEmailViewController(), animated: true)
+            self.navigationController?.pushViewController(SignUpGenderViewController(), animated: true)
         }
     }
     

@@ -5,16 +5,21 @@
 //  Created by Joonhwan Jeon on 2022/01/21.
 //
 
+//Todo
+//금지된 단어로 돌아왔을때 기존에 입력한 정보가 유지되어 있어야 함
+//화면 진입시 키보드를 활성화 하는데 placeholder가 표시가 안됨
+//TextFieldEffects의 HoshiTextField가 아예 안먹히는건가 싶기도
+
+
 import UIKit
 
 class SignUpNicknameViewController: BaseViewController {
     let mainView = SignUpNicknameView()
-    let viewModel = SignUpNickNameViewModel()
+    let viewModel = SignUpViewModel()
     
     override func loadView() {
         self.view = mainView
         submitButtonActiveCheck()
-        
     }
     
     override func viewDidLoad() {
@@ -44,7 +49,9 @@ class SignUpNicknameViewController: BaseViewController {
         }
     }
     
-    //self.toastMessage(message: "토스트 메세지 입니다.")
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.mainView.inputTextField.resignFirstResponder()
+    }
     
     
     

@@ -57,6 +57,7 @@ class SignUpViewController: BaseViewController {
                 vc.phoneNumber = self.phoneNumber
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        self.toastMessage(message: "전화 번호 인증 시작")
     }
     
     func submitButtonActiveCheck() {

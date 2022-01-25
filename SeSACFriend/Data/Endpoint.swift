@@ -15,24 +15,23 @@ enum Method: String {
 }
 
 enum EndPoint {
-    case getMyUserInfo
-    case postMyUserInfo
-    case withdrawSignUp
+    case getUserInfo
+    case postUserInfo
+    case deleteUserInfo
 }
 
 extension EndPoint {
     var url: URL {
         switch self {
-        case .getMyUserInfo:
+        case .getUserInfo:
             return .makeEndPoint("user")
-        case .postMyUserInfo:
+        case .postUserInfo:
             return .makeEndPoint("user")
-        case .withdrawSignUp:
+        case .deleteUserInfo:
             return .makeEndPoint("user/withdraw")
         }
     }
 }
-
 
 extension URL {
     static let baseURL = "http://test.monocoding.com:35484/"

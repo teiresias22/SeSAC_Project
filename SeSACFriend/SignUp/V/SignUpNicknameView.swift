@@ -1,59 +1,39 @@
 //
-//  SignUpGenderView.swift
+//  SignUpNicknameView.swift
 //  SeSACFriend
 //
-//  Created by Joonhwan Jeon on 2022/01/24.
+//  Created by Joonhwan Jeon on 2022/01/19.
 //
 
 import UIKit
 import SnapKit
+import TextFieldEffects
 
-class SignUpGenderView: UIView, ViewRepresentable {
+class SignUpNicknameView: UIView, ViewRepresentable {
     
     let mainTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "성별을 선택해 주세요"
+        label.text = "닉네임을 입력해 주세요"
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .customBlack
         
         return label
     }()
     
-    let subTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "새싹 찾기 기능을 이용하기 위헤서 필요해요!"
-        label.textAlignment = .center
-        label.textColor = .customGray4
+    let inputTextField: HoshiTextField = {
+        let textfield = HoshiTextField()
+        textfield.placeholder = "10자 이내로 입력"
+        textfield.borderActiveColor = .focus
+        textfield.borderInactiveColor = .customGray7
+        textfield.becomeFirstResponder()
         
-        return label
-    }()
-    
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 12
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        
-        return stackView
-    }()
-    
-    let genderManView: CustomGenderView = {
-        let view = CustomGenderView()
-        
-        return view
-    }()
-    
-    let genderFemaleView: CustomGenderView = {
-        let view = CustomGenderView()
-        
-        return view
+        return textfield
     }()
     
     let submitButton: CustomButton = {
         let button = CustomButton()
         button.setTitle("다음", for: .normal)
-        button.backgroundColor = .customGray6
         
         return button
     }()
@@ -70,7 +50,7 @@ class SignUpGenderView: UIView, ViewRepresentable {
     
     func setupView() {
         addSubview(mainTextLabel)
-        addSubview(subTextLabel)
+        addSubview(inputTextField)
         addSubview(submitButton)
     }
     
@@ -82,14 +62,15 @@ class SignUpGenderView: UIView, ViewRepresentable {
             make.height.equalTo(48)
         }
         
-        subTextLabel.snp.makeConstraints { make in
+        inputTextField.snp.makeConstraints { make in
             make.bottom.equalTo(submitButton.snp.top).offset(-72)
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
+            make.height.equalTo(48)
         }
         
         mainTextLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(subTextLabel.snp.top).offset(-8)
+            make.bottom.equalTo(inputTextField.snp.top).offset(-72)
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
         }

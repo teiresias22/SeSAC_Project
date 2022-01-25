@@ -24,12 +24,11 @@ class SignUpGenderViewController: BaseViewController {
         mainView.genderManView.tag = 100
         mainView.genderWomanView.tag = 200
         
-        self.mainView.genderManView.isUserInteractionEnabled = true
-        self.mainView.genderWomanView.isUserInteractionEnabled = true
+        mainView.genderManView.isUserInteractionEnabled = true
+        mainView.genderWomanView.isUserInteractionEnabled = true
         
-        self.mainView.genderManView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewClicked)))
-        self.mainView.genderWomanView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewClicked)))
-        
+        mainView.genderManView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewClicked)))
+        mainView.genderWomanView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewClicked)))
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
     }
     

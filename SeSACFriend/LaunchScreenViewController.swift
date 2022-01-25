@@ -21,11 +21,17 @@ class LaunchScreenViewController: BaseViewController {
             let isOnboarding = UserDefaults.standard.bool(forKey: "isOnboarding")
             print("isOnboarding", isOnboarding)
             
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             if isOnboarding == true {
-                self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SignUpViewController())
             } else {
-                self.navigationController?.pushViewController(OnboardingViewController(), animated: true)
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
             }
+            windowScene.windows.first?.makeKeyAndVisible()
+            
         }
     }
 }
+
+
+

@@ -35,7 +35,6 @@ class SignUpNicknameViewController: BaseViewController {
     }
     
     @objc func submitButtonClicked(_ sender: Any) {
-        
         self.navigationController?.pushViewController(SignUpBDViewController(), animated: true)
     }
     

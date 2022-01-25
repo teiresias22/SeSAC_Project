@@ -36,12 +36,7 @@ class SignUpBDViewController: BaseViewController {
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked(_:)), for: .touchUpInside)
     }
     
-    @objc func textFieldClicked(_ textField: UITextField) {
-        
-    }
-    
     @objc func submitButtonClicked(_ sender: Any) {
-        
         self.navigationController?.pushViewController(SignUpEmailViewController(), animated: true)
     }
     

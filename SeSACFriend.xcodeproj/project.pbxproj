@@ -54,6 +54,9 @@
 		759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CD279FC6CB0063E31B /* OnboardingView.swift */; };
 		759097D0279FD1710063E31B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CF279FD1710063E31B /* LaunchScreenViewController.swift */; };
 		759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D1279FD7260063E31B /* LaunchScreenView.swift */; };
+		759097D327A1102F0063E31B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 759097B6279E512A0063E31B /* NotoSansKR-Medium.otf */; };
+		759097D427A110320063E31B /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 759097B5279E512A0063E31B /* NotoSansKR-Regular.otf */; };
+		759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D527A13D0E0063E31B /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,7 @@
 		759097CD279FC6CB0063E31B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		759097CF279FD1710063E31B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		759097D1279FD7260063E31B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		759097D527A13D0E0063E31B /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				759097792795852A0063E31B /* SignUpViewModel.swift */,
+				759097C2279EF7EB0063E31B /* UserInfo.swift */,
+				759097C8279F1D870063E31B /* SignUpForm.swift */,
+				759097D527A13D0E0063E31B /* AuthResponse.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -212,8 +219,6 @@
 		75909770279582A80063E31B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				759097C2279EF7EB0063E31B /* UserInfo.swift */,
-				759097C8279F1D870063E31B /* SignUpForm.swift */,
 				759097942798DEBB0063E31B /* APIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
 				759097852795B9830063E31B /* Observable.swift */,
@@ -351,9 +356,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759097D327A1102F0063E31B /* NotoSansKR-Medium.otf in Resources */,
 				75909753279517D90063E31B /* LaunchScreen.storyboard in Resources */,
 				75909750279517D90063E31B /* Assets.xcassets in Resources */,
 				7590979727995BCB0063E31B /* GoogleService-Info.plist in Resources */,
+				759097D427A110320063E31B /* NotoSansKR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
 				759097A4279AFFCB0063E31B /* ToastMessage + Extention.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
+				759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */,
 				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
 				759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */,

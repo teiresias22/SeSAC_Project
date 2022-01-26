@@ -17,7 +17,7 @@ class LaunchScreenViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             let isOnboarding = UserDefaults.standard.bool(forKey: "isOnboarding")
             print("isOnboarding", isOnboarding)
             

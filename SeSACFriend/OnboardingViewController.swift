@@ -82,7 +82,7 @@ class OnboardingViewController: UIPageViewController {
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SignUpViewController())
             windowScene.windows.first?.makeKeyAndVisible()
-            
+            UserDefaults.standard.set(true, forKey: "isOnboarding")
             return
         }
         setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
@@ -117,7 +117,6 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
         pageControl.currentPage = currentIndex
     }
 }
-
 
 class ViewController1: UIViewController {
     

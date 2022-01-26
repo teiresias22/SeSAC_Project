@@ -17,12 +17,11 @@ class LaunchScreenViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            let isOnboarding = UserDefaults.standard.bool(forKey: "isOnboarding")
-            print("isOnboarding", isOnboarding)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            let isOnboarding = UserDefaults.standard.bool(forKey: UserDefault.isOnboarding.rawValue)
             
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            if isOnboarding == true {
+            if isOnboarding {
                 windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SignUpViewController())
             } else {
                 windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())

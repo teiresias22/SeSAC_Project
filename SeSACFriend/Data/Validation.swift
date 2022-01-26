@@ -25,15 +25,17 @@ class Validation {
     
     // 닉네임 형식 검사
     func isValidNickname(name: String) -> Bool {
-        let nicknameRegEx = "[A-Z0-9a-z._%+-]{4,12}$"
-        let nicknameTest = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
-        return nicknameTest.evaluate(with: name)
+        if name.count > 0 && name.count <= 10 {
+            return true
+        } else {
+            return false
+        }
     }
     
     // 비밀번호 형식 검사
-    func isValidPassword(pwd: String) -> Bool {
-        let passwordRegEx = "^[a-zA-Z0-9._%+-]{6,}$"
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        return passwordTest.evaluate(with: pwd)
+    func isValidCode(code: String) -> Bool {
+        let codeRegEx = "[0-9]{6}"
+        let codeTest = NSPredicate(format: "SELF MATCHES %@", codeRegEx)
+        return codeTest.evaluate(with: code)
     }
 }

@@ -14,6 +14,7 @@ class SignUpNicknameView: UIView, ViewRepresentable {
     let mainTextLabel: UILabel = {
         let label = UILabel()
         label.text = "닉네임을 입력해 주세요"
+        label.font = .Display1_R20
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .customBlack
@@ -26,7 +27,7 @@ class SignUpNicknameView: UIView, ViewRepresentable {
         textfield.placeholder = "10자 이내로 입력"
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7
-        textfield.becomeFirstResponder()
+        //textfield.becomeFirstResponder()
         
         return textfield
     }()

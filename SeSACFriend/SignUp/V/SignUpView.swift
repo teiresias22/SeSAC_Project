@@ -15,6 +15,7 @@ class SignUpView: UIView, ViewRepresentable {
         let label = UILabel()
         label.text = "새싹 서비스 이용을 위해 \n휴대폰 번호를 입력해 주세요"
         label.numberOfLines = 0
+        label.font = .Display1_R20
         label.textAlignment = .center
         label.textColor = .customBlack
         
@@ -24,9 +25,11 @@ class SignUpView: UIView, ViewRepresentable {
     let inputTextField: HoshiTextField = {
         let textfield = HoshiTextField()
         textfield.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
+        textfield.font = .Title4_R14
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7
         textfield.keyboardType = .numberPad
+        //textfield.becomeFirstResponder()
         
         return textfield
     }()
@@ -73,7 +76,6 @@ class SignUpView: UIView, ViewRepresentable {
             make.bottom.equalTo(inputTextField.snp.top).offset(-72)
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
-            make.height.equalTo(50)
         }
     }
 }

@@ -22,7 +22,13 @@ class BaseViewController: UIViewController {
         
     }
     
-    func toastMessage(message: String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+    //키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
+    //토스트 메세지 출력
+    func toastMessage(message: String, font: UIFont = .Title3_M14 ?? UIFont.systemFont(ofSize: 14.0)) {
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2-150, y: self.view.frame.size.height-100, width: 300, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = .customWhite

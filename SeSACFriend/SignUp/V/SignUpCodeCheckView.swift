@@ -14,6 +14,7 @@ class SignUpCodeCheckView: UIView, ViewRepresentable {
     let mainTextLabel: UILabel = {
        let label = UILabel()
         label.text = "인증번호가 문자로 전송되었어요."
+        label.font = .Display1_R20
         label.textAlignment = .center
         label.textColor = .customBlack
         
@@ -23,6 +24,7 @@ class SignUpCodeCheckView: UIView, ViewRepresentable {
     let subTextLabel: UILabel = {
         let label = UILabel()
         label.text = "(최대 소모 20초)"
+        label.font = .Title2_R16
         label.textAlignment = .center
         label.textColor = .customGray4
         
@@ -41,6 +43,7 @@ class SignUpCodeCheckView: UIView, ViewRepresentable {
     
     let timerLabel: UILabel = {
         let label = UILabel()
+        label.font = .Title3_M14
         label.textAlignment = .center
         label.textColor = .customGreen
         
@@ -50,6 +53,7 @@ class SignUpCodeCheckView: UIView, ViewRepresentable {
     let inputTextField: HoshiTextField = {
         let textfield = HoshiTextField()
         textfield.placeholder = "인증번호 입력"
+        textfield.font = .Title4_R14
         textfield.borderActiveColor = .focus
         textfield.borderInactiveColor = .customGray7
         textfield.keyboardType = .numberPad

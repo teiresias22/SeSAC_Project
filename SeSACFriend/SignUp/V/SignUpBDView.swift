@@ -14,6 +14,7 @@ class SignUpBDView: UIView, ViewRepresentable {
     let mainTextLabel: UILabel = {
         let label = UILabel()
         label.text = "생년월일을 알려주세요"
+        label.font = .Display1_R20
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .customBlack

@@ -9,8 +9,9 @@ import UIKit
 
 class SignUpEmailViewController: BaseViewController {
     let mainView = SignUpEmailView()
-    let viewModel = SignUpViewModel()
+    var viewModel: SignUpViewModel!
     let validation = Validation()
+    var isReturn: Bool!
         
     override func loadView() {
         self.view = mainView
@@ -18,6 +19,8 @@ class SignUpEmailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        returnCheck()
         
         mainView.inputTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
@@ -29,18 +32,27 @@ class SignUpEmailViewController: BaseViewController {
     }
     
     @objc func submitButtonClicked(_ sender: Any) {
-        if !validation.isValidEmail(email: viewModel.email.value) {
-            self.toastMessage(message: "이메일 형식이 올바르지 않습니다.")
+        if validation.isValidEmail(email: viewModel.email.value) {
+            let vc = SignUpGenderViewController()
+            vc.viewModel = self.viewModel
+            vc.isReturn = isReturn
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            self.navigationController?.pushViewController(SignUpGenderViewController(), animated: true)
+            self.toastMessage(message: "이메일 형식이 올바르지 않습니다.")
         }
     }
     
     func submitButtonActiveCheck() {
         if !validation.isValidEmail(email: viewModel.email.value) {
-            mainView.submitButton.backgroundColor = .customGray7
+            mainView.submitButton.backgroundColor = .customGray6
         } else {
             mainView.submitButton.backgroundColor = .customGreen
+        }
+    }
+    
+    func returnCheck() {
+        if isReturn {
+            mainView.inputTextField.text = viewModel.email.value
         }
     }
 }

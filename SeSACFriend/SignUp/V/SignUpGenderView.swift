@@ -25,7 +25,7 @@ class SignUpGenderView: UIView, ViewRepresentable {
         label.text = "새싹 찾기 기능을 이용하기 위헤서 필요해요!"
         label.font = .Title2_R16
         label.textAlignment = .center
-        label.textColor = .customGray4
+        label.textColor = .customGray7
         
         return label
     }()

@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpGenderViewController: BaseViewController {
     let mainView = SignUpGenderView()
+    var viewModel: SignUpViewModel!
     let validation = Validation()
+    var isReturn: Bool!
     
     var manButton = false
     var womanButton = false
@@ -20,6 +23,8 @@ class SignUpGenderViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        returnCheck()
         
         mainView.genderManView.tag = 100
         mainView.genderWomanView.tag = 200
@@ -34,6 +39,7 @@ class SignUpGenderViewController: BaseViewController {
     
     @objc func viewClicked(_ sender: UITapGestureRecognizer) {
         if sender.view!.tag == 100 {
+            viewModel.gender.value = 1
             manButton = !manButton
             if manButton {
                 mainView.genderManView.backgroundColor = .customWhiteGreen
@@ -43,6 +49,7 @@ class SignUpGenderViewController: BaseViewController {
                 mainView.genderManView.backgroundColor = .customWhite
             }
         } else if sender.view!.tag == 200 {
+            viewModel.gender.value = 2
             womanButton = !womanButton
             if womanButton {
                 mainView.genderWomanView.backgroundColor = .customWhiteGreen
@@ -56,15 +63,74 @@ class SignUpGenderViewController: BaseViewController {
     }
     
     @objc func submitButtonClicked(_ sender: Any) {
-        /*
-        서버통신시 Int 전달, 남자: 1 여자: 2 미선택: -1
-        이후 사용자 정보 서버에 전송 : (post, /user)
-        성공 응답 → 홈 화면 전환
-        금지된 단어로 닉네임 사용한 경우(code 202) → 닉네임 입력 화면으로 전환
-        사용자 기입 내용 유지
-        Firebase Token 만료(code 401) → Token 갱신 후 재요청
-        세부사항은 API 명세서 참고
-         */
+        self.viewModel.signUpUserInfo { statuscode, error in
+            switch statuscode {
+            case 200 :
+                self.toastMessage(message: "회원가입에 성공했습니다")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    let vc = MainHomeViewController()
+                    
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: vc)
+                    windowScene.windows.first?.makeKeyAndVisible()
+                }
+                
+            case 201:
+                self.toastMessage(message: "이미 가입한 유저입니다.")
+                
+            case 202:
+                self.toastMessage(message: "사용할 수 없는 닉네임입니다.")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.backToNicknameController()
+                }
+            case 401:
+                Auth.auth().currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                    
+                    if let error = error {
+                        self.toastMessage(message: "토큰 갱신에 실패했습니다")
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    if let idToken = idToken {
+                        print("idToken 갱신",idToken)
+                        UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
+                        
+                        //갱신후 재요청
+                        self.viewModel.signUpUserInfo { statuscode, error in
+                            switch statuscode {
+                            case 200 :
+                                self.toastMessage(message: "회원가입에 성공했습니다")
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                                    let vc = MainHomeViewController()
+                                    
+                                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: vc)
+                                    windowScene.windows.first?.makeKeyAndVisible()
+                                }
+                                
+                            case 201:
+                                self.toastMessage(message: "이미 가입한 유저입니다.")
+                                
+                            case 202:
+                                self.toastMessage(message: "사용할 수 없는 닉네임입니다.")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    self.backToNicknameController()
+                                }
+                            default:
+                                self.toastMessage(message: "회원가입에 실패했습니다")
+                            }
+                        }
+                        
+                    }
+            
+                }
+            default :
+                self.toastMessage(message: "회원가입에 실패했습니다")
+            }
+        }
     }
     
     func submitButtonActiveCheck() {
@@ -72,6 +138,19 @@ class SignUpGenderViewController: BaseViewController {
             mainView.submitButton.backgroundColor = .customGreen
         } else {
             mainView.submitButton.backgroundColor = .customGray7
+        }
+    }
+    
+    func backToNicknameController(){
+        let viewControllers : [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        
+        self.navigationController?.popToViewController(viewControllers[viewControllers.count - 4 ], animated: true)
+        
+    }
+    
+    func returnCheck() {
+        if isReturn {
+            
         }
     }
 }

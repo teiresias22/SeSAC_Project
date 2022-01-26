@@ -14,6 +14,7 @@ class SignUpEmailView: UIView, ViewRepresentable {
     let mainTextLabel: UILabel = {
         let label = UILabel()
         label.text = "이메일을 입려해 주세요"
+        label.font = .Display1_R20
         label.textAlignment = .center
         label.textColor = .customBlack
         
@@ -23,8 +24,9 @@ class SignUpEmailView: UIView, ViewRepresentable {
     let subTextLabel: UILabel = {
         let label = UILabel()
         label.text = "휴대폰 번호 변경 시 인증을 위해 사용해요"
+        label.font = .Title2_R16
         label.textAlignment = .center
-        label.textColor = .customGray4
+        label.textColor = .customGray7
         
         return label
     }()

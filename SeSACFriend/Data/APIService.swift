@@ -10,13 +10,13 @@ import Alamofire
 import SwiftyJSON
 
 class APISevice {
+    
     static func getUserInfo(idToken: String, completion: @escaping (UserInfo? , Int?, Error?) -> Void) {
         let headers = ["idtoken": idToken] as HTTPHeaders
         
         AF.request(EndPoint.getUserInfo.url.absoluteString, method: .get, headers: headers).responseDecodable(of: UserInfo.self) { response in
             
             let statusCode = response.response?.statusCode
-            
             switch response.result {
             case.success(let value):
                 print("response.result success", value)

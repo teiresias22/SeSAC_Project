@@ -21,7 +21,7 @@ class SignUpViewModel {
     var verificationID = ""
     
     var idToken = ""
-    var fcmToken = UserDefaults.standard.string(forKey: UserDefault.FCMToken.rawValue)
+    var fcmToken = UserDefaults.standard.string(forKey: UserDefault.FCMToken.rawValue)!
     
     func requestCode(completion: @escaping (String?,Error?) -> Void) {
         PhoneAuthProvider.provider()
@@ -72,7 +72,7 @@ class SignUpViewModel {
     
     
     func signUpUserInfo(completion: @escaping (Int?, Error?) -> Void) {
-        let form = SignUpForm(phoneNumber: "+82" + requestNumber.value, FCMtoken: fcmToken!, nick: nickName.value, email: email.value, birth: birthDay.value, gender: gender.value)
+        let form = SignUpForm(phoneNumber: "+82" + requestNumber.value, FCMtoken: fcmToken, nick: nickName.value, email: email.value, birth: birthDay.value, gender: gender.value)
         
         print("form", form)
         

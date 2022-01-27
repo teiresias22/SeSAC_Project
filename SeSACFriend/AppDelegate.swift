@@ -8,6 +8,7 @@
 import UIKit
 import UserNotifications
 import Firebase
+import FirebaseMessaging
 
 
 @main
@@ -19,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in })
         application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
+        
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                UserDefaults.standard.set(token, forKey: UserDefault.FCMToken.rawValue)
+                print("FMC registration token: \(token)")
+            }
+        }
         
         return true
     }
@@ -36,7 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+}
 
-
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firbase registeration token: \(String(describing: fcmToken))")
+        
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    }
 }
 

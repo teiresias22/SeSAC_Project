@@ -47,8 +47,8 @@
 		759097B4279DE3930063E31B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 759097B3279DE3930063E31B /* SwiftyJSON */; };
 		759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097B7279E68AA0063E31B /* Font+Extention.swift */; };
 		759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C2279EF7EB0063E31B /* UserInfo.swift */; };
-		759097C5279EF82B0063E31B /* MainHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C4279EF82B0063E31B /* MainHomeView.swift */; };
-		759097C7279EF83A0063E31B /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C6279EF83A0063E31B /* MainHomeViewController.swift */; };
+		759097C5279EF82B0063E31B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C4279EF82B0063E31B /* HomeView.swift */; };
+		759097C7279EF83A0063E31B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C6279EF83A0063E31B /* HomeViewController.swift */; };
 		759097C9279F1D870063E31B /* SignUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C8279F1D870063E31B /* SignUpForm.swift */; };
 		759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CB279FC6C00063E31B /* OnboardingViewController.swift */; };
 		759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CD279FC6CB0063E31B /* OnboardingView.swift */; };
@@ -59,6 +59,17 @@
 		759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D527A13D0E0063E31B /* AuthResponse.swift */; };
 		759097D827A17CFF0063E31B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D727A17CFF0063E31B /* UserDefault.swift */; };
 		759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097D927A1D5860063E31B /* Date+Extention.swift */; };
+		759097DD27A2953A0063E31B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097DC27A2953A0063E31B /* TabBarViewController.swift */; };
+		759097EB27A2A20C0063E31B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097EA27A2A20C0063E31B /* HomeViewModel.swift */; };
+		759097ED27A2A9B80063E31B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097EC27A2A9B80063E31B /* ShopView.swift */; };
+		759097EF27A2AA4A0063E31B /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097EE27A2AA4A0063E31B /* ShopViewModel.swift */; };
+		759097F127A2AA690063E31B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097F027A2AA690063E31B /* ShopViewController.swift */; };
+		759097F327A2ABEE0063E31B /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097F227A2ABEE0063E31B /* FriendView.swift */; };
+		759097F527A2AC310063E31B /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097F427A2AC310063E31B /* FriendViewModel.swift */; };
+		759097F727A2AC520063E31B /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097F627A2AC520063E31B /* FriendViewController.swift */; };
+		759097F927A2ACF30063E31B /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097F827A2ACF30063E31B /* MyView.swift */; };
+		759097FB27A2ACFB0063E31B /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097FA27A2ACFB0063E31B /* MyViewModel.swift */; };
+		759097FD27A2AD1C0063E31B /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097FC27A2AD1C0063E31B /* MyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +109,8 @@
 		759097B6279E512A0063E31B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../Font/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		759097B7279E68AA0063E31B /* Font+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extention.swift"; sourceTree = "<group>"; };
 		759097C2279EF7EB0063E31B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		759097C4279EF82B0063E31B /* MainHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeView.swift; sourceTree = "<group>"; };
-		759097C6279EF83A0063E31B /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
+		759097C4279EF82B0063E31B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		759097C6279EF83A0063E31B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		759097C8279F1D870063E31B /* SignUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForm.swift; sourceTree = "<group>"; };
 		759097CB279FC6C00063E31B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		759097CD279FC6CB0063E31B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -108,6 +119,17 @@
 		759097D527A13D0E0063E31B /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		759097D727A17CFF0063E31B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		759097D927A1D5860063E31B /* Date+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extention.swift"; sourceTree = "<group>"; };
+		759097DC27A2953A0063E31B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		759097EA27A2A20C0063E31B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		759097EC27A2A9B80063E31B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		759097EE27A2AA4A0063E31B /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		759097F027A2AA690063E31B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		759097F227A2ABEE0063E31B /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		759097F427A2AC310063E31B /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
+		759097F627A2AC520063E31B /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		759097F827A2ACF30063E31B /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		759097FA27A2ACFB0063E31B /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
+		759097FC27A2AD1C0063E31B /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +171,7 @@
 		75909745279517D80063E31B /* SeSACFriend */ = {
 			isa = PBXGroup;
 			children = (
-				759097BE279EB0890063E31B /* Main */,
-				759097BD279EB0130063E31B /* SignUp */,
+				759097DB27A295250063E31B /* View */,
 				759097A2279AFFAD0063E31B /* Extention */,
 				75909770279582A80063E31B /* Data */,
 				7590976B279581910063E31B /* Custom */,
@@ -199,9 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				759097792795852A0063E31B /* SignUpViewModel.swift */,
-				759097C2279EF7EB0063E31B /* UserInfo.swift */,
-				759097C8279F1D870063E31B /* SignUpForm.swift */,
-				759097D527A13D0E0063E31B /* AuthResponse.swift */,
+				759097872795CB1E0063E31B /* Validation.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -225,8 +244,10 @@
 			children = (
 				759097942798DEBB0063E31B /* APIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
+				759097C2279EF7EB0063E31B /* UserInfo.swift */,
+				759097C8279F1D870063E31B /* SignUpForm.swift */,
+				759097D527A13D0E0063E31B /* AuthResponse.swift */,
 				759097852795B9830063E31B /* Observable.swift */,
-				759097872795CB1E0063E31B /* Validation.swift */,
 				759097D727A17CFF0063E31B /* UserDefault.swift */,
 			);
 			path = Data;
@@ -253,20 +274,20 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		759097BE279EB0890063E31B /* Main */ = {
+		759097BE279EB0890063E31B /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				759097BF279EB0970063E31B /* V */,
 				759097C0279EB09D0063E31B /* VM */,
 				759097C1279EB13B0063E31B /* VC */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		759097BF279EB0970063E31B /* V */ = {
 			isa = PBXGroup;
 			children = (
-				759097C4279EF82B0063E31B /* MainHomeView.swift */,
+				759097C4279EF82B0063E31B /* HomeView.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -274,6 +295,7 @@
 		759097C0279EB09D0063E31B /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				759097EA27A2A20C0063E31B /* HomeViewModel.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -281,9 +303,124 @@
 		759097C1279EB13B0063E31B /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				759097C6279EF83A0063E31B /* MainHomeViewController.swift */,
+				759097C6279EF83A0063E31B /* HomeViewController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		759097DB27A295250063E31B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				759097BD279EB0130063E31B /* SignUp */,
+				759097DC27A2953A0063E31B /* TabBarViewController.swift */,
+				759097BE279EB0890063E31B /* Home */,
+				759097DE27A29A6D0063E31B /* Shop */,
+				759097DF27A29A7B0063E31B /* Friend */,
+				759097E027A29A840063E31B /* My */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		759097DE27A29A6D0063E31B /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				759097E127A29BEF0063E31B /* V */,
+				759097E227A29BF40063E31B /* VM */,
+				759097E327A29BF90063E31B /* VC */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		759097DF27A29A7B0063E31B /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				759097E627A29C370063E31B /* V */,
+				759097E527A29C320063E31B /* VM */,
+				759097E427A29C2B0063E31B /* VC */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		759097E027A29A840063E31B /* My */ = {
+			isa = PBXGroup;
+			children = (
+				759097E927A29C470063E31B /* V */,
+				759097E827A29C410063E31B /* VM */,
+				759097E727A29C3D0063E31B /* VC */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		759097E127A29BEF0063E31B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				759097EC27A2A9B80063E31B /* ShopView.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		759097E227A29BF40063E31B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				759097EE27A2AA4A0063E31B /* ShopViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		759097E327A29BF90063E31B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				759097F027A2AA690063E31B /* ShopViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		759097E427A29C2B0063E31B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				759097F627A2AC520063E31B /* FriendViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		759097E527A29C320063E31B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				759097F427A2AC310063E31B /* FriendViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		759097E627A29C370063E31B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				759097F227A2ABEE0063E31B /* FriendView.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		759097E727A29C3D0063E31B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				759097FC27A2AD1C0063E31B /* MyViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		759097E827A29C410063E31B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				759097FA27A2ACFB0063E31B /* MyViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		759097E927A29C470063E31B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				759097F827A2ACF30063E31B /* MyView.swift */,
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,14 +516,21 @@
 			files = (
 				759097D827A17CFF0063E31B /* UserDefault.swift in Sources */,
 				759097952798DEBB0063E31B /* APIService.swift in Sources */,
-				759097C5279EF82B0063E31B /* MainHomeView.swift in Sources */,
+				759097C5279EF82B0063E31B /* HomeView.swift in Sources */,
+				759097FD27A2AD1C0063E31B /* MyViewController.swift in Sources */,
+				759097F127A2AA690063E31B /* ShopViewController.swift in Sources */,
+				759097F727A2AC520063E31B /* FriendViewController.swift in Sources */,
+				759097EB27A2A20C0063E31B /* HomeViewModel.swift in Sources */,
 				7590978F2796D1210063E31B /* SignUpCodeCheckView.swift in Sources */,
 				7590979F279AC5CE0063E31B /* SignUpEmailViewController.swift in Sources */,
 				759097D0279FD1710063E31B /* LaunchScreenViewController.swift in Sources */,
 				75909772279583ED0063E31B /* CustomButton.swift in Sources */,
 				7590978027958E4A0063E31B /* BaseViewController.swift in Sources */,
+				759097F927A2ACF30063E31B /* MyView.swift in Sources */,
 				7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */,
 				7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */,
+				759097FB27A2ACFB0063E31B /* MyViewModel.swift in Sources */,
+				759097DD27A2953A0063E31B /* TabBarViewController.swift in Sources */,
 				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
 				759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */,
 				759097C9279F1D870063E31B /* SignUpForm.swift in Sources */,
@@ -394,10 +538,13 @@
 				759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */,
 				7590974B279517D80063E31B /* ViewController.swift in Sources */,
 				759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */,
+				759097F527A2AC310063E31B /* FriendViewModel.swift in Sources */,
 				7590978A279657550063E31B /* Color+Extention.swift in Sources */,
+				759097EF27A2AA4A0063E31B /* ShopViewModel.swift in Sources */,
 				759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */,
-				759097C7279EF83A0063E31B /* MainHomeViewController.swift in Sources */,
+				759097C7279EF83A0063E31B /* HomeViewController.swift in Sources */,
 				759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */,
+				759097ED27A2A9B80063E31B /* ShopView.swift in Sources */,
 				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
 				759097A4279AFFCB0063E31B /* ToastMessage + Extention.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
@@ -414,6 +561,7 @@
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
 				7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */,
 				759097882795CB1E0063E31B /* Validation.swift in Sources */,
+				759097F327A2ABEE0063E31B /* FriendView.swift in Sources */,
 				75909749279517D80063E31B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

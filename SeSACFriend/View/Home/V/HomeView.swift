@@ -1,5 +1,5 @@
 //
-//  MainHomeView.swift
+//  HomeView.swift
 //  SeSACFriend
 //
 //  Created by Joonhwan Jeon on 2022/01/25.
@@ -7,13 +7,12 @@
 
 import UIKit
 import SnapKit
-import TextFieldEffects
 
-class MainHomeView: UIView, ViewRepresentable {
+class HomeView: UIView, ViewRepresentable {
     
     let mainTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome Main Page"
+        label.text = "Welcome Home Page"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .customBlack

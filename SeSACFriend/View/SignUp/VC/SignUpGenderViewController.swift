@@ -69,7 +69,7 @@ class SignUpGenderViewController: BaseViewController {
                 self.toastMessage(message: "회원가입에 성공했습니다")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                    let vc = MainHomeViewController()
+                    let vc = TabBarViewController()
                     
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
                     windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: vc)
@@ -104,7 +104,7 @@ class SignUpGenderViewController: BaseViewController {
                                 self.toastMessage(message: "회원가입에 성공했습니다")
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                                    let vc = MainHomeViewController()
+                                    let vc = TabBarViewController()
                                     
                                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
                                     windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: vc)

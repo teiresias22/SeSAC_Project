@@ -1,13 +1,13 @@
 //
-//  CustomButton.swift
+//  CustomButtonH32.swift
 //  SeSACFriend
 //
-//  Created by Joonhwan Jeon on 2022/01/17.
+//  Created by Joonhwan Jeon on 2022/01/30.
 //
 
 import UIKit
 
-class CustomButton: UIButton {
+class CustomButtonH32: UIButton {
     
     @IBInspectable var cornerRadius: CGFloat {
         get {return layer.cornerRadius}
@@ -28,7 +28,7 @@ class CustomButton: UIButton {
         super.init(frame: frame)
         self.backgroundColor = .customGreen
         self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = .Body3_R14
+        self.titleLabel?.font = .Title4_R14
         self.cornerRadius = 8
     }
     

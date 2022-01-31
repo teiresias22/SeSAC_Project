@@ -25,7 +25,6 @@ class LaunchScreenViewController: BaseViewController {
             }
 
             if let idToken = idToken {
-                print("getIDToken",idToken)
                 UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
             }
         }

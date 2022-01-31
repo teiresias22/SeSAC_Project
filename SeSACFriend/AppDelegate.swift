@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         
         Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM registration token: \(error)")
+            if error != nil {
+                //print("Error fetching FCM registration token: \(error)")
             } else if let token = token {
                 UserDefaults.standard.set(token, forKey: UserDefault.FCMToken.rawValue)
-                print("FMC registration token: \(token)")
+                //print("FMC registration token: \(token)")
             }
         }
         
@@ -49,6 +49,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler([.alert, .badge, .sound])
+  }
+  
+  func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    completionHandler()
+  }
 }
 
 extension AppDelegate: MessagingDelegate {

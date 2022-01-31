@@ -5,6 +5,8 @@
 //  Created by Joonhwan Jeon on 2022/01/20.
 //
 
+//ApiService도 사용 요소별로 
+
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -18,12 +20,10 @@ class APISevice {
             
             let statusCode = response.response?.statusCode
             switch response.result {
-            case.success(let value):
-                print("response.result success", value)
+            case.success(_):
                 completion(response.value, statusCode, nil)
                 
             case.failure(let error):
-                print("response.result error",error)
                 completion(nil, statusCode, error)
             }
         }
@@ -49,7 +49,6 @@ class APISevice {
         
         AF.request(EndPoint.postUserInfo.url.absoluteString, method: .post, parameters: parameters, headers: headers)
             .responseString { response in
-                print("responseString", response.response)
                 completion(response.response?.statusCode, nil)
             }
     }

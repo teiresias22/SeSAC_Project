@@ -5,6 +5,8 @@
 //  Created by Joonhwan Jeon on 2022/01/21.
 //
 
+//반복되는. "User" 도 묶어서 표기하는게 좋다.
+
 import Foundation
 
 enum Method: String {

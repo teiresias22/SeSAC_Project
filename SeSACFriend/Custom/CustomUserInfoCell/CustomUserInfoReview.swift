@@ -21,7 +21,7 @@ class CustomUserInfoReview: UIView, ViewRepresentable {
     
     let moreButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "arrow_down"), for: .normal)
+        button.setImage(UIImage(named: "arrow_right"), for: .normal)
         
         return button
     }()
@@ -62,10 +62,15 @@ class CustomUserInfoReview: UIView, ViewRepresentable {
         }
         
         moreButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(18)
+            make.top.equalToSuperview().inset(12)
             make.trailing.equalToSuperview().inset(18)
-            make.width.equalTo(12)
-            make.height.equalTo(6)
+            make.width.equalTo(6)
+            make.height.equalTo(12)
+        }
+        
+        reviewTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
         
     }

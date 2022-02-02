@@ -32,7 +32,6 @@ class CustomUserInfoCell: UITableViewCell {
         return stackView
     }()
     
-    
     let customUserInfoName = CustomUserInfoName()
     let customUserInfoTitle = CustomUserInfoTitle()
     let customUserInfoHobby = CustomUserInfoHobby()
@@ -42,6 +41,8 @@ class CustomUserInfoCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setViews()
         setConstraints()
+        
+        backgroundColor = .white
         
     }
     
@@ -69,15 +70,25 @@ class CustomUserInfoCell: UITableViewCell {
         }
         
         customUserInfoName.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(58)
         }
         
         customUserInfoTitle.snp.makeConstraints { make in
-            make.height.equalTo(146)
+            make.top.equalTo(customUserInfoName.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(154)
         }
         
         customUserInfoHobby.snp.makeConstraints { make in
+            make.top.equalTo(customUserInfoTitle.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(66)
+        }
+        
+        customUserInfoReview.snp.makeConstraints { make in
+            make.top.equalTo(customUserInfoHobby.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
         }
     }
 }

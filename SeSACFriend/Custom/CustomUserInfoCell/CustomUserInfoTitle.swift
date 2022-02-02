@@ -33,7 +33,8 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
-        stackView.alignment = .fill
+        stackView.alignment = .center
+        stackView.distribution = .fill
         stackView.distribution = .fillEqually
         
         return stackView
@@ -42,10 +43,6 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton1: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("좋은 매너", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
-        button.backgroundColor = .customGreen
-        button.tintColor = .customWhite
         
         return button
     }()
@@ -53,10 +50,8 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton2: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("정확한 시간 약속", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
         button.backgroundColor = .customWhite
-        button.tintColor = .customBlack
+        button.setTitleColor(.customBlack, for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.customGray2?.cgColor
         
@@ -76,10 +71,8 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton3: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("빠른 응답", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
         button.backgroundColor = .customWhite
-        button.tintColor = .customBlack
+        button.setTitleColor(.customBlack, for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.customGray2?.cgColor
         
@@ -89,10 +82,6 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton4: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("친절한 성격", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
-        button.backgroundColor = .customGreen
-        button.tintColor = .customWhite
         
         return button
     }()
@@ -110,10 +99,6 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton5: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("능숙한 취미 실력", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
-        button.backgroundColor = .customGreen
-        button.tintColor = .customWhite
         
         return button
     }()
@@ -121,10 +106,6 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     let customButton6: CustomButtonH32 = {
         let button = CustomButtonH32()
         button.setTitle("유익한 시간", for: .normal)
-        button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont.Title4_R14
-        button.backgroundColor = .customGreen
-        button.tintColor = .customWhite
         
         return button
     }()
@@ -143,12 +124,15 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
         addSubview(titleLabel)
         addSubview(verticalStackView)
         verticalStackView.addSubview(horizontalStackView1)
+        verticalStackView.addSubview(horizontalStackView2)
+        verticalStackView.addSubview(horizontalStackView3)
+        
         horizontalStackView1.addSubview(customButton1)
         horizontalStackView1.addSubview(customButton2)
-        verticalStackView.addSubview(horizontalStackView2)
+        
         horizontalStackView2.addSubview(customButton3)
         horizontalStackView2.addSubview(customButton4)
-        verticalStackView.addSubview(horizontalStackView3)
+        
         horizontalStackView3.addSubview(customButton5)
         horizontalStackView3.addSubview(customButton6)
         
@@ -156,15 +140,60 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     
     func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(8)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(18)
+            make.height.equalTo(26)
         }
         
         verticalStackView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(16)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(112)
         }
         
+        horizontalStackView1.snp.makeConstraints { make in
+            make.height.equalTo(32)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        horizontalStackView2.snp.makeConstraints { make in
+            make.top.equalTo(horizontalStackView1.snp.bottom).offset(8)
+            make.height.equalTo(32)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        horizontalStackView3.snp.makeConstraints { make in
+            make.top.equalTo(horizontalStackView2.snp.bottom).offset(8)
+            make.height.equalTo(32)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        customButton1.snp.makeConstraints { make in
+            make.height.equalTo(32)
+        }
+        
+        customButton2.snp.makeConstraints { make in
+            make.height.equalTo(32)
+        }
+        
+        customButton3.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(32)
+        }
+        
+        customButton4.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.height.equalTo(32)
+        }
+        
+        customButton5.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.equalTo(32)
+        }
+        
+        customButton6.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.height.equalTo(32)
+        }
     }
 }

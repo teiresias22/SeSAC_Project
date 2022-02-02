@@ -23,10 +23,13 @@ class MyDetailView: UIView, ViewRepresentable {
     let customCardImageView = CustomCardImageView()
     
     let customUserInfoTabelView: UITableView = {
-        let view = UITableView()
+        let tableview = UITableView()
+        tableview.backgroundColor = .cyan
         
-        return view
+        return tableview
     }()
+    
+    let myDetailBottomView = MyDetailBottomView()
     
     var isOpen = false
     
@@ -44,8 +47,9 @@ class MyDetailView: UIView, ViewRepresentable {
     func setupView() {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
-        scrollView.addSubview(customCardImageView)
-        scrollView.addSubview(customUserInfoTabelView)
+        contentView.addSubview(customCardImageView)
+        contentView.addSubview(customUserInfoTabelView)
+        contentView.addSubview(myDetailBottomView)
         
         customCardImageView.requestButton.layer.isHidden = true
     }
@@ -63,6 +67,17 @@ class MyDetailView: UIView, ViewRepresentable {
         
         customCardImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        customUserInfoTabelView.snp.makeConstraints { make in
+            make.top.equalTo(customCardImageView.snp.bottom)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(58)
+        }
+        
+        myDetailBottomView.snp.makeConstraints { make in
+            make.top.equalTo(customUserInfoTabelView.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         

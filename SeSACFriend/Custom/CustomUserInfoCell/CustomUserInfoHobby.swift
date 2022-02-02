@@ -21,7 +21,7 @@ class CustomUserInfoHobby: UIView, ViewRepresentable {
     
     let customLabel1: CustomLabel = {
         let label = CustomLabel()
-        label.text = "취미1"
+        label.text = "산책"
         label.font = UIFont.Title4_R14
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.customGray2?.cgColor
@@ -32,7 +32,7 @@ class CustomUserInfoHobby: UIView, ViewRepresentable {
     
     let customLabel2: CustomLabel = {
         let label = CustomLabel()
-        label.text = "취미1"
+        label.text = "클라이밍"
         label.font = UIFont.Title4_R14
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.customGray2?.cgColor
@@ -43,7 +43,7 @@ class CustomUserInfoHobby: UIView, ViewRepresentable {
     
     let customLabel3: CustomLabel = {
         let label = CustomLabel()
-        label.text = "취미1"
+        label.text = "전시회"
         label.font = UIFont.Title4_R14
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.customGray2?.cgColor
@@ -71,24 +71,27 @@ class CustomUserInfoHobby: UIView, ViewRepresentable {
     
     func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(8)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(18)
         }
         
         customLabel1.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(16)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview().inset(16)
+            make.height.equalTo(32)
         }
         
         customLabel2.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(16)
-            make.leading.equalTo(customLabel1.snp.trailing).inset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.leading.equalTo(customLabel1.snp.trailing).offset(8)
+            make.height.equalTo(32)
         }
         
         customLabel3.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(16)
-            make.leading.equalTo(customLabel2.snp.trailing).inset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.leading.equalTo(customLabel2.snp.trailing).offset(8)
+            make.height.equalTo(32)
         }
     }
 }

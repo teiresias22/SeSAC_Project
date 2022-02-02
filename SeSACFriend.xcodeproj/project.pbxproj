@@ -48,7 +48,7 @@
 		759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C2279EF7EB0063E31B /* UserInfo.swift */; };
 		759097C5279EF82B0063E31B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C4279EF82B0063E31B /* HomeView.swift */; };
 		759097C7279EF83A0063E31B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C6279EF83A0063E31B /* HomeViewController.swift */; };
-		759097C9279F1D870063E31B /* SignUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C8279F1D870063E31B /* SignUpForm.swift */; };
+		759097C9279F1D870063E31B /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097C8279F1D870063E31B /* Form.swift */; };
 		759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CB279FC6C00063E31B /* OnboardingViewController.swift */; };
 		759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CD279FC6CB0063E31B /* OnboardingView.swift */; };
 		759097D0279FD1710063E31B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759097CF279FD1710063E31B /* LaunchScreenViewController.swift */; };
@@ -121,7 +121,7 @@
 		759097C2279EF7EB0063E31B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		759097C4279EF82B0063E31B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		759097C6279EF83A0063E31B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		759097C8279F1D870063E31B /* SignUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForm.swift; sourceTree = "<group>"; };
+		759097C8279F1D870063E31B /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		759097CB279FC6C00063E31B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		759097CD279FC6CB0063E31B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		759097CF279FD1710063E31B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 				759097942798DEBB0063E31B /* APIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
 				759097C2279EF7EB0063E31B /* UserInfo.swift */,
-				759097C8279F1D870063E31B /* SignUpForm.swift */,
+				759097C8279F1D870063E31B /* Form.swift */,
 				759097D527A13D0E0063E31B /* AuthResponse.swift */,
 				759097852795B9830063E31B /* Observable.swift */,
 				759097D727A17CFF0063E31B /* UserDefault.swift */,
@@ -586,7 +586,7 @@
 				7590981927A7CE9C0063E31B /* CustomUserInfoHobby.swift in Sources */,
 				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
 				759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */,
-				759097C9279F1D870063E31B /* SignUpForm.swift in Sources */,
+				759097C9279F1D870063E31B /* Form.swift in Sources */,
 				75909782279592B80063E31B /* ViewRepresentable.swift in Sources */,
 				759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */,
 				7590974B279517D80063E31B /* ViewController.swift in Sources */,

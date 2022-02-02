@@ -7,11 +7,12 @@
 
 import UIKit
 import FirebaseAuth
-import SnapKit
 
 class MyDetailViewController: BaseViewController {
     let mainView = MyDetailView()
     var viewModel: MyViewModel!
+    
+    var isOpen = false
     
     override func loadView() {
         self.view = mainView
@@ -22,27 +23,74 @@ class MyDetailViewController: BaseViewController {
         
         title = "정보관리"
         
+        mainView.customUserInfoTabelView.delegate = self
+        mainView.customUserInfoTabelView.dataSource = self
+        mainView.customUserInfoTabelView.register(CustomUserInfoCell.self, forCellReuseIdentifier: CustomUserInfoCell.identifier)
         
     }
     
-    //1. 메인뷰 안에 있는 커스텀뷰의 높이를 조절, 애니메이션 효과를 주고, 뷰를 다시 로드 한다.
-    //      메인뷰 안의 커스텀스텀뷰의 높이 조절은 가능하나, 뷰를 다시 로드하는 방식을 찾을수가 없다.
-    //2. 컨테이너뷰를 제작해서 높이를 조절한다
-    //      컨테이너뷰는 코드로 제작이 안되는듯??
-    //      Xib파일로도 컨테이너뷰는 제작이 안되네??
-    //3. 테이블뷰로 제작한다
-    
     @objc func toggleButtonClicked() {
-        print("Toggle Clicked1", mainView.customUserInfoView.snp.height)
-        DispatchQueue.main.async {
-            self.mainView.customUserInfoView.snp.updateConstraints { make in
-                make.height.equalTo(800)
-            }
-        }
-        print("Toggle Clicked2", mainView.customUserInfoView.snp.height)
+        print("클릭")
+        isOpen = !isOpen
+        mainView.customUserInfoTabelView.reloadData()
     }
     
+}
+
+extension MyDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomUserInfoCell.identifier) as? CustomUserInfoCell else { return UITableViewCell() }
+        
+        if isOpen {
+            cell.customUserInfoTitle.isHidden = false
+            cell.customUserInfoHobby.isHidden = true
+            cell.customUserInfoReview.isHidden = false
+            
+            DispatchQueue.main.async {
+                cell.customUserInfoHobby.snp.makeConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.mainView.customUserInfoTabelView.snp.updateConstraints { make in
+                    make.height.equalTo(self.mainView.customUserInfoTabelView.contentSize.height)
+                }
+            }
+            
+        } else {
+            cell.customUserInfoTitle.isHidden = true
+            cell.customUserInfoHobby.isHidden = true
+            cell.customUserInfoReview.isHidden = true
+            
+            DispatchQueue.main.async {
+                cell.customUserInfoHobby.snp.makeConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.mainView.customUserInfoTabelView.snp.updateConstraints { make in
+                    make.height.equalTo(self.mainView.customUserInfoTabelView.contentSize.height)
+                }
+            }
+        }
+        
+        cell.customUserInfoName.nameLabel.text = "get.user.nick"
+        
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isOpen {
+            return 350
+        } else {
+            return 60
+            
+        }
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        isOpen.toggle()
+        
+        tableView.reloadData()
+    }
 }

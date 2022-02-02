@@ -19,7 +19,9 @@ enum Method: String {
 enum EndPoint {
     case getUserInfo
     case postUserInfo
-    case deleteUserInfo
+    case widthdrawUserInfo
+    case updateUserInfo
+    case updateFCMToken
 }
 
 extension EndPoint {
@@ -29,8 +31,12 @@ extension EndPoint {
             return .makeEndPoint("user")
         case .postUserInfo:
             return .makeEndPoint("user")
-        case .deleteUserInfo:
+        case .widthdrawUserInfo:
             return .makeEndPoint("user/withdraw")
+        case .updateUserInfo:
+            return .makeEndPoint("update/mypage")
+        case .updateFCMToken:
+            return .makeEndPoint("update_fcm_token")
         }
     }
 }

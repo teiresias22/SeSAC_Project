@@ -22,13 +22,12 @@ class APISevice {
             switch response.result {
             case.success(_):
                 completion(response.value, statusCode, nil)
-                
             case.failure(let error):
                 completion(nil, statusCode, error)
             }
         }
         .responseString { response in
-            print("responseString", response)
+            //print("responseString", response)
         }
     }
     
@@ -53,15 +52,30 @@ class APISevice {
             }
     }
     
-    static func deleteUserInfo(idToken: String, completion: @escaping (Int?, Error?) -> Void){
+    static func widthdrawUserInfo(idToken: String, completion: @escaping (Int?, Error?) -> Void){
         let headers = ["idtoken": idToken,
                        "Content-Type": "application/x-www-form-urlencoded"] as HTTPHeaders
     
-        AF.request(EndPoint.deleteUserInfo.url.absoluteString, method: .post, headers: headers).responseString { response in
+        AF.request(EndPoint.widthdrawUserInfo.url.absoluteString, method: .post, headers: headers).responseString { response in
             
             completion(response.response?.statusCode, nil)
         }
     }
     
-    
+    static func updateUserInfo(idToken: String, form: UpdateUserInfoForm, completion: @escaping (Int?) -> Void) {
+        let headers = ["idtoken": idToken,
+                       "Content-Type": "application/x-www-form-urlencoded"] as HTTPHeaders
+        
+        let parameters : Parameters = [
+            "searchable" : form.searchable,
+            "ageMin" : form.ageMin,
+            "ageMax" : form.ageMax,
+            "gender" : form.gender,
+            "hobby" : form.hobby
+        ]
+        
+        AF.request(EndPoint.updateUserInfo.url.absoluteString, method: .post, parameters: parameters, headers: headers).responseString { response in
+            completion(response.response?.statusCode)
+        }
+    }
 }

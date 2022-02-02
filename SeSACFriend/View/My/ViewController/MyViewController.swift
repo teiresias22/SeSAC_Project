@@ -22,22 +22,25 @@ class MyViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
+        
+        DispatchQueue.main.async {
+            self.viewModel.getUserInfo { userInfo, status, error in
+                
+            }
+        }
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "내정보"
         
-        getUserInfo()
-        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(MyProfileTableViewCell.self, forCellReuseIdentifier: MyProfileTableViewCell.identifier)
         mainView.tableView.register(MyMenuTableViewCell.self, forCellReuseIdentifier: MyMenuTableViewCell.identifier)
-    }
-    
-    //FCM토큰 갱신, 유저 정보를 가져오기
-    func getUserInfo() {
+        
         
     }
 }
@@ -52,7 +55,9 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
             //내정보 셀 만들어서 연결
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MyProfileTableViewCell.identifier) as? MyProfileTableViewCell else { return UITableViewCell()}
             
-            cell.userNameLabel.text = "get.user.nick"
+            viewModel.userInfo.bind { UserInfo in
+                cell.userNameLabel.text = UserInfo.nick
+            }
             cell.selectionStyle = .none
             
             return cell

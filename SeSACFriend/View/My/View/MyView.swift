@@ -10,11 +10,7 @@ import SnapKit
 
 class MyView: UIView, ViewRepresentable {
     
-    let tableView: UITableView = {
-        let view = UITableView()
-        
-        return view
-    }()
+    let tableView = UITableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -90,12 +90,12 @@ class SignUpGenderViewController: BaseViewController {
                     
                     if let error = error {
                         self.toastMessage(message: "토큰 갱신에 실패했습니다")
-                        print(error.localizedDescription)
+                        //print(error.localizedDescription)
                         return
                     }
                     
                     if let idToken = idToken {
-                        print("idToken 갱신",idToken)
+                        //print("idToken 갱신",idToken)
                         UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
                         
                         //갱신후 재요청

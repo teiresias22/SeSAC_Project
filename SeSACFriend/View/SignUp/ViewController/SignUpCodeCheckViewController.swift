@@ -46,8 +46,8 @@ class SignUpCodeCheckViewController: BaseViewController {
         viewModel.requestCode { verificationID, error in
             guard let verificationID = verificationID else {
                 //error
-                print("error",error!.localizedDescription)
-                print("error",error.debugDescription)
+                //print("error",error!.localizedDescription)
+                //print("error",error.debugDescription)
 
                 switch error!.localizedDescription {
                 case AuthResponse.blocked.rawValue: self.toastMessage(message: "과도한 인증 시도가 있었습니다.")
@@ -78,7 +78,7 @@ class SignUpCodeCheckViewController: BaseViewController {
                 return
             }
             
-            print("submit Succeed!")
+            //print("submit Succeed!")
             
             self.viewModel.getUserInfo { UserInfo, statuscode, error in
                 switch statuscode {

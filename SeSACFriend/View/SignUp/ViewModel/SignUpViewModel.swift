@@ -41,7 +41,7 @@ class SignUpViewModel {
         )
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if error == nil {
-                print("login Succeed!")
+                //print("login Succeed!")
                 
                 let currentUser = Auth.auth().currentUser
                 currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
@@ -50,7 +50,7 @@ class SignUpViewModel {
                         return;
                     }
                     if let idToken = idToken {
-                        print("idToken",idToken)
+                        //print("idToken",idToken)
                         self.idToken = idToken
                         UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
                     }
@@ -58,7 +58,7 @@ class SignUpViewModel {
                 }
             } else {
                 completion(nil, error)
-                print("error : ",error.debugDescription)
+                //print("error : ",error.debugDescription)
             }
         }
     }
@@ -73,7 +73,7 @@ class SignUpViewModel {
     func signUpUserInfo(completion: @escaping (Int?, Error?) -> Void) {
         let form = SignUpForm(phoneNumber: "+82" + requestNumber.value, FCMtoken: fcmToken, nick: nickName.value, email: email.value, birth: birthDay.value, gender: gender.value)
         
-        print("form", form)
+        //print("form", form)
         
         APISevice.signUpUserInfo(idToken: idToken, form: form) { statuscode, error in
             completion(statuscode, error)

@@ -28,8 +28,6 @@ class MyViewController: BaseViewController {
                 
             }
         }
-        
-        
     }
     
     override func viewDidLoad() {

@@ -81,6 +81,8 @@
 		7590981927A7CE9C0063E31B /* CustomUserInfoHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590981827A7CE9C0063E31B /* CustomUserInfoHobby.swift */; };
 		7590981B27A7CEB00063E31B /* CustomUserInfoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590981A27A7CEB00063E31B /* CustomUserInfoReview.swift */; };
 		7590981F27A860880063E31B /* MyDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590981E27A860880063E31B /* MyDetailBottomView.swift */; };
+		7590982127AB72CC0063E31B /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982027AB72CC0063E31B /* CustomAlertViewController.swift */; };
+		7590982327AB832A0063E31B /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982227AB83290063E31B /* CustomAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +154,8 @@
 		7590981827A7CE9C0063E31B /* CustomUserInfoHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserInfoHobby.swift; sourceTree = "<group>"; };
 		7590981A27A7CEB00063E31B /* CustomUserInfoReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserInfoReview.swift; sourceTree = "<group>"; };
 		7590981E27A860880063E31B /* MyDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailBottomView.swift; sourceTree = "<group>"; };
+		7590982027AB72CC0063E31B /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		7590982227AB83290063E31B /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 				7590980D27A597BE0063E31B /* CustomButtonH32.swift */,
 				759097A7279C005B0063E31B /* CustomLabel.swift */,
 				7590980B27A4DAEA0063E31B /* CustomCardImageView.swift */,
+				7590982227AB83290063E31B /* CustomAlertView.swift */,
 				7590981327A7CCEC0063E31B /* CustomUserInfoCell.swift */,
 				7590981527A7CE6A0063E31B /* CustomUserInfoCell */,
 			);
@@ -430,6 +435,7 @@
 			children = (
 				759097FC27A2AD1C0063E31B /* MyViewController.swift */,
 				7590980527A453B70063E31B /* MyDetailViewController.swift */,
+				7590982027AB72CC0063E31B /* CustomAlertViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				759097952798DEBB0063E31B /* APIService.swift in Sources */,
 				7590981B27A7CEB00063E31B /* CustomUserInfoReview.swift in Sources */,
 				759097C5279EF82B0063E31B /* HomeView.swift in Sources */,
+				7590982327AB832A0063E31B /* CustomAlertView.swift in Sources */,
 				7590981F27A860880063E31B /* MyDetailBottomView.swift in Sources */,
 				7590980827A453C90063E31B /* MyDetailView.swift in Sources */,
 				759097FD27A2AD1C0063E31B /* MyViewController.swift in Sources */,
@@ -616,6 +623,7 @@
 				7590977E2795853E0063E31B /* SignUpView.swift in Sources */,
 				759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */,
 				7590979D279AC5BB0063E31B /* SignUpBDViewController.swift in Sources */,
+				7590982127AB72CC0063E31B /* CustomAlertViewController.swift in Sources */,
 				759097862795B9830063E31B /* Observable.swift in Sources */,
 				759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */,
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,

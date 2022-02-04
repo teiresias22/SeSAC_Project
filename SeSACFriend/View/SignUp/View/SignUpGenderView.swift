@@ -81,14 +81,14 @@ class SignUpGenderView: UIView, ViewRepresentable {
     
     let manImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "ic.man")
+        image.image = UIImage(named: "ic_man")
         
         return image
     }()
     
     let womanImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "ic.woman")
+        image.image = UIImage(named: "ic_woman")
         
         return image
     }()

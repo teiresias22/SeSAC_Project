@@ -86,7 +86,7 @@ class SignUpCodeCheckViewController: BaseViewController {
                 case 200: self.toastMessage(message: "이미 가입된 사용자 입니다.")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: TabBarViewController())
                     windowScene.windows.first?.makeKeyAndVisible()
                 }
                 

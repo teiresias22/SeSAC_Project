@@ -123,18 +123,18 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
     func setupView() {
         addSubview(titleLabel)
         addSubview(verticalStackView)
-        verticalStackView.addSubview(horizontalStackView1)
-        verticalStackView.addSubview(horizontalStackView2)
-        verticalStackView.addSubview(horizontalStackView3)
+        verticalStackView.addArrangedSubview(horizontalStackView1)
+        verticalStackView.addArrangedSubview(horizontalStackView2)
+        verticalStackView.addArrangedSubview(horizontalStackView3)
         
-        horizontalStackView1.addSubview(customButton1)
-        horizontalStackView1.addSubview(customButton2)
+        horizontalStackView1.addArrangedSubview(customButton1)
+        horizontalStackView1.addArrangedSubview(customButton2)
         
-        horizontalStackView2.addSubview(customButton3)
-        horizontalStackView2.addSubview(customButton4)
+        horizontalStackView2.addArrangedSubview(customButton3)
+        horizontalStackView2.addArrangedSubview(customButton4)
         
-        horizontalStackView3.addSubview(customButton5)
-        horizontalStackView3.addSubview(customButton6)
+        horizontalStackView3.addArrangedSubview(customButton5)
+        horizontalStackView3.addArrangedSubview(customButton6)
         
     }
     
@@ -166,34 +166,6 @@ class CustomUserInfoTitle: UIView, ViewRepresentable {
             make.top.equalTo(horizontalStackView2.snp.bottom).offset(8)
             make.height.equalTo(32)
             make.leading.trailing.equalToSuperview()
-        }
-        
-        customButton1.snp.makeConstraints { make in
-            make.height.equalTo(32)
-        }
-        
-        customButton2.snp.makeConstraints { make in
-            make.height.equalTo(32)
-        }
-        
-        customButton3.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.height.equalTo(32)
-        }
-        
-        customButton4.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.height.equalTo(32)
-        }
-        
-        customButton5.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.height.equalTo(32)
-        }
-        
-        customButton6.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.height.equalTo(32)
         }
     }
 }

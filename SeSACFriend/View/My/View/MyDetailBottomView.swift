@@ -13,6 +13,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let genderStackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
         stackView.alignment = .fill
@@ -34,6 +35,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
         button.setTitle("남자", for: .normal)
         button.titleLabel?.font = UIFont.Title4_R14
         button.backgroundColor = .customGreen
+        button.layer.cornerRadius = 8
         
         return button
     }()
@@ -42,13 +44,17 @@ class MyDetailBottomView: UIView, ViewRepresentable {
         let button = UIButton()
         button.setTitle("여자", for: .normal)
         button.titleLabel?.font = UIFont.Title4_R14
-        button.tintColor = .customBlack
+        button.setTitleColor(.customBlack, for: .normal)
+        button.layer.borderColor = UIColor.customGray2?.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 8
         
         return button
     }()
     
     let hobbyStackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
         stackView.alignment = .fill
@@ -75,6 +81,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let allowSearchStackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
         stackView.alignment = .fill
@@ -103,6 +110,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let ageStackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
         stackView.alignment = .fill
@@ -138,26 +146,6 @@ class MyDetailBottomView: UIView, ViewRepresentable {
         return slider
     }()
     
-    let widthDrawStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        
-        return stackView
-    }()
-    
-    let widthDrawLabel: UILabel = {
-        let label = UILabel()
-        label.text = "회원 탈퇴"
-        label.font = .Title4_R14
-        
-        return label
-    }()
-    
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -170,25 +158,22 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     func setupView() {
         addSubview(genderStackView)
-        genderStackView.addSubview(genderLabel)
-        genderStackView.addSubview(manButton)
-        genderStackView.addSubview(womanButton)
+        genderStackView.addArrangedSubview(genderLabel)
+        genderStackView.addArrangedSubview(manButton)
+        genderStackView.addArrangedSubview(womanButton)
         
         addSubview(hobbyStackView)
-        hobbyStackView.addSubview(hobbyLabel)
-        hobbyStackView.addSubview(hobbyInputTextfield)
+        hobbyStackView.addArrangedSubview(hobbyLabel)
+        hobbyStackView.addArrangedSubview(hobbyInputTextfield)
         
         addSubview(allowSearchStackView)
-        allowSearchStackView.addSubview(allowSearchLabel)
-        allowSearchStackView.addSubview(allowSearchSwitch)
+        allowSearchStackView.addArrangedSubview(allowSearchLabel)
+        allowSearchStackView.addArrangedSubview(allowSearchSwitch)
         
         addSubview(ageStackView)
-        ageStackView.addSubview(ageLabel)
-        ageStackView.addSubview(ageRangeLabel)
+        ageStackView.addArrangedSubview(ageLabel)
+        ageStackView.addArrangedSubview(ageRangeLabel)
         addSubview(ageSlider)
-        
-        addSubview(widthDrawStackView)
-        widthDrawStackView.addSubview(widthDrawLabel)
     }
     
     func setupConstraints() {
@@ -196,20 +181,12 @@ class MyDetailBottomView: UIView, ViewRepresentable {
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(48)
         }
-        genderLabel.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview()
-            make.trailing.equalTo(manButton.snp.leading).inset(8)
-        }
-        
+                
         manButton.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.trailing.equalTo(womanButton.snp.leading).inset(8)
             make.width.equalTo(60)
         }
         
         womanButton.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.trailing.equalToSuperview().inset(8)
             make.width.equalTo(60)
         }
         
@@ -217,11 +194,6 @@ class MyDetailBottomView: UIView, ViewRepresentable {
             make.top.equalTo(genderStackView.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(48)
-        }
-        
-        hobbyLabel.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
-            make.trailing.equalTo(hobbyInputTextfield.snp.leading).inset(8)
         }
         
         hobbyInputTextfield.snp.makeConstraints { make in
@@ -235,13 +207,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
             make.height.equalTo(48)
         }
         
-        allowSearchLabel.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
-            make.trailing.equalTo(allowSearchSwitch.snp.leading).inset(8)
-        }
-        
         allowSearchSwitch.snp.makeConstraints { make in
-            make.top.bottom.trailing.equalToSuperview()
             make.width.equalTo(52)
         }
         
@@ -251,13 +217,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
             make.height.equalTo(48)
         }
         
-        ageLabel.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
-            make.trailing.equalTo(ageRangeLabel.snp.leading).inset(8)
-        }
-        
         ageRangeLabel.snp.makeConstraints { make in
-            make.top.bottom.trailing.equalToSuperview()
             make.width.equalTo(44)
         }
         
@@ -265,17 +225,6 @@ class MyDetailBottomView: UIView, ViewRepresentable {
             make.top.equalTo(ageStackView.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(24)
-        }
-        
-        widthDrawStackView.snp.makeConstraints { make in
-            make.top.equalTo(ageSlider.snp.bottom).offset(24)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(48)
-        }
-        
-        widthDrawLabel.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
-            make.width.equalTo(60)
         }
     }
 }

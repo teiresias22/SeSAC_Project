@@ -122,9 +122,7 @@ class SignUpGenderViewController: BaseViewController {
                                 self.toastMessage(message: "회원가입에 실패했습니다")
                             }
                         }
-                        
                     }
-            
                 }
             default :
                 self.toastMessage(message: "회원가입에 실패했습니다")

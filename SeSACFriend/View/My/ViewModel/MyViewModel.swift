@@ -17,7 +17,7 @@ class MyViewModel {
     var searchable = Observable(0)
     var gender = Observable(-1)
     
-    var myInfoIconArray = [UIImage(named: "notice_ic"), UIImage(named: "faq_ic"), UIImage(named: "qna_ic"), UIImage(named: "setting_alarm_ic"), UIImage(named: "permit_ic")]
+    var myInfoIconArray = [UIImage(named: "ic_notice"), UIImage(named: "ic_faq"), UIImage(named: "ic_qna"), UIImage(named: "ic_setting_alarm"), UIImage(named: "ic_permit")]
     
     var myInfoTitleArray = ["공지사항", "자주 묻는 질문", "1:1 문의", "알림 설정", "이용 약관"]
     

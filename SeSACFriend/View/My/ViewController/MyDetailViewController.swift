@@ -5,12 +5,26 @@
 //  Created by Joonhwan Jeon on 2022/01/29.
 //
 
+//Todo
+//MyDetailBottomView 클릭시 이벤트 연결
+//번호 검색 허용 처리 안되었음
+//연령대 슬라이더 처리 안되었음
+//저장 버튼 클릭시 통신처리 안되었음
+
 import UIKit
 import FirebaseAuth
+import CloudKit
 
 class MyDetailViewController: BaseViewController {
     let mainView = MyDetailView()
     var viewModel: MyViewModel!
+    
+    var barButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(barButtonClicked))
+        button.tintColor = .customBlack
+        
+        return button
+    }()
     
     var isOpen = false
     
@@ -21,12 +35,26 @@ class MyDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "정보관리"
+        self.title = "정보관리"
+        self.navigationItem.rightBarButtonItem = self.barButton
         
         mainView.customUserInfoTabelView.delegate = self
         mainView.customUserInfoTabelView.dataSource = self
         mainView.customUserInfoTabelView.register(CustomUserInfoCell.self, forCellReuseIdentifier: CustomUserInfoCell.identifier)
         
+        mainView.withdrawButton.addTarget(self, action: #selector(withdrawButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func barButtonClicked() {
+        print("BarButtonClicked")
+    }
+    
+    @objc func withdrawButtonClicked() {
+        let vc = CustomAlertViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.viewModel = self.viewModel
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func toggleButtonClicked() {
@@ -74,7 +102,9 @@ extension MyDetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        cell.customUserInfoName.nameLabel.text = "get.user.nick"
+        viewModel.userInfo.bind { UserInfo in
+            cell.customUserInfoName.nameLabel.text = UserInfo.nick
+        }
         
         return cell
     }

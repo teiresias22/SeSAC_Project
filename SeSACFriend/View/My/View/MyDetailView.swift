@@ -5,13 +5,6 @@
 //  Created by Joonhwan Jeon on 2022/01/29.
 //
 
-//Todo
-//스크롤뷰를 기본으로 올리고,
-//상단의 이미지와 이름, 토글버튼은 별도의 View로 제작해서 Main에서 재사용
-//그 밑에 부분을 깔쌈하게 각각의 줄마다 StackView로 담아서 구성한다?
-
-//탈퇴 확인창 커스텀하기
-
 import UIKit
 import SnapKit
 
@@ -22,17 +15,20 @@ class MyDetailView: UIView, ViewRepresentable {
     
     let customCardImageView = CustomCardImageView()
     
-    let customUserInfoTabelView: UITableView = {
-        let tableview = UITableView()
-        tableview.backgroundColor = .cyan
-        
-        return tableview
-    }()
+    let customUserInfoTabelView = UITableView()
     
     let myDetailBottomView = MyDetailBottomView()
     
-    var isOpen = false
+    let withdrawButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("회원 탈퇴", for: .normal)
+        button.titleLabel?.font = UIFont.Title4_R14
+        button.setTitleColor(.customBlack, for: .normal)
+        
+        return button
+    }()
     
+    var isOpen = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +46,7 @@ class MyDetailView: UIView, ViewRepresentable {
         contentView.addSubview(customCardImageView)
         contentView.addSubview(customUserInfoTabelView)
         contentView.addSubview(myDetailBottomView)
+        addSubview(withdrawButton)
         
         customCardImageView.requestButton.layer.isHidden = true
     }
@@ -79,6 +76,13 @@ class MyDetailView: UIView, ViewRepresentable {
         myDetailBottomView.snp.makeConstraints { make in
             make.top.equalTo(customUserInfoTabelView.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(272)
+        }
+        
+        withdrawButton.snp.makeConstraints { make in
+            make.top.equalTo(myDetailBottomView.snp.bottom).offset(24)
+            make.leading.equalToSuperview().inset(16)
+            make.height.equalTo(48)
         }
         
     }

@@ -34,7 +34,9 @@ class MyDetailBottomView: UIView, ViewRepresentable {
         let button = UIButton()
         button.setTitle("남자", for: .normal)
         button.titleLabel?.font = UIFont.Title4_R14
+        button.setTitleColor(.customWhite, for: .normal)
         button.backgroundColor = .customGreen
+        button.layer.borderColor = UIColor.customGray2?.cgColor
         button.layer.cornerRadius = 8
         
         return button
@@ -45,6 +47,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
         button.setTitle("여자", for: .normal)
         button.titleLabel?.font = UIFont.Title4_R14
         button.setTitleColor(.customBlack, for: .normal)
+        button.backgroundColor = .customWhite
         button.layer.borderColor = UIColor.customGray2?.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 8
@@ -139,7 +142,10 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let ageSlider: UISlider = {
         let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.isContinuous = false
         slider.thumbTintColor = .customGreen
+        slider.value = 18
         slider.maximumValue = 60
         slider.minimumValue = 18
         

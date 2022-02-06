@@ -20,6 +20,13 @@ class HomeView: UIView, ViewRepresentable {
         return view
     }()
     
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "map_marker")
+        
+        return view
+    }()
+    
     let genderView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
@@ -103,6 +110,7 @@ class HomeView: UIView, ViewRepresentable {
     
     func setupView() {
         addSubview(mapView)
+        mapView.addSubview(imageView)
         addSubview(genderView)
         genderView.addSubview(genderStackView)
         genderStackView.addArrangedSubview(allButton)
@@ -117,6 +125,11 @@ class HomeView: UIView, ViewRepresentable {
     func setupConstraints() {
         mapView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(48)
         }
         
         genderView.snp.makeConstraints { make in

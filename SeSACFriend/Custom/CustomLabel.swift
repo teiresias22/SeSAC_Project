@@ -9,8 +9,8 @@ import UIKit
 
 class CustomLabel: UILabel {
     
-    @IBInspectable var topInset: CGFloat = 8.0
-    @IBInspectable var bottomInset: CGFloat = 8.0
+    @IBInspectable var topInset: CGFloat = 5.0
+    @IBInspectable var bottomInset: CGFloat = 5.0
     @IBInspectable var leftInset: CGFloat = 16.0
     @IBInspectable var rightInset: CGFloat = 16.0
     

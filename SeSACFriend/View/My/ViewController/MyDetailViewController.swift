@@ -6,14 +6,12 @@
 //
 
 //Todo
-//MyDetailBottomView 클릭시 이벤트 연결
 //번호 검색 허용 처리 안되었음
 //연령대 슬라이더 처리 안되었음
 //저장 버튼 클릭시 통신처리 안되었음
 
 import UIKit
 import FirebaseAuth
-import CloudKit
 
 class MyDetailViewController: BaseViewController {
     let mainView = MyDetailView()
@@ -27,6 +25,11 @@ class MyDetailViewController: BaseViewController {
     }()
     
     var isOpen = false
+    var switchIsOn = false
+    
+    var nick = ""
+    var gender = -1
+    var hobby = ""
     
     override func loadView() {
         self.view = mainView
@@ -38,15 +41,78 @@ class MyDetailViewController: BaseViewController {
         self.title = "정보관리"
         self.navigationItem.rightBarButtonItem = self.barButton
         
+        checkUserData()
+        
         mainView.customUserInfoTabelView.delegate = self
         mainView.customUserInfoTabelView.dataSource = self
         mainView.customUserInfoTabelView.register(CustomUserInfoCell.self, forCellReuseIdentifier: CustomUserInfoCell.identifier)
         
         mainView.withdrawButton.addTarget(self, action: #selector(withdrawButtonClicked), for: .touchUpInside)
+        mainView.myDetailBottomView.manButton.addTarget(self, action: #selector(manButtonClicked), for: .touchUpInside)
+        mainView.myDetailBottomView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)
+        mainView.myDetailBottomView.allowSearchSwitch.addTarget(self, action: #selector(allowSearchSwitchChanged), for: .touchUpInside)
+        
+        mainView.myDetailBottomView.ageSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+    }
+    
+    func checkUserData(){
+        viewModel.userInfo.bind { UserInfo in
+            self.nick = UserInfo.nick
+            self.gender = UserInfo.gender
+            self.hobby = UserInfo.hobby
+        }
+    }
+    
+    func setgenderButton() {
+        if gender == -1 {
+            buttonDeactive(mainView.myDetailBottomView.manButton)
+            buttonDeactive(mainView.myDetailBottomView.womanButton)
+        } else if gender == 0 {
+            buttonActive(mainView.myDetailBottomView.womanButton)
+            buttonDeactive(mainView.myDetailBottomView.manButton)
+        } else if gender == 1 {
+            buttonActive(mainView.myDetailBottomView.manButton)
+            buttonDeactive(mainView.myDetailBottomView.womanButton)
+        }
+    }
+    
+    func buttonActive(_ target: UIButton) {
+        target.backgroundColor = .customGreen
+        target.setTitleColor(.customWhite, for: .normal)
+        target.layer.borderWidth = 0
+    }
+    
+    func buttonDeactive(_ target: UIButton) {
+        target.backgroundColor = .customWhite
+        target.setTitleColor(.customBlack, for: .normal)
+        target.layer.borderWidth = 1
+        
+    }
+    
+    //MARK: ClickAction
+    @objc func manButtonClicked() {
+        buttonActive(mainView.myDetailBottomView.manButton)
+        buttonDeactive(mainView.myDetailBottomView.womanButton)
+    }
+    
+    @objc func womanButtonClicked() {
+        buttonActive(mainView.myDetailBottomView.womanButton)
+        buttonDeactive(mainView.myDetailBottomView.manButton)
+    }
+    
+    @objc func allowSearchSwitchChanged() {
+        switchIsOn.toggle()
+        //번호 검색 허용하기, searchable에서 가져오기
+    }
+    
+    @objc func sliderValueChanged(_ sender: UISlider!) {
+        print("sliderValue", mainView.myDetailBottomView.ageSlider.value)
+        //multislider 적용하기, ageMin, ageMax에서 가져오기
     }
     
     @objc func barButtonClicked() {
         print("BarButtonClicked")
+        //updateMypage 해야함
     }
     
     @objc func withdrawButtonClicked() {
@@ -58,7 +124,6 @@ class MyDetailViewController: BaseViewController {
     }
     
     @objc func toggleButtonClicked() {
-        print("클릭")
         isOpen = !isOpen
         mainView.customUserInfoTabelView.reloadData()
     }
@@ -86,7 +151,6 @@ extension MyDetailViewController: UITableViewDelegate, UITableViewDataSource {
                     make.height.equalTo(self.mainView.customUserInfoTabelView.contentSize.height)
                 }
             }
-            
         } else {
             cell.customUserInfoTitle.isHidden = true
             cell.customUserInfoHobby.isHidden = true
@@ -101,10 +165,7 @@ extension MyDetailViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
-        
-        viewModel.userInfo.bind { UserInfo in
-            cell.customUserInfoName.nameLabel.text = UserInfo.nick
-        }
+        cell.customUserInfoName.nameLabel.text = nick
         
         return cell
     }

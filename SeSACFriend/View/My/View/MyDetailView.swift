@@ -76,7 +76,7 @@ class MyDetailView: UIView, ViewRepresentable {
         myDetailBottomView.snp.makeConstraints { make in
             make.top.equalTo(customUserInfoTabelView.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(272)
+            make.height.equalTo(282)
         }
         
         withdrawButton.snp.makeConstraints { make in

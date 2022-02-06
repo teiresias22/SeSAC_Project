@@ -9,6 +9,6 @@ import UIKit
 
 class HomeViewModel {
     
-    let stateButtonIconArray = [UIImage(named: "ic_magnifying"), UIImage(named: "ic_antenna"), UIImage(named: "ic_message")]
+    let stateButtonIconArray = ["ic_magnifying", "ic_antenna", "ic_message"]
     
 }

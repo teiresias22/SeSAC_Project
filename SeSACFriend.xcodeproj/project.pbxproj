@@ -83,6 +83,12 @@
 		7590981F27A860880063E31B /* MyDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590981E27A860880063E31B /* MyDetailBottomView.swift */; };
 		7590982127AB72CC0063E31B /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982027AB72CC0063E31B /* CustomAlertViewController.swift */; };
 		7590982327AB832A0063E31B /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982227AB83290063E31B /* CustomAlertView.swift */; };
+		7590982B27AD92A00063E31B /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982A27AD92A00063E31B /* HobbyView.swift */; };
+		7590982D27AD92EA0063E31B /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982C27AD92EA0063E31B /* HobbyViewController.swift */; };
+		7590982F27AD9EBB0063E31B /* NearUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982E27AD9EBB0063E31B /* NearUserView.swift */; };
+		7590983127AD9F050063E31B /* NearUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983027AD9F050063E31B /* NearUserViewController.swift */; };
+		7590983427AE49EF0063E31B /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */; };
+		7590983627AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +162,12 @@
 		7590981E27A860880063E31B /* MyDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailBottomView.swift; sourceTree = "<group>"; };
 		7590982027AB72CC0063E31B /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		7590982227AB83290063E31B /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		7590982A27AD92A00063E31B /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
+		7590982C27AD92EA0063E31B /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		7590982E27AD9EBB0063E31B /* NearUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserView.swift; sourceTree = "<group>"; };
+		7590983027AD9F050063E31B /* NearUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewController.swift; sourceTree = "<group>"; };
+		7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
+		7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,12 +235,13 @@
 			isa = PBXGroup;
 			children = (
 				75909771279583ED0063E31B /* CustomButton.swift */,
+				7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */,
 				7590980D27A597BE0063E31B /* CustomButtonH32.swift */,
 				759097A7279C005B0063E31B /* CustomLabel.swift */,
+				7590981527A7CE6A0063E31B /* CustomUserInfoCell */,
 				7590980B27A4DAEA0063E31B /* CustomCardImageView.swift */,
 				7590982227AB83290063E31B /* CustomAlertView.swift */,
 				7590981327A7CCEC0063E31B /* CustomUserInfoCell.swift */,
-				7590981527A7CE6A0063E31B /* CustomUserInfoCell */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -306,6 +319,7 @@
 		759097BE279EB0890063E31B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7590983227AE49D80063E31B /* Cell */,
 				759097BF279EB0970063E31B /* View */,
 				759097C0279EB09D0063E31B /* ViewModel */,
 				759097C1279EB13B0063E31B /* ViewController */,
@@ -317,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				759097C4279EF82B0063E31B /* HomeView.swift */,
+				7590982A27AD92A00063E31B /* HobbyView.swift */,
+				7590982E27AD9EBB0063E31B /* NearUserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +349,8 @@
 			isa = PBXGroup;
 			children = (
 				759097C6279EF83A0063E31B /* HomeViewController.swift */,
+				7590982C27AD92EA0063E31B /* HobbyViewController.swift */,
+				7590983027AD9F050063E31B /* NearUserViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -478,6 +496,14 @@
 			path = CustomUserInfoCell;
 			sourceTree = "<group>";
 		};
+		7590983227AE49D80063E31B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,14 +634,17 @@
 				759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */,
 				7590981427A7CCEC0063E31B /* CustomUserInfoCell.swift in Sources */,
 				759097ED27A2A9B80063E31B /* ShopView.swift in Sources */,
+				7590982D27AD92EA0063E31B /* HobbyViewController.swift in Sources */,
 				7590980227A3CD400063E31B /* MyMenuTableViewCell.swift in Sources */,
 				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
 				7590981727A7CE810063E31B /* CustomUserInfoTitle.swift in Sources */,
 				7590980E27A597BE0063E31B /* CustomButtonH32.swift in Sources */,
 				7590980A27A4DA3A0063E31B /* CustomUserInfoName.swift in Sources */,
+				7590983627AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
 				759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */,
 				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,
+				7590982B27AD92A00063E31B /* HobbyView.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
 				7590980027A3CD340063E31B /* MyProfileTableViewCell.swift in Sources */,
 				759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */,
@@ -624,6 +653,8 @@
 				759097CC279FC6C00063E31B /* OnboardingViewController.swift in Sources */,
 				7590979D279AC5BB0063E31B /* SignUpBDViewController.swift in Sources */,
 				7590982127AB72CC0063E31B /* CustomAlertViewController.swift in Sources */,
+				7590983427AE49EF0063E31B /* HobbyCollectionViewCell.swift in Sources */,
+				7590982F27AD9EBB0063E31B /* NearUserView.swift in Sources */,
 				759097862795B9830063E31B /* Observable.swift in Sources */,
 				759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */,
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
@@ -631,6 +662,7 @@
 				759097882795CB1E0063E31B /* Validation.swift in Sources */,
 				759097F327A2ABEE0063E31B /* FriendView.swift in Sources */,
 				75909749279517D80063E31B /* SceneDelegate.swift in Sources */,
+				7590983127AD9F050063E31B /* NearUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

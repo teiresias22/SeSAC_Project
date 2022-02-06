@@ -39,7 +39,6 @@ class MyViewController: BaseViewController {
         mainView.tableView.register(MyProfileTableViewCell.self, forCellReuseIdentifier: MyProfileTableViewCell.identifier)
         mainView.tableView.register(MyMenuTableViewCell.self, forCellReuseIdentifier: MyMenuTableViewCell.identifier)
         
-        
     }
 }
 
@@ -80,6 +79,4 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
             self.toastMessage(message: "해당 메뉴는 준비중입니다.")
         }
     }
-    
-    
 }

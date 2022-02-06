@@ -17,6 +17,7 @@ class HomeViewController: BaseViewController {
     
     var locationManager = CLLocationManager()
     
+    var myState = ""
     
     override func loadView() {
         self.view = mainView
@@ -33,9 +34,19 @@ class HomeViewController: BaseViewController {
         mainView.mapView.showsUserLocation = true
         
         mainView.myLocationButton.addTarget(self, action: #selector(myLocationClicked), for: .touchUpInside)
+        
+        mainView.stateButton.addTarget(self, action: #selector(stateButtonClicked), for: .touchUpInside)
     }
     
     func setStateButtonImage(){
+        mainView.stateButton.setImage(UIImage(named: viewModel.stateButtonIconArray[0]), for: .normal)
+    }
+    
+    @objc func stateButtonClicked() {
+        
+        let vc = HobbyViewController()
+        vc.viewModel = self.viewModel
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

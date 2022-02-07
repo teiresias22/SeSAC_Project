@@ -88,7 +88,6 @@
 		7590982F27AD9EBB0063E31B /* NearUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590982E27AD9EBB0063E31B /* NearUserView.swift */; };
 		7590983127AD9F050063E31B /* NearUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983027AD9F050063E31B /* NearUserViewController.swift */; };
 		7590983427AE49EF0063E31B /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */; };
-		7590983627AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,7 +166,6 @@
 		7590982E27AD9EBB0063E31B /* NearUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserView.swift; sourceTree = "<group>"; };
 		7590983027AD9F050063E31B /* NearUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewController.swift; sourceTree = "<group>"; };
 		7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
-		7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				75909771279583ED0063E31B /* CustomButton.swift */,
-				7590983527AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift */,
 				7590980D27A597BE0063E31B /* CustomButtonH32.swift */,
 				759097A7279C005B0063E31B /* CustomLabel.swift */,
 				7590981527A7CE6A0063E31B /* CustomUserInfoCell */,
@@ -640,7 +637,6 @@
 				7590981727A7CE810063E31B /* CustomUserInfoTitle.swift in Sources */,
 				7590980E27A597BE0063E31B /* CustomButtonH32.swift in Sources */,
 				7590980A27A4DA3A0063E31B /* CustomUserInfoName.swift in Sources */,
-				7590983627AE7A330063E31B /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
 				759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */,
 				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,

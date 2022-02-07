@@ -33,8 +33,12 @@ class HomeViewController: BaseViewController {
         locationManager.startUpdatingLocation()
         mainView.mapView.showsUserLocation = true
         
-        mainView.myLocationButton.addTarget(self, action: #selector(myLocationClicked), for: .touchUpInside)
+        genderButtonActive(mainView.allButton)
         
+        mainView.allButton.addTarget(self, action: #selector(allButtonClicked), for: .touchUpInside)
+        mainView.manButton.addTarget(self, action: #selector(manButtonClicked), for: .touchUpInside)
+        mainView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)
+        mainView.myLocationButton.addTarget(self, action: #selector(myLocationClicked), for: .touchUpInside)
         mainView.stateButton.addTarget(self, action: #selector(stateButtonClicked), for: .touchUpInside)
     }
     
@@ -43,17 +47,47 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func stateButtonClicked() {
-        
-        let vc = HobbyViewController()
-        vc.viewModel = self.viewModel
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        if myState == "" {
+            let vc = HobbyViewController()
+            vc.viewModel = self.viewModel
+            self.navigationController?.pushViewController(vc, animated: true)
+            print("넘어가나?")
+        } else {
+            print("else")
+        }
+    }
+    
+    @objc func allButtonClicked(){
+        genderButtonActive(mainView.allButton)
+        genderButtonDeactive(mainView.manButton)
+        genderButtonDeactive(mainView.womanButton)
+    }
+    
+    @objc func manButtonClicked(){
+        genderButtonActive(mainView.manButton)
+        genderButtonDeactive(mainView.allButton)
+        genderButtonDeactive(mainView.womanButton)
+    }
+    
+    @objc func womanButtonClicked(){
+        genderButtonActive(mainView.womanButton)
+        genderButtonDeactive(mainView.allButton)
+        genderButtonDeactive(mainView.manButton)
     }
     
     @objc func myLocationClicked() {
         checkUserLocationServicesAithorization()
     }
     
+    func genderButtonActive(_ target: UIButton) {
+        target.backgroundColor = .customGreen
+        target.setTitleColor(.customWhite, for: .normal)
+    }
+    
+    func genderButtonDeactive(_ target: UIButton) {
+        target.backgroundColor = .customWhite
+        target.setTitleColor(.customBlack, for: .normal)
+    }
     
     //권한 비허용시 기본화면
     func defaultLocation() {

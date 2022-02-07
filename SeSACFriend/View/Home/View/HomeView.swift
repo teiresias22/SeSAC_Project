@@ -42,6 +42,7 @@ class HomeView: UIView, ViewRepresentable {
         view.spacing = 0
         view.alignment = .fill
         view.distribution = .fillEqually
+        view.layer.zPosition = 999
         
         return view
     }()
@@ -50,8 +51,7 @@ class HomeView: UIView, ViewRepresentable {
         let button = UIButton()
         button.setTitle("전체", for: .normal)
         button.titleLabel?.font = UIFont.Title3_M14
-        button.setTitleColor(.customWhite, for: .normal)
-        button.backgroundColor = .customGreen
+        button.setTitleColor(.customBlack, for: .normal)
         button.layer.cornerRadius = 8
         button.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         
@@ -111,7 +111,7 @@ class HomeView: UIView, ViewRepresentable {
     func setupView() {
         addSubview(mapView)
         mapView.addSubview(imageView)
-        addSubview(genderView)
+        mapView.addSubview(genderView)
         genderView.addSubview(genderStackView)
         genderStackView.addArrangedSubview(allButton)
         genderStackView.addArrangedSubview(manButton)

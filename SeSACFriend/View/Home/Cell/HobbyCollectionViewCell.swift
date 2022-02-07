@@ -9,8 +9,6 @@ import UIKit
 
 class HobbyCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "HobbyCollectionViewCell"
-    
     let textLabel: CustomLabel = {
         let label = CustomLabel()
         label.textColor = .error

@@ -21,9 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //LaunchScreenViewController
         //TabBarViewController
-        let vc = TabBarViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nav
+        
+        window?.rootViewController = TabBarViewController()
         window?.makeKeyAndVisible() // iOS13
     }
 

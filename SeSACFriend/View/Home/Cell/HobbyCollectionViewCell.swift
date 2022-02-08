@@ -38,7 +38,7 @@ class HobbyCollectionViewCell: UICollectionViewCell {
     
     func setConstraints() {
         textLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }

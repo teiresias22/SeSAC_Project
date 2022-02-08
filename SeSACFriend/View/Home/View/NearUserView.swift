@@ -13,7 +13,7 @@ class NearUserView: UIView, ViewRepresentable {
     let topStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
+        view.axis = .horizontal
         view.spacing = 0
         view.alignment = .fill
         view.distribution = .fillEqually
@@ -59,7 +59,9 @@ class NearUserView: UIView, ViewRepresentable {
         return view
     }()
     
-    let collectionView = UICollectionView()
+    let defaultView = CantFindUserView()
+    
+    let tableView = UITableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,10 +74,58 @@ class NearUserView: UIView, ViewRepresentable {
     }
     
     func setupView() {
+        addSubview(topStackView)
+        topStackView.addArrangedSubview(nearUserView)
+        nearUserView.addSubview(nearUserButton)
+        nearUserView.addSubview(nearUserBottomLine)
         
+        topStackView.addArrangedSubview(requestReceivedView)
+        requestReceivedView.addSubview(requestRecivedButton)
+        requestReceivedView.addSubview(requestRecivedBottomLine)
+        
+        addSubview(defaultView)
+        addSubview(tableView)
     }
     
     func setupConstraints() {
+        topStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(90)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(44)
+        }
         
+        nearUserButton.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(43)
+        }
+        
+        nearUserBottomLine.snp.makeConstraints { make in
+            make.top.equalTo(nearUserButton.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        requestRecivedButton.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(43)
+        }
+        
+        requestRecivedBottomLine.snp.makeConstraints { make in
+            make.top.equalTo(requestRecivedButton.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        defaultView.snp.makeConstraints { make in
+            make.top.equalTo(topStackView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(topStackView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(110)
+        }
     }
 }

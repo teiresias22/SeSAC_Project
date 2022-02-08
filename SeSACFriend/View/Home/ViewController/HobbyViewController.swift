@@ -32,6 +32,7 @@ class HobbyViewController: BaseViewController {
         
         configure()
         setSearchBar()
+        mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
     }
     
     override func configure() {
@@ -48,6 +49,12 @@ class HobbyViewController: BaseViewController {
         let searchBar = UISearchBar()
         searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
         self.navigationItem.titleView = searchBar
+    }
+    
+    @objc func submitButtonClicked() {
+        let vc = NearUserViewController()
+        vc.viewModel = self.viewModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -87,7 +94,6 @@ extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if collectionView == mainView.bottomColectionView {
             bottomTextArray.remove(at: indexPath.row)
             collectionView.reloadData()
@@ -99,6 +105,6 @@ extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        return 8
     }
 }

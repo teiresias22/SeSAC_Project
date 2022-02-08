@@ -51,7 +51,6 @@ class HomeViewController: BaseViewController {
             let vc = HobbyViewController()
             vc.viewModel = self.viewModel
             self.navigationController?.pushViewController(vc, animated: true)
-            print("넘어가나?")
         } else {
             print("else")
         }

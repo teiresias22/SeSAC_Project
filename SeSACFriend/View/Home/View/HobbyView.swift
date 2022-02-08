@@ -23,6 +23,11 @@ class HobbyView: UIView, ViewRepresentable {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+        
+        if let flowLayout = view.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         
         return view
     }()
@@ -40,6 +45,11 @@ class HobbyView: UIView, ViewRepresentable {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+        
+        if let flowLayout = view.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         return view
     }()
     
@@ -65,10 +75,9 @@ class HobbyView: UIView, ViewRepresentable {
     func setupView() {
         addSubview(topTitleLabel)
         addSubview(topColectionView)
-        
         addSubview(bottomTitleLabel)
         addSubview(bottomColectionView)
-        
+        addSubview(submitButton)
     }
     
     func setupConstraints() {
@@ -82,7 +91,7 @@ class HobbyView: UIView, ViewRepresentable {
         topColectionView.snp.makeConstraints { make in
             make.top.equalTo(topTitleLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(112)
+            make.height.equalTo(114)
         }
         
         bottomTitleLabel.snp.makeConstraints { make in
@@ -96,5 +105,33 @@ class HobbyView: UIView, ViewRepresentable {
             make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalTo(120)
         }
+        
+        submitButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(112)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(48)
+        }
+    }
+}
+
+class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
+    let cellSpacing: CGFloat = 8
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        self.minimumLineSpacing = 8.0
+        self.sectionInset = UIEdgeInsets(top: 5.0, left: 16.0, bottom: 5.0, right: 16.0)
+        let attributes = super.layoutAttributesForElements(in: rect)
+ 
+        var leftMargin = sectionInset.left
+        var maxY: CGFloat = -1.0
+        attributes?.forEach { layoutAttribute in
+            if layoutAttribute.frame.origin.y >= maxY {
+                leftMargin = sectionInset.left
+            }
+            layoutAttribute.frame.origin.x = leftMargin
+            leftMargin += layoutAttribute.frame.width + cellSpacing
+            maxY = max(layoutAttribute.frame.maxY, maxY)
+        }
+        return attributes
     }
 }

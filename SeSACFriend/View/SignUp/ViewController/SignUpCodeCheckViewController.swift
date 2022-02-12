@@ -91,7 +91,7 @@ class SignUpCodeCheckViewController: BaseViewController {
                 }
                 
                 //미가입 유저
-                case 201: self.toastMessage(message: "인증에 성공하였습니다.")
+                case 406: self.toastMessage(message: "인증에 성공하였습니다.")
                 let vc = SignUpNicknameViewController()
                 vc.viewModel = self.viewModel
                 self.navigationController?.pushViewController(vc, animated: true)

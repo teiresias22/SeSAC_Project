@@ -5,6 +5,12 @@
 //  Created by Joonhwan Jeon on 2022/02/05.
 //
 
+//Todo LIST
+//찾기 중단 버튼 클릭이벤트
+//요청하기, 수락하기 버튼 클릭이벤트
+//취미 변경하기, 새로고침 클릭 이벤트
+//서버통신
+
 import UIKit
 import FirebaseAuth
 

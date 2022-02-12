@@ -90,6 +90,13 @@
 		7590983427AE49EF0063E31B /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */; };
 		7590985227B26B7B0063E31B /* CantFindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590985127B26B7B0063E31B /* CantFindUserView.swift */; };
 		7590985427B27B1F0063E31B /* NearUserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590985327B27B1F0063E31B /* NearUserViewCell.swift */; };
+		7590986527B574A20063E31B /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590986427B574A10063E31B /* Enums.swift */; };
+		7590987027B6CC3D0063E31B /* QueueAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590986F27B6CC3D0063E31B /* QueueAPIService.swift */; };
+		7590987227B6CC930063E31B /* QueueEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987127B6CC930063E31B /* QueueEndpoint.swift */; };
+		7590987427B6CD640063E31B /* OnQueueResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987327B6CD640063E31B /* OnQueueResult.swift */; };
+		7590987C27B77B760063E31B /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987B27B77B750063E31B /* ChattingViewController.swift */; };
+		7590987E27B77BCB0063E31B /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987D27B77BCB0063E31B /* ChattingView.swift */; };
+		7590988027B7EB670063E31B /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987F27B7EB670063E31B /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +177,13 @@
 		7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
 		7590985127B26B7B0063E31B /* CantFindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantFindUserView.swift; sourceTree = "<group>"; };
 		7590985327B27B1F0063E31B /* NearUserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewCell.swift; sourceTree = "<group>"; };
+		7590986427B574A10063E31B /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		7590986F27B6CC3D0063E31B /* QueueAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueAPIService.swift; sourceTree = "<group>"; };
+		7590987127B6CC930063E31B /* QueueEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueEndpoint.swift; sourceTree = "<group>"; };
+		7590987327B6CD640063E31B /* OnQueueResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnQueueResult.swift; sourceTree = "<group>"; };
+		7590987B27B77B750063E31B /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		7590987D27B77BCB0063E31B /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
+		7590987F27B7EB670063E31B /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,10 +233,6 @@
 				75909746279517D80063E31B /* AppDelegate.swift */,
 				75909748279517D80063E31B /* SceneDelegate.swift */,
 				7590974A279517D80063E31B /* ViewController.swift */,
-				759097CD279FC6CB0063E31B /* OnboardingView.swift */,
-				759097CB279FC6C00063E31B /* OnboardingViewController.swift */,
-				759097D1279FD7260063E31B /* LaunchScreenView.swift */,
-				759097CF279FD1710063E31B /* LaunchScreenViewController.swift */,
 				759097B6279E512A0063E31B /* NotoSansKR-Medium.otf */,
 				759097B5279E512A0063E31B /* NotoSansKR-Regular.otf */,
 				7590974F279517D90063E31B /* Assets.xcassets */,
@@ -287,12 +297,16 @@
 			isa = PBXGroup;
 			children = (
 				759097942798DEBB0063E31B /* APIService.swift */,
+				7590986F27B6CC3D0063E31B /* QueueAPIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
+				7590987127B6CC930063E31B /* QueueEndpoint.swift */,
 				759097C2279EF7EB0063E31B /* UserInfo.swift */,
 				759097C8279F1D870063E31B /* Form.swift */,
 				759097D527A13D0E0063E31B /* AuthResponse.swift */,
+				7590987327B6CD640063E31B /* OnQueueResult.swift */,
 				759097852795B9830063E31B /* Observable.swift */,
 				759097D727A17CFF0063E31B /* UserDefault.swift */,
+				7590986427B574A10063E31B /* Enums.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -335,6 +349,8 @@
 				7590982A27AD92A00063E31B /* HobbyView.swift */,
 				7590982E27AD9EBB0063E31B /* NearUserView.swift */,
 				7590985127B26B7B0063E31B /* CantFindUserView.swift */,
+				7590987D27B77BCB0063E31B /* ChattingView.swift */,
+				7590987F27B7EB670063E31B /* CustomAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 				759097C6279EF83A0063E31B /* HomeViewController.swift */,
 				7590982C27AD92EA0063E31B /* HobbyViewController.swift */,
 				7590983027AD9F050063E31B /* NearUserViewController.swift */,
+				7590987B27B77B750063E31B /* ChattingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,13 +377,12 @@
 		759097DB27A295250063E31B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7590987527B6D2EA0063E31B /* Default */,
 				759097BD279EB0130063E31B /* SignUp */,
 				759097BE279EB0890063E31B /* Home */,
 				759097DE27A29A6D0063E31B /* Shop */,
 				759097DF27A29A7B0063E31B /* Friend */,
 				759097E027A29A840063E31B /* My */,
-				759097DC27A2953A0063E31B /* TabBarViewController.swift */,
-				7590977F27958E4A0063E31B /* BaseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -507,6 +523,35 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7590987527B6D2EA0063E31B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				7590987727B6D30A0063E31B /* ViewController */,
+				7590987627B6D2FE0063E31B /* View */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		7590987627B6D2FE0063E31B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				759097D1279FD7260063E31B /* LaunchScreenView.swift */,
+				759097CD279FC6CB0063E31B /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7590987727B6D30A0063E31B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7590977F27958E4A0063E31B /* BaseViewController.swift */,
+				759097DC27A2953A0063E31B /* TabBarViewController.swift */,
+				759097CF279FD1710063E31B /* LaunchScreenViewController.swift */,
+				759097CB279FC6C00063E31B /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,6 +647,8 @@
 				759097952798DEBB0063E31B /* APIService.swift in Sources */,
 				7590981B27A7CEB00063E31B /* CustomUserInfoReview.swift in Sources */,
 				759097C5279EF82B0063E31B /* HomeView.swift in Sources */,
+				7590987227B6CC930063E31B /* QueueEndpoint.swift in Sources */,
+				7590987427B6CD640063E31B /* OnQueueResult.swift in Sources */,
 				7590982327AB832A0063E31B /* CustomAlertView.swift in Sources */,
 				7590981F27A860880063E31B /* MyDetailBottomView.swift in Sources */,
 				7590980827A453C90063E31B /* MyDetailView.swift in Sources */,
@@ -630,11 +677,13 @@
 				7590980627A453B70063E31B /* MyDetailViewController.swift in Sources */,
 				759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */,
 				759097F527A2AC310063E31B /* FriendViewModel.swift in Sources */,
+				7590986527B574A20063E31B /* Enums.swift in Sources */,
 				7590978A279657550063E31B /* Color+Extention.swift in Sources */,
 				7590980C27A4DAEA0063E31B /* CustomCardImageView.swift in Sources */,
 				759097EF27A2AA4A0063E31B /* ShopViewModel.swift in Sources */,
 				759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */,
 				759097C7279EF83A0063E31B /* HomeViewController.swift in Sources */,
+				7590987C27B77B760063E31B /* ChattingViewController.swift in Sources */,
 				759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */,
 				7590981427A7CCEC0063E31B /* CustomUserInfoCell.swift in Sources */,
 				759097ED27A2A9B80063E31B /* ShopView.swift in Sources */,
@@ -650,6 +699,7 @@
 				7590982B27AD92A00063E31B /* HobbyView.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
 				7590985227B26B7B0063E31B /* CantFindUserView.swift in Sources */,
+				7590987E27B77BCB0063E31B /* ChattingView.swift in Sources */,
 				7590980027A3CD340063E31B /* MyProfileTableViewCell.swift in Sources */,
 				759097AC279DB5590063E31B /* SignUpGenderView.swift in Sources */,
 				759097AA279D8DBE0063E31B /* SignUpEmailView.swift in Sources */,
@@ -659,6 +709,7 @@
 				7590982127AB72CC0063E31B /* CustomAlertViewController.swift in Sources */,
 				7590983427AE49EF0063E31B /* HobbyCollectionViewCell.swift in Sources */,
 				7590982F27AD9EBB0063E31B /* NearUserView.swift in Sources */,
+				7590988027B7EB670063E31B /* CustomAnnotationView.swift in Sources */,
 				759097862795B9830063E31B /* Observable.swift in Sources */,
 				759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */,
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
@@ -667,6 +718,7 @@
 				759097F327A2ABEE0063E31B /* FriendView.swift in Sources */,
 				75909749279517D80063E31B /* SceneDelegate.swift in Sources */,
 				7590983127AD9F050063E31B /* NearUserViewController.swift in Sources */,
+				7590987027B6CC3D0063E31B /* QueueAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

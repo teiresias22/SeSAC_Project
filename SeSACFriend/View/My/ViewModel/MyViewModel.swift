@@ -14,8 +14,9 @@ class MyViewModel {
     
     var ageMin = Observable(0)
     var ageMax = Observable(0)
-    var searchable = Observable(0)
+    var searchable = Observable(1)
     var gender = Observable(-1)
+    var hobby = Observable("")
     
     var myInfoIconArray = [UIImage(named: "ic_notice"), UIImage(named: "ic_faq"), UIImage(named: "ic_qna"), UIImage(named: "ic_setting_alarm"), UIImage(named: "ic_permit")]
     
@@ -26,20 +27,19 @@ class MyViewModel {
         ageMax.value = userInfo.value.ageMax
         searchable.value = userInfo.value.searchable
         gender.value = userInfo.value.gender
+        hobby.value = userInfo.value.hobby
     }
     
     func getUserInfo(completion: @escaping (UserInfo?, Int?, Error?) -> Void) {
-            APISevice.getUserInfo(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { userInfo, statuscode, error  in
-             
-                guard let userInfo = userInfo else {
-                    return
-                }
-                self.userInfo.value = userInfo
-                
-                completion(userInfo,statuscode,error)
+        APISevice.getUserInfo(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { userInfo, statuscode, error  in
+            guard let userInfo = userInfo else {
+                return
             }
+            self.userInfo.value = userInfo
             
+            completion(userInfo,statuscode,error)
         }
+    }
     
     func updateMypage(form: UpdateUserInfoForm, completion: @escaping (Int?) -> Void) {
         APISevice.updateUserInfo(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, form: form) { statuscode in

@@ -11,5 +11,6 @@ enum UserDefault: String {
     case isOnboarding = "isOnboarding"
     case idToken = "idToken"
     case FCMToken = "FCMToken"
+    case myStatus = "myStatus"
     
 }

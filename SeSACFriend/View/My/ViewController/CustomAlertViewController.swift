@@ -33,12 +33,35 @@ class CustomAlertViewController: BaseViewController {
         dismiss(animated: false, completion: nil)
     }
     
-    @objc func submitButtonClicked() {        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SignUpViewController())
-            windowScene.windows.first?.makeKeyAndVisible()
+    @objc func submitButtonClicked() {
+        APISevice.widthdrawUserInfo(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { statuscode, error in
+            switch statuscode {
+            case UserStatusCodeCase.success.rawValue, UserStatusCodeCase.unAuthorized.rawValue:
+                if statuscode == UserStatusCodeCase.success.rawValue {
+                    self.toastMessage(message: "회원탈퇴에 성공했습니다.")
+                } else {
+                    self.toastMessage(message: "이미 탈퇴 처리된 회원입니다.")
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = OnboardingViewController()
+                    windowScene.windows.first?.makeKeyAndVisible()
+                    UIView.transition(with: windowScene.windows.first!, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+                }
+                
+            case UserStatusCodeCase.firebaseTokenError.rawValue:
+                self.refreshFirebaseIdToken { idToken, error in
+                    if let idToken = idToken {
+                        self.submitButtonClicked()
+                    }
+                }
+                
+            case UserStatusCodeCase.serverError.rawValue:
+                self.toastMessage(message: "잠시 후 다시 시도해주세요.")
+                
+            default:
+                self.toastMessage(message: "잠시 후 다시 시도해주세요.")
+            }
         }
     }
 }

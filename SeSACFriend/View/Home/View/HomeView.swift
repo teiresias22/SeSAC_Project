@@ -10,7 +10,6 @@ import MapKit
 import SnapKit
 
 class HomeView: UIView, ViewRepresentable {
-    
     let mapView: MKMapView = {
         let view = MKMapView()
         view.mapType = .standard
@@ -23,6 +22,7 @@ class HomeView: UIView, ViewRepresentable {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "map_marker")
+        view.isHidden = true
         
         return view
     }()
@@ -42,7 +42,6 @@ class HomeView: UIView, ViewRepresentable {
         view.spacing = 0
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.layer.zPosition = 999
         
         return view
     }()
@@ -129,7 +128,7 @@ class HomeView: UIView, ViewRepresentable {
         
         imageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.width.height.equalTo(48)
+            make.width.height.equalTo(35)
         }
         
         genderView.snp.makeConstraints { make in

@@ -104,6 +104,7 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let allowSearchSwitch: UISwitch = {
         let searchSwitch = UISwitch()
+        searchSwitch.isOn = false
         searchSwitch.thumbTintColor = .customWhite
         searchSwitch.onTintColor = .customGreen
         
@@ -142,12 +143,13 @@ class MyDetailBottomView: UIView, ViewRepresentable {
     
     let ageSlider: UISlider = {
         let slider = UISlider()
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.isContinuous = false
-        slider.thumbTintColor = .customGreen
-        slider.value = 18
         slider.maximumValue = 60
         slider.minimumValue = 18
+        slider.thumbTintColor = .customGreen
+        slider.maximumTrackTintColor = .customGreen
+        slider.minimumTrackTintColor = .customGreen
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.isContinuous = false
         
         return slider
     }()

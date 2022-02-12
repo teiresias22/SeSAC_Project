@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
@@ -41,5 +42,21 @@ class BaseViewController: UIViewController {
         self.view.addSubview(toastLabel)
         UIView.animate(withDuration: 2.0, delay: 1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
     }
+    
+    func refreshFirebaseIdToken(completion: @escaping (String?, Error?) -> Void) {
+        Auth.auth().currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+            if let error = error {
+                self.toastMessage(message: "에러가 발생했습니다. 잠시 후 다시 시도해주세요.")
+                completion(nil, error)
+                return
+            }
 
+            if let idToken = idToken {
+                UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
+                completion(idToken,nil)
+                
+            }
+        }
+    }
+    
 }

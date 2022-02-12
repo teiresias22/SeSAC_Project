@@ -9,6 +9,30 @@ import UIKit
 import SnapKit
 
 class HobbyView: UIView, ViewRepresentable {
+    let topStackView: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.spacing = 8
+        view.alignment = .fill
+        view.distribution = .fill
+        
+        return view
+    }()
+    
+    let backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "ic_arrow"), for: .normal)
+        
+        return button
+    }()
+    
+    let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
+        
+        return searchBar
+    }()
     
     let topTitleLabel: UILabel = {
         let label = UILabel()
@@ -73,6 +97,9 @@ class HobbyView: UIView, ViewRepresentable {
     }
     
     func setupView() {
+        addSubview(topStackView)
+        topStackView.addArrangedSubview(backButton)
+        topStackView.addArrangedSubview(searchBar)
         addSubview(topTitleLabel)
         addSubview(topColectionView)
         addSubview(bottomTitleLabel)
@@ -81,9 +108,19 @@ class HobbyView: UIView, ViewRepresentable {
     }
     
     func setupConstraints() {
+        topStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(50)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(36)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+            make.centerY.equalToSuperview()
+        }
         
         topTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(122)
+            make.top.equalTo(topStackView.snp.bottom).offset(32)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(22)
         }
@@ -107,7 +144,7 @@ class HobbyView: UIView, ViewRepresentable {
         }
         
         submitButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(112)
+            make.bottom.equalToSuperview().inset(50)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(48)
         }

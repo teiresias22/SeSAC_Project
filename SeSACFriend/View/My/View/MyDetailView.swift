@@ -28,8 +28,6 @@ class MyDetailView: UIView, ViewRepresentable {
         return button
     }()
     
-    var isOpen = false
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()

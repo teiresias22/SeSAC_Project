@@ -6,12 +6,6 @@
 //
 
 //Todo
-//유저 정보를 가져와야 함
-//Get을 사용해서 유저 정보를 가져와야 이름과 설정을 가져올텐데
-//요거는 조금만 더 공부해서 적용하도록 하자
-//목표는 설 연휴 끝나기 전까지!!!!
-
-//어째 네비게이션바가 두개가 중복된것 같다?? 뭐가 어디서부터 잘못 된걸까??
 
 import UIKit
 import FirebaseAuth
@@ -39,6 +33,9 @@ class MyViewController: BaseViewController {
         mainView.tableView.register(MyProfileTableViewCell.self, forCellReuseIdentifier: MyProfileTableViewCell.identifier)
         mainView.tableView.register(MyMenuTableViewCell.self, forCellReuseIdentifier: MyMenuTableViewCell.identifier)
         
+        viewModel.userInfo.bind { UserInfo in
+            self.mainView.tableView.reloadData()
+        }
     }
 }
 

@@ -14,25 +14,21 @@ class HobbyViewController: BaseViewController {
     
     private let HobbyViewControllerCellId = "HobbyViewControllerCellId"
     
-    var systemRecomend: Array<String> = ["아무거나", "SeSAC", "코딩"]
-    var otherUserRecomend: Array<String> = ["맛집탐방", "공원산책", "독서모임", "다육이", "쓰레기줍기"]
-    
-    var topTextArray: Array<String> = []
-    var bottomTextArray: Array<String> = ["코딩", "클라이밍", "달리기", "자전거", "사진", "필름카메라", "전시관람", "게임"]
+    var recomendHobbyArray: Array<String> = []
+    var myHobbyArray: Array<String> = []
+    var newHobbyArray: Array<String> = []
     
     override func loadView() {
         self.view = mainView
-        
-        topTextArray += systemRecomend
-        topTextArray += otherUserRecomend
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
-        setSearchBar()
+        mainView.backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
+        mainView.searchBar.searchTextField.addTarget(self, action: #selector(searchTextFieldEditingChanged), for: .editingChanged)
     }
     
     override func configure() {
@@ -45,10 +41,17 @@ class HobbyViewController: BaseViewController {
         mainView.bottomColectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyViewControllerCellId)
     }
     
-    func setSearchBar() {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
-        self.navigationItem.titleView = searchBar
+    @objc func backButtonClicked() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func searchTextFieldEditingChanged(){
+        myHobbyArray = mainView.searchBar.searchTextField.text?.components(separatedBy: " ").filter({ text in
+            text.count > 0
+        }) ?? []
+        print(myHobbyArray)
+        print(newHobbyArray)
+        checkMyHobbyValidation(newHobbys: newHobbyArray)
     }
     
     @objc func submitButtonClicked() {
@@ -57,22 +60,39 @@ class HobbyViewController: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func checkMyHobbyValidation(newHobbys: [String]) -> Bool {
+        if myHobbyArray.count + newHobbyArray.count  > 8 {
+            toastMessage(message: "취미를 더 추가할 수 없습니다.")
+            return false
+        }
+        
+        for hobby in newHobbyArray {
+            if hobby.count > 8 {
+                toastMessage(message: "취미는 최대 8자까지 가능합니다.")
+            }
+        }
+        return true
+    }
+    
+    
+    
+    
 }
 
 extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainView.topColectionView {
-            return topTextArray.count
+            return recomendHobbyArray.count
         } else {
-            return bottomTextArray.count
+            return myHobbyArray.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainView.topColectionView {
             guard let item = mainView.topColectionView.dequeueReusableCell(withReuseIdentifier: HobbyViewControllerCellId, for: indexPath) as? HobbyCollectionViewCell else { return UICollectionViewCell() }
-            item.textLabel.text = topTextArray[indexPath.row]
+            item.textLabel.text = recomendHobbyArray[indexPath.row]
             
             if indexPath.row < 3 {
                 item.textLabel.textColor = .error
@@ -85,7 +105,7 @@ extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDeleg
             return item
         } else {
             guard let item = mainView.bottomColectionView.dequeueReusableCell(withReuseIdentifier: HobbyViewControllerCellId, for: indexPath) as? HobbyCollectionViewCell else { return UICollectionViewCell() }
-            item.textLabel.text = bottomTextArray[indexPath.row]
+            item.textLabel.text = myHobbyArray[indexPath.row]
             item.textLabel.textColor = .customGreen
             item.textLabel.layer.borderColor = UIColor.customGreen?.cgColor
             
@@ -95,7 +115,7 @@ extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainView.bottomColectionView {
-            bottomTextArray.remove(at: indexPath.row)
+            myHobbyArray.remove(at: indexPath.row)
             collectionView.reloadData()
         }
     }

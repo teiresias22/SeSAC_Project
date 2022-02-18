@@ -33,7 +33,7 @@ class MyDetailViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { // [weak self]클로저 캡쳐리스트
             self.viewModel.getUserInfo { userInfo, status, error in
                 guard let userInfo = userInfo else {
                     return
@@ -176,10 +176,11 @@ extension MyDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomUserInfoCell.identifier) as? CustomUserInfoCell else { return UITableViewCell() }
         
+        cell.customUserInfoHobby.isHidden = true
+        
         if isOpen {
-            cell.customUserInfoTitle.isHidden = false
-            cell.customUserInfoHobby.isHidden = true
-            cell.customUserInfoReview.isHidden = false
+            cell.customUserInfoTitle.isHidden = isOpen
+            cell.customUserInfoReview.isHidden = isOpen
             
             DispatchQueue.main.async {
                 cell.customUserInfoHobby.snp.makeConstraints { make in

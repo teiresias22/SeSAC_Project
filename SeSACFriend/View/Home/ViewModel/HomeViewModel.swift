@@ -26,7 +26,7 @@ class HomeViewModel {
     
     var fromRecommendHobby: Observable<[String]> = Observable([])
     var fromNearFriendsHobby: Observable<[String]> = Observable([])
-    var myFavoriteHobby: Observable<[String]> = Observable([])
+    var fromMyHobby: Observable<[String]> = Observable([])
 
     func searchNearFriends(form: OnQueueForm, completion: @escaping (OnQueueResult?, Int?, Error?) -> Void) {
             QueueAPIService.onQueue(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, form: form) { onqueueResult, statuscode, error in

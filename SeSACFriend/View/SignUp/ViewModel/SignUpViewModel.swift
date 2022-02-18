@@ -5,6 +5,8 @@
 //  Created by Joonhwan Jeon on 2022/01/17.
 //
 
+//로직 > 비즈니스 로직(연산, 통신)회원가입 등등 ViewModel UIKit이 필요 없음 // UI 로직 (화면 전환) ViewController
+
 import Firebase
 
 class SignUpViewModel {
@@ -69,11 +71,8 @@ class SignUpViewModel {
         }
     }
     
-    
     func signUpUserInfo(completion: @escaping (Int?, Error?) -> Void) {
         let form = SignUpForm(phoneNumber: "+82" + requestNumber.value, FCMtoken: fcmToken, nick: nickName.value, email: email.value, birth: birthDay.value, gender: gender.value)
-        
-        //print("form", form)
         
         APISevice.signUpUserInfo(idToken: idToken, form: form) { statuscode, error in
             completion(statuscode, error)

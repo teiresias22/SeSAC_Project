@@ -25,6 +25,8 @@ class LaunchScreenViewController: BaseViewController {
             }
 
             if let idToken = idToken {
+                //PropertyWraooer -> example 추후에 적용할것, 요즘 많이 사용함
+                //UserDefaults.standard.set(idToken, forKey
                 UserDefaults.standard.set(idToken, forKey: UserDefault.idToken.rawValue)
             }
         }

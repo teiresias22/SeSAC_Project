@@ -29,11 +29,14 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.async {
-            self.viewModel.getUserInfo { userInfo, statuscode, error in
-                guard let userInfo = userInfo else {
-                    return
-                }
+        checkMyStatus()
+        searchFriends()
+        
+        self.viewModel.getUserInfo { userInfo, statuscode, error in
+            guard let userInfo = userInfo else {
+                return
+            }
+            DispatchQueue.main.async {
                 if userInfo.fcMtoken != UserDefaults.standard.string(forKey: UserDefault.FCMToken.rawValue) {
                     self.updateFCMToken(newFCMToken: UserDefaults.standard.string(forKey: UserDefault.FCMToken.rawValue)!)
                 }
@@ -103,22 +106,26 @@ class HomeViewController: BaseViewController {
         genderButtonActive(mainView.allButton)
         genderButtonDeactive(mainView.manButton)
         genderButtonDeactive(mainView.womanButton)
+        searchFriends()
     }
     
     @objc func manButtonClicked(){
         genderButtonActive(mainView.manButton)
         genderButtonDeactive(mainView.allButton)
         genderButtonDeactive(mainView.womanButton)
+        searchFriends()
     }
     
     @objc func womanButtonClicked(){
         genderButtonActive(mainView.womanButton)
         genderButtonDeactive(mainView.allButton)
         genderButtonDeactive(mainView.manButton)
+        searchFriends()
     }
     
     @objc func myLocationClicked() {
         checkUserLocationServicesAithorization()
+        searchFriends()
     }
     
     func genderButtonActive(_ target: UIButton) {
@@ -133,6 +140,8 @@ class HomeViewController: BaseViewController {
     
     //토큰 갱신은 여러 페이지에서 해야하는 작업이니까 BaseViewController에서 처리할수는 없을까?
     //그런데 BaseViewController에서 업데이트하는 ViewModel.getUserInfo는 각각의 ViewController마다 다른데 어떻게 처리해줘야 딱 깔쌈하게 적용이 되려나??
+    //BaseVC에 별도의 VM을 연결해서 사용하면 된다. 추후에 업데이트 할것!!
+    
     func updateFCMToken(newFCMToken: String) {
         APISevice.updateFCMToken(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, fcmToken: newFCMToken) { statuscode in
             switch statuscode {
@@ -155,7 +164,7 @@ class HomeViewController: BaseViewController {
         viewModel.myStatus.value = myStatus
     }
     
-    // MARK: MapKit 설정 정리
+    // MARK: MapKit 관련 설정
     func setLocation(){
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

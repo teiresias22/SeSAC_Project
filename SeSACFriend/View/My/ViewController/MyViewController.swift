@@ -16,12 +16,6 @@ class MyViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
-        
-        DispatchQueue.main.async {
-            self.viewModel.getUserInfo { userInfo, status, error in
-                
-            }
-        }
     }
     
     override func viewDidLoad() {
@@ -32,6 +26,12 @@ class MyViewController: BaseViewController {
         mainView.tableView.dataSource = self
         mainView.tableView.register(MyProfileTableViewCell.self, forCellReuseIdentifier: MyProfileTableViewCell.identifier)
         mainView.tableView.register(MyMenuTableViewCell.self, forCellReuseIdentifier: MyMenuTableViewCell.identifier)
+        
+        DispatchQueue.main.async {
+            self.viewModel.getUserInfo { userInfo, status, error in
+                //어짜피 글로벌로 돌기 때문에 Main async가 의미가 없고 Complecion만 Main Async 적용하는게 좋아보임
+            }
+        }
         
         viewModel.userInfo.bind { UserInfo in
             self.mainView.tableView.reloadData()

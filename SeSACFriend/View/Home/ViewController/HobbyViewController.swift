@@ -29,6 +29,9 @@ class HobbyViewController: BaseViewController {
         mainView.backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
         mainView.searchBar.searchTextField.addTarget(self, action: #selector(searchTextFieldEditingChanged), for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: self.view.window)
     }
     
     override func configure() {
@@ -49,8 +52,8 @@ class HobbyViewController: BaseViewController {
         myHobbyArray = mainView.searchBar.searchTextField.text?.components(separatedBy: " ").filter({ text in
             text.count > 0
         }) ?? []
-        print(myHobbyArray)
-        print(newHobbyArray)
+        print("myHobbyArray",myHobbyArray)
+        print("newHobbyArray",newHobbyArray)
         checkMyHobbyValidation(newHobbys: newHobbyArray)
     }
     
@@ -59,6 +62,27 @@ class HobbyViewController: BaseViewController {
         vc.viewModel = self.viewModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            DispatchQueue.main.async {
+                self.mainView.submitButton.snp.makeConstraints { make in
+                    make.bottom.equalToSuperview().inset(keyboardSize.height)
+                    make.leading.trailing.equalToSuperview()
+                }
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        DispatchQueue.main.async {
+            self.mainView.submitButton.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().inset(50)
+                make.leading.trailing.equalToSuperview().inset(16)
+            }
+        }
+    }
+    
     
     func checkMyHobbyValidation(newHobbys: [String]) -> Bool {
         if myHobbyArray.count + newHobbyArray.count  > 8 {
@@ -80,12 +104,11 @@ class HobbyViewController: BaseViewController {
 }
 
 extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainView.topColectionView {
-            return recomendHobbyArray.count
+            return viewModel.fromRecommendHobby.value.count
         } else {
-            return myHobbyArray.count
+            return viewModel.fromMyHobby.value.count ?? 0
         }
     }
     
@@ -105,7 +128,7 @@ extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDeleg
             return item
         } else {
             guard let item = mainView.bottomColectionView.dequeueReusableCell(withReuseIdentifier: HobbyViewControllerCellId, for: indexPath) as? HobbyCollectionViewCell else { return UICollectionViewCell() }
-            item.textLabel.text = myHobbyArray[indexPath.row]
+            item.textLabel.text = viewModel.fromMyHobby.value[indexPath.row]
             item.textLabel.textColor = .customGreen
             item.textLabel.layer.borderColor = UIColor.customGreen?.cgColor
             

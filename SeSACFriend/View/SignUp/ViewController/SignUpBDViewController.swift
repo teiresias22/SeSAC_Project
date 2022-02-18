@@ -15,7 +15,6 @@ class SignUpBDViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
-        
     }
     
     override func viewDidLoad() {

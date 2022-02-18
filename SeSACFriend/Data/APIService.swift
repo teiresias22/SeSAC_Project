@@ -8,7 +8,7 @@
 //ApiService도 사용 요소별로 
 
 import Foundation
-import Alamofire
+import Alamofire // URLSession > Global 
 import SwiftyJSON
 
 class APISevice {

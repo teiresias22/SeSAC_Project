@@ -118,6 +118,7 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
     }
 }
 
+//나중에 최적화 재사용 할것
 class ViewController1: UIViewController {
     
     override func loadView() {

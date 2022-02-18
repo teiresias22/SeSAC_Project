@@ -10,6 +10,12 @@ import Foundation
 enum QueueEndPoint {
     case onQueue
     case postQueue
+    case deleteQueue
+    case hobbyRequest
+    case hobbyAccept
+    case myQueueState
+    case writeReview(id: String)
+    case dodge
     
 }
 
@@ -18,8 +24,19 @@ extension QueueEndPoint {
         switch self {
         case .onQueue:
             return .makeQueueEndPoint("onqueue")
-        case .postQueue:
+        case .postQueue, .deleteQueue:
             return .makeQueueEndPoint("")
+        case .hobbyRequest:
+            return .makeQueueEndPoint("hobbyrequest")
+        case .hobbyAccept:
+            return .makeQueueEndPoint("hobbyaccept")
+        case .myQueueState:
+            return .makeQueueEndPoint("myQueueState")
+        case .writeReview(id: let id):
+            return .makeQueueEndPoint("rate/\(id)")
+        case .dodge:
+            return .makeQueueEndPoint("dodge")
+
         }
     }
 }

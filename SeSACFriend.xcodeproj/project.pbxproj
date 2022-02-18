@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75429D8527BFD30900BADA9E /* QueueStateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75429D8427BFD30900BADA9E /* QueueStateResult.swift */; };
 		75909747279517D80063E31B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909746279517D80063E31B /* AppDelegate.swift */; };
 		75909749279517D80063E31B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75909748279517D80063E31B /* SceneDelegate.swift */; };
 		7590974B279517D80063E31B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590974A279517D80063E31B /* ViewController.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75429D8427BFD30900BADA9E /* QueueStateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStateResult.swift; sourceTree = "<group>"; };
 		75909743279517D80063E31B /* SeSACFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75909746279517D80063E31B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75909748279517D80063E31B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				759097C2279EF7EB0063E31B /* UserInfo.swift */,
 				759097C8279F1D870063E31B /* Form.swift */,
 				759097D527A13D0E0063E31B /* AuthResponse.swift */,
+				75429D8427BFD30900BADA9E /* QueueStateResult.swift */,
 				7590987327B6CD640063E31B /* OnQueueResult.swift */,
 				759097852795B9830063E31B /* Observable.swift */,
 				759097D727A17CFF0063E31B /* UserDefault.swift */,
@@ -697,6 +700,7 @@
 				759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */,
 				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,
 				7590982B27AD92A00063E31B /* HobbyView.swift in Sources */,
+				75429D8527BFD30900BADA9E /* QueueStateResult.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
 				7590985227B26B7B0063E31B /* CantFindUserView.swift in Sources */,
 				7590987E27B77BCB0063E31B /* ChattingView.swift in Sources */,

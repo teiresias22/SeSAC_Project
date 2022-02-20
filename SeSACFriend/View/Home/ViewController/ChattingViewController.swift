@@ -20,6 +20,7 @@ class ChattingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
     }
     
 }

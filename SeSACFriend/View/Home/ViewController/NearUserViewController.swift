@@ -24,23 +24,16 @@ class NearUserViewController: BaseViewController {
     var requestUser = 1
     
     var nowDisplay = true
-    
-    var barButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "찾기중단", style: .plain, target: self, action: #selector(barButtonClicked))
-        button.tintColor = .customBlack
-        
-        return button
-    }()
 
     override func loadView() {
         self.view = mainView
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "새싹찾기"
-        self.navigationItem.rightBarButtonItem = self.barButton
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         initRefresh()
         

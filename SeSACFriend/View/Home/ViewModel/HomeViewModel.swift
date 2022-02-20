@@ -28,7 +28,7 @@ class HomeViewModel {
     
     var fromRecommendHobby: Observable<[String]> = Observable([])
     var fromNearFriendsHobby: Observable<[String]> = Observable([])
-    var fromMyHobby: Observable<[String]> = Observable([])
+    var fromMyHobby: Observable<[String]> = Observable([""])
 
     func searchNearFriends(form: OnQueueForm, completion: @escaping (OnQueueResult?, Int?, Error?) -> Void) {
         QueueAPIService.onQueue(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, form: form) { onqueueResult, statuscode, error in
@@ -92,69 +92,63 @@ class HomeViewModel {
     }
     
     func deleteQueue(completion: @escaping (Int?, Error?) -> Void) {
-        QueueAPIService.deleteQueue(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!) { statuscode, error in
+        QueueAPIService.deleteQueue(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { statuscode, error in
             
             guard let statuscode = statuscode else {
                 return
             }
-            
             completion(statuscode, error)
         }
         
     }
     
     func hobbyRequest(otheruid: String, completion: @escaping (Int?, Error?) -> Void) {
-        QueueAPIService.hobbyRequest(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
+        QueueAPIService.hobbyRequest(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
             
             guard let statuscode = statuscode else {
                 return
             }
-            
             completion(statuscode, error)
         }
     }
     
     func hobbyAccept(otheruid: String, completion: @escaping (Int?, Error?) -> Void) {
-        QueueAPIService.hobbyAccept(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
+        QueueAPIService.hobbyAccept(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
             
             guard let statuscode = statuscode else {
                 return
             }
-
             completion(statuscode, error)
         }
     }
     
-    func checkMyQueueStatus(completion: @escaping (MyQueueStateResult?, Int?, Error?) -> Void) {
+    func checkMyQueueStatus(completion: @escaping (QueueStateResult?, Int?, Error?) -> Void) {
         
-        QueueAPIService.checkMyQueueStatus(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!) { myQueueState, statuscode, error in
+        QueueAPIService.checkMyQueueStatus(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { myQueueState, statuscode, error in
             
             guard let myQueueState = myQueueState else {
                 return
             }
-            
             completion(myQueueState, statuscode, error)
         }
     }
     
     func writeReview(form: WriteReviewFrom, completion: @escaping (Int?, Error?) -> Void) {
-        QueueAPIService.writeReview(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!, form: form) { statuscode, error in
+        QueueAPIService.writeReview(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, form: form) { statuscode, error in
             
             guard let statuscode = statuscode else {
                 return
             }
-
             completion(statuscode, error)
         }
     }
     
     func dodgeMatching(otheruid: String, completion: @escaping (Int?, Error?) -> Void) {
-        QueueAPIService.dodgeMatching(idToken: UserDefaults.standard.string(forKey: UserDefaultKeys.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
+        QueueAPIService.dodgeMatching(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, otheruid: otheruid) { statuscode, error in
             
             guard let statuscode = statuscode else {
                 return
             }
-
             completion(statuscode, error)
         }
     }

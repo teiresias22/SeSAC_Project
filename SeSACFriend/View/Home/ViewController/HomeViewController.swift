@@ -61,6 +61,8 @@ class HomeViewController: BaseViewController {
         setLocation()
         genderButtonActive(mainView.allButton)
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: mTimer, userInfo: nil, repeats: true)
         
         mainView.allButton.addTarget(self, action: #selector(allButtonClicked), for: .touchUpInside)

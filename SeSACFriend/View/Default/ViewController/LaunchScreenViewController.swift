@@ -20,7 +20,7 @@ class LaunchScreenViewController: BaseViewController {
         
         Auth.auth().currentUser?.getIDToken { idToken, error in
             if let error = error {
-                //print(error)
+                print("getIDTokenError", error)
                 return
             }
 

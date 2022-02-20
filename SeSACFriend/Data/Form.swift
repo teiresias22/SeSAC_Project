@@ -34,3 +34,9 @@ struct PostQueueForm: Encodable {
     let long: Double
     let hf: [String]
 }
+
+struct WriteReviewFrom: Encodable {
+    let otheruid: String
+    let reputation: [Int]
+    let comment: String
+}

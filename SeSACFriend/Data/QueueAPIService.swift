@@ -20,8 +20,6 @@ class QueueAPIService {
         
         AF.request(QueueEndPoint.onQueue.url.absoluteString, method: .post, parameters: parameters, headers: headers).responseDecodable(of: OnQueueResult.self) { response in
             
-            print(response)
-            
             let statusCode = response.response?.statusCode
             
             switch response.result {

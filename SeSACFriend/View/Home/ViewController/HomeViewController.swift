@@ -88,17 +88,20 @@ class HomeViewController: BaseViewController {
             switch viewModel.myStatus.value {
             case MyStatusCase.matching.rawValue :
                 let vc = NearUserViewController()
+                vc.viewModel = viewModel
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
                 
             case MyStatusCase.matched.rawValue :
                 let vc = ChattingViewController()
+                vc.viewModel = viewModel
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
                 
             default:
                 let vc = HobbyViewController()
                 vc.modalPresentationStyle = .fullScreen
+                vc.viewModel = viewModel
                 self.present(vc, animated: true, completion: nil)
             }
         }
@@ -142,7 +145,7 @@ class HomeViewController: BaseViewController {
     
     //토큰 갱신은 여러 페이지에서 해야하는 작업이니까 BaseViewController에서 처리할수는 없을까?
     //그런데 BaseViewController에서 업데이트하는 ViewModel.getUserInfo는 각각의 ViewController마다 다른데 어떻게 처리해줘야 딱 깔쌈하게 적용이 되려나??
-    //BaseVC에 별도의 VM을 연결해서 사용하면 된다. 추후에 업데이트 할것!!
+    //MARK: BaseVC에 별도의 VM을 연결해서 사용하면 된다. 추후에 업데이트 할것!!
     
     func updateFCMToken(newFCMToken: String) {
         APISevice.updateFCMToken(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!, fcmToken: newFCMToken) { statuscode in
@@ -177,7 +180,7 @@ class HomeViewController: BaseViewController {
         mainView.mapView.showsUserLocation = true
     }
     
-    func searchFriends() {
+    func searchFriends() {        
         let form = OnQueueForm(region: viewModel.centerRegion.value, lat: viewModel.centerLatitude.value, long: viewModel.centerLongitude.value)
         viewModel.searchNearFriends(form: form) { onqueueResult, statuscode, error in
             switch statuscode {

@@ -52,6 +52,7 @@ class HobbyViewController: BaseViewController {
         myHobby = mainView.searchBar.searchTextField.text?.components(separatedBy: " ").filter({ text in
             text.count > 0
         }) ?? []
+        
         print("myHobby",myHobby)
         print("newHobby",newHobby)
         checkMyHobbyValidation(newHobbys: newHobby)
@@ -88,16 +89,17 @@ class HobbyViewController: BaseViewController {
             toastMessage(message: "취미를 더 추가할 수 없습니다.")
             return false
         }
-        
         for hobby in newHobbys {
             if hobby.count > 8 {
                 toastMessage(message: "취미는 최대 8자까지 가능합니다.")
+                return false
             }
         }
         return true
     }
 }
 
+//MARK: CollectionView Set
 extension HobbyViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainView.topColectionView {

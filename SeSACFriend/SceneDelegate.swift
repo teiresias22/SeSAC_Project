@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //LaunchScreenViewController
         //TabBarViewController
         
-        window?.rootViewController = TabBarViewController()
+        window?.rootViewController = LaunchScreenViewController()
         window?.makeKeyAndVisible() // iOS13
     }
 

@@ -128,7 +128,7 @@ class HobbyView: UIView, ViewRepresentable {
         topColectionView.snp.makeConstraints { make in
             make.top.equalTo(topTitleLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(114)
+            make.height.equalTo(164)
         }
         
         bottomTitleLabel.snp.makeConstraints { make in

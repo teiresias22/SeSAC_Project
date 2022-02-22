@@ -43,6 +43,62 @@ enum OnQueueStatusCodeCase: Int {
     case clientError = 501
 }
 
+enum MyQueueStatusCodeCase: Int {
+    case success = 200
+    case matchingCanceled = 201
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum ReportOtherStatusCodeCase: Int {
+    case success = 200
+    case reported = 201
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum DodgeStatusCodeCase: Int {
+    case success = 200
+    case wrongOtherUid = 201
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum RateStatusCodeCase: Int {
+    case success = 200
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum HobbyRequestStatusCodeCase: Int {
+    case success = 200
+    case alreadyRecievedRequest = 201
+    case canceledMatcting = 202
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum HobbyAcceptStatusCodeCase: Int {
+    case success = 200
+    case alreadyMatched = 201
+    case canceledMatcting = 202
+    case alreadyMatcting = 203
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
 enum MyStatusCase: Int {
     case normal = 0
     case matching = 1

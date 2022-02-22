@@ -123,7 +123,6 @@ class HomeViewModel {
     }
     
     func checkMyQueueStatus(completion: @escaping (QueueStateResult?, Int?, Error?) -> Void) {
-        
         QueueAPIService.checkMyQueueStatus(idToken: UserDefaults.standard.string(forKey: UserDefault.idToken.rawValue)!) { myQueueState, statuscode, error in
             
             guard let myQueueState = myQueueState else {

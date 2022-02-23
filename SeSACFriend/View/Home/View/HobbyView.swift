@@ -58,7 +58,7 @@ class HobbyView: UIView, ViewRepresentable {
     
     let bottomTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "지금 주변에는"
+        label.text = "내가 하고 싶은"
         label.font = UIFont.Title6_R12
         label.textColor = .customBlack
         

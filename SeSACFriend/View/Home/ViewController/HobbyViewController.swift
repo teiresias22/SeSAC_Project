@@ -30,8 +30,8 @@ class HobbyViewController: BaseViewController {
         mainView.submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
         mainView.searchBar.searchTextField.addTarget(self, action: #selector(searchTextFieldEditingChanged), for: .editingChanged)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: self.view.window)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardDidShowNotification, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardDidHideNotification, object: self.view.window)
     }
     
     func setCollectionView() {
@@ -49,19 +49,17 @@ class HobbyViewController: BaseViewController {
     }
     
     @objc func searchTextFieldEditingChanged(){
-        myHobby = mainView.searchBar.searchTextField.text?.components(separatedBy: " ").filter({ text in
+        newHobby = mainView.searchBar.searchTextField.text?.components(separatedBy: " ").filter({ text in
             text.count > 0
         }) ?? []
-        
-        print("myHobby",myHobby)
-        print("newHobby",newHobby)
         checkMyHobbyValidation(newHobbys: newHobby)
+        viewModel.fromMyHobby.value = newHobby
     }
     
     @objc func submitButtonClicked() {
         mainView.searchBar.searchTextField.endEditing(true)
         
-        if myHobby.count == 0 {
+        if viewModel.fromMyHobby.value.count == 0 {
             toastMessage(message: "취미를 하나 이상 입력해주세요.")
         } else {
             let form = PostQueueForm(type: viewModel.searchGender.value, region: viewModel.centerRegion.value, lat: viewModel.centerLatitude.value, long: viewModel.centerLongitude.value, hf: viewModel.fromMyHobby.value)

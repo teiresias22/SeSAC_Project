@@ -88,14 +88,14 @@ class HomeViewController: BaseViewController {
             switch viewModel.myStatus.value {
             case MyStatusCase.matching.rawValue :
                 let vc = NearUserViewController()
-                vc.viewModel = viewModel
                 vc.modalPresentationStyle = .fullScreen
+                vc.viewModel = viewModel
                 self.present(vc, animated: true, completion: nil)
                 
             case MyStatusCase.matched.rawValue :
                 let vc = ChattingViewController()
-                vc.viewModel = viewModel
                 vc.modalPresentationStyle = .fullScreen
+                vc.viewModel = viewModel
                 self.present(vc, animated: true, completion: nil)
                 
             default:

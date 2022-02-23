@@ -13,6 +13,7 @@
 
 import UIKit
 import FirebaseAuth
+import CoreLocation
 
 class NearUserViewController: BaseViewController {
     let mainView = NearUserView()
@@ -20,6 +21,7 @@ class NearUserViewController: BaseViewController {
     
     let refreshControl = UIRefreshControl()
     
+    //임시로 넣어둠
     var findUser = 3
     var requestUser = 1
     
@@ -31,20 +33,22 @@ class NearUserViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "새싹찾기"
         
-        self.tabBarController?.tabBar.isHidden = true
-        
+        setTableView()
         initRefresh()
         
         checkFindUser()
         
+        mainView.backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+        mainView.stopButton.addTarget(self, action: #selector(stopButtonClicked), for: .touchUpInside)
+        mainView.nearUserButton.addTarget(self, action: #selector(nearUserButtonClicked), for: .touchUpInside)
+        mainView.requestRecivedButton.addTarget(self, action: #selector(requestRecivedButtonClicked), for: .touchUpInside)
+    }
+    
+    func setTableView() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(NearUserViewCell.self, forCellReuseIdentifier: NearUserViewCell.identifier)
-        
-        mainView.nearUserButton.addTarget(self, action: #selector(nearUserButtonClicked), for: .touchUpInside)
-        mainView.requestRecivedButton.addTarget(self, action: #selector(requestRecivedButtonClicked), for: .touchUpInside)
     }
     
     //당겨서 새로고침
@@ -53,22 +57,38 @@ class NearUserViewController: BaseViewController {
         
         refreshControl.backgroundColor = .customGreen
         refreshControl.attributedTitle = NSAttributedString(string: "새로고침")
-        
         mainView.tableView.refreshControl = refreshControl
+        
+        self.refreshFriends()
     }
     
     @objc func refreshTable(refresh: UIRefreshControl) {
-        print("새로고침 시작")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.mainView.tableView.reloadData()
             refresh.endRefreshing()
         }
     }
     
-    @objc func barButtonClicked() {
-        print("BarButtonClicked")
-        //찾기 중단 해야함
+    @objc func backButtonClicked() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func stopButtonClicked() {
+        print("stopButtonClicked")
+        
+        viewModel.deleteQueue { statusCode, error in
+            switch statusCode {
+            case DeleteQueueStatusCodeCase.success.rawValue:
+                UserDefaults.standard.set(MyStatusCase.normal.rawValue, forKey: UserDefault.myStatus.rawValue)
+                let vc = HobbyViewController()
+                vc.viewModel = self.viewModel
+                self.navigationController?.pushViewController(vc, animated: true)
+            case DeleteQueueStatusCodeCase.matched.rawValue:
+                self.toastMessage(message: "앗! 누군가가 나의 취미 함께 하기를 수락하였어요!")
+            default:
+                self.toastMessage(message: "오류가 발생했습니다. 잠시 후 다시 시도해주세요.")
+            }
+        }
     }
     
     //주변새싹 클릭
@@ -121,6 +141,51 @@ class NearUserViewController: BaseViewController {
             mainView.tableView.isHidden = true
             mainView.defaultView.titleLabel.text = "아직 받은 요청이 없어요ㅠ"
         }
+    }
+}
+
+extension NearUserViewController: CLLocationManagerDelegate{
+    func refreshFriends() {
+        let form = OnQueueForm(region: viewModel.centerRegion.value, lat: viewModel.centerLatitude.value, long: viewModel.centerLongitude.value)
+        viewModel.searchNearFriends(form: form) { onqueueResult, statusCode, error in
+            switch statusCode {
+            case OnQueueStatusCodeCase.success.rawValue:
+                guard let onqueueResult = onqueueResult else {
+                    return
+                }
+                
+                for userInfo in onqueueResult.fromQueueDB {
+                    self.viewModel.fromNearFriendsHobby.value.append(contentsOf: userInfo.hf)
+                    self.viewModel.fromNearFriendsHobby.value = Array(self.viewModel.fromNearFriendsHobby.value)
+                }
+                
+                for userInfo in onqueueResult.fromQueueDBRequested {
+                    self.viewModel.fromNearFriendsHobby.value.append(contentsOf: userInfo.hf)
+                    self.viewModel.fromNearFriendsHobby.value = Array(Set(self.viewModel.fromNearFriendsHobby.value))
+                }
+                self.viewModel.fromRecommendHobby.value =  onqueueResult.fromRecommend
+                
+                switch self.viewModel.searchGender.value {
+                case GenderCode.man.rawValue, GenderCode.woman.rawValue:
+                    self.viewModel.filteredQueueDB.value = onqueueResult.fromQueueDB.filter({
+                        $0.gender == self.viewModel.searchGender.value
+                    })
+                default:
+                    self.viewModel.filteredQueueDB.value = onqueueResult.fromQueueDB
+                }
+                self.viewModel.filteredQueueDBRequested.value = onqueueResult.fromQueueDBRequested
+                
+            case OnQueueStatusCodeCase.firebaseTokenError.rawValue:
+                self.refreshFirebaseIdToken { idToken, error in
+                   if let idToken = idToken {
+                       self.refreshFriends()
+                   }
+               }
+            default:
+                self.toastMessage(message: "잠시후 다시 시도해주세요.")
+            }
+        }
+        
     }
 }
 

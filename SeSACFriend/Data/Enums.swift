@@ -52,6 +52,15 @@ enum MyQueueStatusCodeCase: Int {
     case clientError = 501
 }
 
+enum DeleteQueueStatusCodeCase: Int {
+    case success = 200
+    case matched = 201
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
 enum ReportOtherStatusCodeCase: Int {
     case success = 200
     case reported = 201

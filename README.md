@@ -8,4 +8,4 @@
 * XIB를 활용하여 Cell을 제작하고 활용하였습니다.
 * WKWebView를 활용하여 Youtube로 검색된 내용을 자동 재생시켜 주었습니다.
 
-Link: [블로그](https://teiresias.tistory.com/10?category=926122){:target="_blank"}
+Link: [블로그](https://teiresias.tistory.com/10?category=926122)

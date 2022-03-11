@@ -42,4 +42,5 @@
      loadView의 경우 View가 메모리에 로드된 직후 호출되기 때문에 코드로 VIew를 작성한게 아니라면 호출하지 않는것이 좋다.    
      viewDidDisappear 같은 경우 View가 제거된 이후에 호출이 되기 때문에 필요없어지는 작업들을 여기서 종료시킨다.    
 
-Link: [블로그](https://teiresias.tistory.com/10?category=926122){:target="_blank"}
+## Link
+###[블로그](https://teiresias.tistory.com/10?category=926122{:target="_blank"})

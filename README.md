@@ -43,4 +43,4 @@
      viewDidDisappear 같은 경우 View가 제거된 이후에 호출이 되기 때문에 필요없어지는 작업들을 여기서 종료시킨다.    
 
 ## Link
-###[블로그](https://teiresias.tistory.com/10?category=926122{:target="_blank"})
+### [블로그](https://teiresias.tistory.com/10?category=926122)

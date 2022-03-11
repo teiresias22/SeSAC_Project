@@ -1,4 +1,6 @@
 # SeSAC.TrandMedia
+https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbz8oao%2Fbtru5bE6RdO%2Fx1Ex90Ap2SWh7lD3GjLkUk%2Fimg.png![image](https://user-images.githubusercontent.com/83900106/157790109-b3db54bc-7949-47a1-a96c-1c15bbaf6930.png)
+
 * Skills & Libraries
   * Storyboard, AutoLayout, MVC
   * MapKit, CoreLocation, WebKit

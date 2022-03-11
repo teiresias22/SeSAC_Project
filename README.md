@@ -1,6 +1,10 @@
 # SeSAC.TrandMedia
 ![R1280x0](https://user-images.githubusercontent.com/83900106/157791688-944e01fb-49db-4587-9193-d790e3771943.png)
-영화와 드라마, 도서를 보여주는 앱 입니다. 국내 박스오피스를 조회할 수 있고, 검색기능을 제공합니다. 상세정보에서는 출연진 정보를 확인할 수 있습니다. 예고편을 확인해볼수 있습니다. 지도에 영화관을 표시해주며 필터링 하여 보여주기도 합니다.    
+## 영화와 드라마, 도서를 보여주는 앱 입니다. 
+    국내 박스오피스를 조회할 수 있고, 검색기능을 제공합니다. 
+    상세정보에서는 출연진 정보를 확인할 수 있습니다. 
+    예고편을 확인해볼수 있습니다. 
+    지도에 영화관을 표시해주며 필터기능을 지원합니다. 
 
 ## 사용 기술 및 라이브러리
   * iOS, Swift, Storyboard, MVC, AutoLayout
@@ -35,7 +39,7 @@
   * TableView의 Cell은 최초 로드에서 모든 Cell을 제작하는게 아닌 보여지는 Cell만을 제작하여 재사용함
 
  ### ViewController의 Life - Cycle
-  * ViewController의 생명주기 (Life-Cycle)는 화면에 보여졌다가 사라지는 주기는 다양하다.    
+  * ViewController의 생명주기 (Life-Cycle)는 화면에 보여졌다가 사라지는 주기로 쓰임에 따라 종류가 다양하다.    
     init, loadView, viewDidLoad, viewWIllAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, viewDidUnload
   * 이중 몇가지의 경우 사용에 주의를 해야 하는데,   
      init의 경우는 View를 초기화 할때 사용되며 코드로 View를 작성하거나, xib 파일을 제작할때 사용됩니다.    
@@ -43,4 +47,4 @@
      viewDidDisappear 같은 경우 View가 제거된 이후에 호출이 되기 때문에 필요없어지는 작업들을 여기서 종료시킨다.    
 
 ## Link
-### [블로그](https://teiresias.tistory.com/10?category=926122)
+* [블로그](https://teiresias.tistory.com/10?category=926122)

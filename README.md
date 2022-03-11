@@ -1,5 +1,7 @@
 # SeSAC.TrandMedia
-https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbz8oao%2Fbtru5bE6RdO%2Fx1Ex90Ap2SWh7lD3GjLkUk%2Fimg.png![image](https://user-images.githubusercontent.com/83900106/157790109-b3db54bc-7949-47a1-a96c-1c15bbaf6930.png)
+![R1280x0](https://user-images.githubusercontent.com/83900106/157791688-944e01fb-49db-4587-9193-d790e3771943.png)
+영화와 드라마, 도서를 보여주는 앱 입니다. 국내 박스오피스를 조회할 수 있고, 검색기능을 제공합니다. 상세정보에서는 출연진 정보를 확인할 수 있습니다.    
+예고편을 확인해볼수 있습니다. 지도에 영화관을 표시해주며 필터링 하여 보여주기도 합니다.    
 
 * Skills & Libraries
   * Storyboard, AutoLayout, MVC

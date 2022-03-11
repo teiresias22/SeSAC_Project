@@ -19,12 +19,12 @@
 
 ## 회고 및 이슈
 ### 동일한 유형의 서로 다른 API사용
-  * 동일한 유형의 서로 다른 API를 활용하기는 매우 까다롭다. API마다 필요로하는 파라미터값이 서로 다르기 때문에 둘을 호환해서 사용하기는 불가능에 가깝기 때문에 하나의 API만을 사용하는것이 안정적이다.
-  * 영화진흥위원회와 TMDB가 같은 영화 정보를 다루고 있지만 동일한 영화에를 관리하는 고유의 ID값이 서로 다르기 때문에 서로의 데이터를 연동해서 사용하기 힘들다.
-  * 프로젝트에서 박스오피스를 보여주는 페이지에서는 영화진흥위원회의 API룰, 그 외 페이지에서는 TMDB의 API를 사용했기 때문에, 박스오피스에서 영화를 클릭한 경우 검색창으로 이동을 시켜주었는데 코드 리팩토링을 통해 상세정보 페이지에서 분기처리 하여 두가지 API를 모두 활용하도록 변경함
+  * 동일한 유형의 서로 다른  API는 요청하는 변수와, 응답 필드 값이 서로 다르기 때문에 호환하여 사용하기가 몹시 까다롭다.
+  * 영화진흥위원회와 TMDB가 같은 영화의 정보를 다루고 있지만 각각의 하나의 영화에 서로 다른 고유 ID를 사용하기 때문에, 동일한 영화를 찾기 위한 요청값이 서로 달라 활용이 까다롭다.
+  * 실제로 프로젝트에서 박스오피스를 보여주는 페이지에서는 영화진흥위원회의 API를, 그 밖의 페이지에서는 TMDB를 사용했기 때문에, 박스오피스에서 영화를 클릭한 경우 검색창으로 이동이 되도록 했지만, 리팩토링을 통해 상세정보 페이지에서 분기처리 하여 두가지 API 활용이 가능하도록 변경하였다.
 
 ### API키 관리
-  * 프로젝트를 Github와 같은 오픈 소스 저장 서버를 이용한다면 API의 Key값 노출에 주의해야 한다.
+  * 프로젝트를 Github와 같은 오픈 소스 저장 서버를 이용한다면 API의 Key 노출에 주의해야 한다.
   * 노출된 Key가 악용된다면 나의 API가 막히는것 뿐만 아니라 정책에 따라 비용이 청구될수 있다.
   * Git에 Private 상태로 올려두었다가 Public으로 전환을 하는 상황에서 ignore 처리를 한다고 하더라도, 현재 기준의 Remote에서만 삭제될뿐 과거의 커밋에는 남아있기 때문에 과거의 커밋을 수정 후 재작성 해주어야 한다.
 
@@ -35,13 +35,11 @@
   * TableView의 Cell은 최초 로드에서 모든 Cell을 제작하는게 아닌 보여지는 Cell만을 제작하여 재사용함
 
  ### ViewController의 Life - Cycle
-  * ViewController의 Life - Cycle에 대한 이해
-  * ViewController의 생명주기 (Life-Cycle)는 화면에 보여졌다가 사라지는 주기를 말하는것이다.
-  * init, loadView, viewDidLoad, viewWIllAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, viewDidUnload
-  * 이중 몇가지의 경우 사용에 주의를 해야 하는데, 
+  * ViewController의 생명주기 (Life-Cycle)는 화면에 보여졌다가 사라지는 주기는 다양하다.    
+    init, loadView, viewDidLoad, viewWIllAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, viewDidUnload
+  * 이중 몇가지의 경우 사용에 주의를 해야 하는데,   
      init의 경우는 View를 초기화 할때 사용되며 코드로 View를 작성하거나, xib 파일을 제작할때 사용됩니다.    
      loadView의 경우 View가 메모리에 로드된 직후 호출되기 때문에 코드로 VIew를 작성한게 아니라면 호출하지 않는것이 좋다.    
      viewDidDisappear 같은 경우 View가 제거된 이후에 호출이 되기 때문에 필요없어지는 작업들을 여기서 종료시킨다.    
 
-Link: [블로그](https://teiresias.tistory.com/10?category=926122){:target="_blank"}    
-Link: <a href="https://teiresias.tistory.com/10?category=926122" target="_blank">블로그</a>
+Link: [블로그](https://teiresias.tistory.com/10?category=926122){:target="_blank"}

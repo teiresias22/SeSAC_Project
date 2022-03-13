@@ -35,7 +35,4 @@ struct tvShowInformation {
             TvShow(title: "The Billion Dollar Code", releaseDate: "10/07/2021",genre: "Drama",region:"Germany", overview: "How stupid is the idea of ??messing with a global corporation? Two German computer nerds tried it out for you. Trillion dollar code, based on a true story, on Netflix October 7th.", rate: 8.0, starring: "Marius Ahrendt, Misel Maticevic, Seumas F. Sargent",backdropImage:"https://www.themoviedb.org/t/p/original/ddFwgyFvaiN5VvUhX0CJBOhlADQ.jpg"),
             
         ]
-
 }
-
-

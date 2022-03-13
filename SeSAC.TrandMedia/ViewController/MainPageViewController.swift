@@ -5,6 +5,7 @@ import Kingfisher
 import SwiftUI
 
 class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var btnMenuBarButton: UIBarButtonItem!
     @IBOutlet weak var btnSearchBarButton: UIBarButtonItem!
     @IBOutlet weak var lbWelcomeMessage: UILabel!
@@ -156,7 +157,6 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
             cell.lbMediaTitleKr.text = row.originalName
             cell.lbMediaOpeningDate.text = row.first_air_date
         }
-        
         return cell
     }
     

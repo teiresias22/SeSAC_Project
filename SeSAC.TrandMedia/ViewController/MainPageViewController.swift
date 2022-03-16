@@ -98,7 +98,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //BarButton Right Clicked
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Search", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

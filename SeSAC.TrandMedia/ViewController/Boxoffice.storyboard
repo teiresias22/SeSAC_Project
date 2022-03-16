@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Boxoffice View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="BoxofficeViewController" id="Y6W-OH-hqX" customClass="BoxofficeViewController" customModule="SeSAC_TrandMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk5-Mi-5dn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pJ-Ei-sIg">
+                                        <rect key="frame" x="0.0" y="0.0" width="248.5" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-Lo-YeG">
+                                        <rect key="frame" x="249" y="0.0" width="165" height="80"/>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1Sw-hL-gAf"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2ih-IN-iPr">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FMw-Hv-Qb3" customClass="BoxofficeTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FMw-Hv-Qb3" id="hxz-Cd-ZZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Dz5-Vv-dxf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2ih-IN-iPr" secondAttribute="bottom" id="Jif-7f-Qbg"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="K4N-Bu-nKC"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="top" secondItem="Nk5-Mi-5dn" secondAttribute="bottom" id="UN7-li-BPi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2ih-IN-iPr" secondAttribute="trailing" id="an4-Id-rJM"/>
+                            <constraint firstItem="5pJ-Ei-sIg" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.6" id="eXK-gP-SGM"/>
+                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uwR-Uu-uFY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nk5-Mi-5dn" secondAttribute="trailing" id="xIl-Fr-izC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boxofficeDatePicker" destination="XkG-Lo-YeG" id="8Qp-sO-hmS"/>
+                        <outlet property="boxofficeTableView" destination="2ih-IN-iPr" id="kWr-MV-6c4"/>
+                        <outlet property="boxofficeTitleLabel" destination="5pJ-Ei-sIg" id="BTs-gR-RSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="120"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

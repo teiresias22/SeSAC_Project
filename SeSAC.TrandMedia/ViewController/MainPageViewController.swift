@@ -77,7 +77,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //웹뷰 링크 버튼 클릭    
     @objc func webViewLinkButtonClicked(selected: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "WebView", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         
         vc.mediaData = mediaData[selected.tag]
@@ -90,7 +90,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //비슷한 컨텐츠 찾기 버튼 클릭
     @objc func similarViewLinkButtonClicked(selected: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "SimilarMedia", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "SimilarMediaViewController") as? SimilarMediaViewController else { return }
         vc.mediaData = mediaData[selected.tag]
         self.navigationController?.pushViewController(vc, animated: true)
@@ -105,18 +105,30 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //BarButton Left Clicked
     @IBAction func MapBarButtonClicked(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-//색상 설정
-extension UIColor {
-    class var customGreen:UIColor? {return UIColor(named: "CustomGreen")}
-    class var customYellow:UIColor? {return UIColor(named: "CustomYellow")}
-    class var customBlue:UIColor? {return UIColor(named: "CustomBlue")}
-    class var customRed:UIColor? {return UIColor(named: "CustomRed")}
+    
+    @IBAction func movieButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Boxoffice", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BoxofficeViewController") as! BoxofficeViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func tvSeriesButtonClicked(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func bookButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Book", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    
 }
 
 //테이블뷰 설정
@@ -165,7 +177,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "CastList", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as? CastListViewController else { return }
         
         let row = mediaData[indexPath.row]
@@ -221,19 +233,3 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
         }
     }
 }
-
-/*
-    Have To!
-    네이버 / 영화진흥위원회 / TMDB를 다 섞어서 쓰면 데이터간 연동은 어케하지??
-    장르 불러오기 어렵네 장르를 불러와서 배열을 만들고, 그 배열의 인덱스 값별로 장르데이터 값과 비교해서 name값을 불러온다?
-    
-    Castlist 에서 인물정보 넘어가기
-    메인 상단 3버튼중 TV버튼 누르면 넘어갈 데이터 만들기
-    
-    9. 위치 권한 비허용시 허용 요청 알림 만들기
-    10. 다크모드 적용시 문제점 해결
-        1. 메인 바 버튼 검정 색상 -> 흰색상 변경
-        2. 상단 3버튼 아이콘 흰색 배경 제거
-        3. 메인 셀 베경 검정색에서 변경
-        4. CastList에서 1번 섹션 토글 버튼 색상 변경
-*/

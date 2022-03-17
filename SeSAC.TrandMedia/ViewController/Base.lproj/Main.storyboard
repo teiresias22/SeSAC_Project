@@ -186,7 +186,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-ZY-gSU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="234"/>
                                 <subviews>
-                                    <label opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Messsage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-Cx-myL">
+                                    <label opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Trand!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-Cx-myL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="27I-Cx-myL" secondAttribute="height" multiplier="3:1" id="wg1-3J-Te8"/>
@@ -209,18 +209,27 @@
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="movieButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fKF-8D-ON1"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-ed-IXD">
                                                         <rect key="frame" x="100" y="0.0" width="60" height="60"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="tvSeriesButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SrS-6g-lj7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6U-JG-EBk">
                                                         <rect key="frame" x="200" y="0.0" width="60" height="60"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="bookButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tHw-TU-Kej"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

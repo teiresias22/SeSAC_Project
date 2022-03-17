@@ -57,6 +57,7 @@ class MainPageTableViewCell: UITableViewCell {
     @IBAction func webViewLinkButtonClicked(_ sender: UIButton) {
         
     }
+    
     @IBAction func similarViewLinkButtonClicked(_ sender: UIButton) {
         
     }

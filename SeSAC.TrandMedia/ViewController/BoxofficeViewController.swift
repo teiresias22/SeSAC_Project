@@ -9,7 +9,7 @@ class BoxofficeViewController: UIViewController {
     @IBOutlet weak var boxofficeDatePicker: UIDatePicker!
     
     var boxofficeData: [BoxofficeModel] = []
-    var setDate: String = "20211103"
+    var setDate: String = getDateToString(date: Date(), format: "yyyy-MM-dd")
     
     var taskList: Results<BoxofficeRank>!
     var filterList: Results<BoxofficeRank>!

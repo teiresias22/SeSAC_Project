@@ -61,13 +61,15 @@
 		759BCC08271C332B00BE2F65 /* tvShowInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759BCC07271C332B00BE2F65 /* tvShowInformation.swift */; };
 		75BFE4B22734EF9600D505A0 /* KobisAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */; };
 		75CE63A427E1884400D32EFE /* Constance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE63A327E1884400D32EFE /* Constance.swift */; };
-		75CE63A627E1B27200D32EFE /* Seaech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63A527E1B27200D32EFE /* Seaech.storyboard */; };
+		75CE63A627E1B27200D32EFE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63A527E1B27200D32EFE /* Search.storyboard */; };
 		75CE63A827E1D6B600D32EFE /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63A727E1D6B500D32EFE /* WebView.storyboard */; };
 		75CE63AA27E1DFE100D32EFE /* Boxoffice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63A927E1DFE100D32EFE /* Boxoffice.storyboard */; };
 		75CE63AC27E1DFE900D32EFE /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63AB27E1DFE900D32EFE /* Map.storyboard */; };
 		75CE63AE27E1DFF000D32EFE /* CastList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63AD27E1DFF000D32EFE /* CastList.storyboard */; };
 		75CE63B027E1DFF600D32EFE /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63AF27E1DFF600D32EFE /* Book.storyboard */; };
 		75CE63B227E1E00100D32EFE /* SimilarMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */; };
+		75CE63B527E2483800D32EFE /* Date + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE63B427E2483800D32EFE /* Date + Extention.swift */; };
+		75CE63B727E2598A00D32EFE /* Color + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE63B627E2598A00D32EFE /* Color + Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -136,13 +138,15 @@
 		759BCC07271C332B00BE2F65 /* tvShowInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvShowInformation.swift; sourceTree = "<group>"; };
 		75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisAPIManager.swift; sourceTree = "<group>"; };
 		75CE63A327E1884400D32EFE /* Constance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constance.swift; sourceTree = "<group>"; };
-		75CE63A527E1B27200D32EFE /* Seaech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Seaech.storyboard; sourceTree = "<group>"; };
+		75CE63A527E1B27200D32EFE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		75CE63A727E1D6B500D32EFE /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		75CE63A927E1DFE100D32EFE /* Boxoffice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Boxoffice.storyboard; sourceTree = "<group>"; };
 		75CE63AB27E1DFE900D32EFE /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		75CE63AD27E1DFF000D32EFE /* CastList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CastList.storyboard; sourceTree = "<group>"; };
 		75CE63AF27E1DFF600D32EFE /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarMedia.storyboard; sourceTree = "<group>"; };
+		75CE63B427E2483800D32EFE /* Date + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extention.swift"; sourceTree = "<group>"; };
+		75CE63B627E2598A00D32EFE /* Color + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 			children = (
 				752291142733E28B000AC604 /* UIFont + Extention.swift */,
 				7522911627343D8C000AC604 /* UIDate + Extention.swift */,
+				75CE63B427E2483800D32EFE /* Date + Extention.swift */,
+				75CE63B627E2598A00D32EFE /* Color + Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -243,7 +249,7 @@
 				759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */,
 				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
 				759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */,
-				75CE63A527E1B27200D32EFE /* Seaech.storyboard */,
+				75CE63A527E1B27200D32EFE /* Search.storyboard */,
 				7542A665271DD42D00CB433D /* WebViewController.swift */,
 				75CE63A727E1D6B500D32EFE /* WebView.storyboard */,
 				757E0882272913BF0006AA14 /* BoxofficeViewController.swift */,
@@ -370,7 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757E0888272925360006AA14 /* BoxofficeTableViewCell.xib in Resources */,
-				75CE63A627E1B27200D32EFE /* Seaech.storyboard in Resources */,
+				75CE63A627E1B27200D32EFE /* Search.storyboard in Resources */,
 				759BCBEC271BC38E00BE2F65 /* LaunchScreen.storyboard in Resources */,
 				752291102733DE8D000AC604 /* MapoDPP.otf in Resources */,
 				75CE63AA27E1DFE100D32EFE /* Boxoffice.storyboard in Resources */,
@@ -409,9 +415,11 @@
 				7527DA5C273179270048FF87 /* RealmModel.swift in Sources */,
 				759BCBF4271BCC8500BE2F65 /* SearchViewController.swift in Sources */,
 				756F2574272D4F86004E05A9 /* TMDBTypeAPIManager.swift in Sources */,
+				75CE63B727E2598A00D32EFE /* Color + Extention.swift in Sources */,
 				759BCC02271BFBF600BE2F65 /* tvShow.swift in Sources */,
 				759BCBF8271BCD6200BE2F65 /* MainPageViewController.swift in Sources */,
 				759BCBE7271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld in Sources */,
+				75CE63B527E2483800D32EFE /* Date + Extention.swift in Sources */,
 				759BCBFA271BCEBC00BE2F65 /* MainPageTableViewCell.swift in Sources */,
 				759BCBE1271BC38D00BE2F65 /* ViewController.swift in Sources */,
 				7533998F272C31A90067C3AC /* TMDBAPIManager.swift in Sources */,

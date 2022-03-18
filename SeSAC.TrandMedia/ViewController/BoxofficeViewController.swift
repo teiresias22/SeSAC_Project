@@ -26,7 +26,6 @@ class BoxofficeViewController: UIViewController {
         boxofficeTableView.register(nibName, forCellReuseIdentifier: BoxofficeTableViewCell.identifier)
         
         taskList = localRealm.objects(BoxofficeRank.self)
-        print("Realm is located at:", localRealm.configuration.fileURL!)
         
         setAttributes()
         checkRealmData()

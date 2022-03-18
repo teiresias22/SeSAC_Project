@@ -13,7 +13,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     var startpage = 1
     
     //toggleButton 설정
-    var toggleButtonClick:Bool = true
+    var toggleButtonClick:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +77,8 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
                 return UITableViewCell()
             }
             
-            let image = toggleButtonClick ? UIImage(systemName: "arrow.down.to.line.alt"): UIImage(systemName: "arrow.up.to.line.alt")
-            let lines = toggleButtonClick ? 2 : 0
+            let image = toggleButtonClick ? UIImage(systemName: "arrow.up.to.line.alt"): UIImage(systemName: "arrow.down.to.line.alt")
+            let lines = toggleButtonClick ? 0 : 2
             cell.mediaOverviewLabel.numberOfLines = lines
             cell.mediaOverviewLabel.text = mediaData?.overview
             cell.mediaOverviewSeeMoreButton.setTitle("", for: .normal)
@@ -107,7 +107,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
     //글자수에 맞춰서 셀의 높이가 자동 설정이 되어야함
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            let cellSize:CGFloat = toggleButtonClick ? 100 : 200
+            let cellSize:CGFloat = toggleButtonClick ? 250 : 100
             return cellSize
         } else {
             return UIScreen.main.bounds.height / 10

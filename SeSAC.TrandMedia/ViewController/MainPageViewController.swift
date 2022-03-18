@@ -4,7 +4,7 @@ import SwiftyJSON
 import Kingfisher
 import SwiftUI
 
-class MainPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainPageViewController: UIViewController {
     
     @IBOutlet weak var btnMenuBarButton: UIBarButtonItem!
     @IBOutlet weak var btnSearchBarButton: UIBarButtonItem!
@@ -24,7 +24,6 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         mediaTableView.delegate = self
         mediaTableView.dataSource = self
-        mediaTableView.prefetchDataSource = self
         
         //네비게이션 버튼 설정
         setBarButton(btnMenuBarButton, "list.bullet", .black)
@@ -60,10 +59,9 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //상단영역 설정
     func topViewSetting(){
-        let layer = topView.layer
-        
         title = "TREND MEDIA"
         
+        let layer = topView.layer
         layer.cornerRadius = 10
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.4
@@ -79,9 +77,7 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
     @objc func webViewLinkButtonClicked(selected: UIButton) {
         let sb = UIStoryboard(name: "WebView", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        
         vc.mediaData = mediaData[selected.tag]
-        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical
         
@@ -110,29 +106,28 @@ class MainPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //TopViewLeftButton
     @IBAction func movieButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Boxoffice", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "BoxofficeViewController") as! BoxofficeViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //TopViewCenterButton
     @IBAction func tvSeriesButtonClicked(_ sender: UIButton) {
         
     }
     
+    //TopViewRightButton
     @IBAction func bookButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Book", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
-    
-    
-    
 }
 
 //테이블뷰 설정
-extension MainPageViewController : UITableViewDataSourcePrefetching {
+extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mediaData.count
     }
@@ -145,9 +140,11 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
         
         cell.webViewLinkButton.tag = indexPath.row
         cell.webViewLinkButton.addTarget(self, action: #selector(webViewLinkButtonClicked(selected:)), for: .touchUpInside)
+        
         cell.similarViewLinkButton.tag = indexPath.row
         cell.similarViewLinkButton.addTarget(self, action: #selector(similarViewLinkButtonClicked(selected:)), for: .touchUpInside)
-        cell.lbMediaRating.text = row.voteAverage
+        
+        cell.lbMediaRating.text = "\(row.voteAverage)"
         cell.lbMediaRating.font = UIFont().mainLight
         cell.lbMediaTag.text = row.mediaType
         
@@ -162,8 +159,6 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
             cell.lbMediaTitleEng.text = row.originalTitle
             cell.lbMediaTitleKr.text = row.title
             cell.lbMediaOpeningDate.text = row.releaseDate
-                        
-            print(row.genre_ids)
         } else {
             cell.lbMediaTitleEng.text = row.name
             cell.lbMediaTitleKr.text = row.originalName
@@ -179,7 +174,6 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "CastList", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as? CastListViewController else { return }
-        
         let row = mediaData[indexPath.row]
         vc.mediaData = row
         
@@ -204,7 +198,7 @@ extension MainPageViewController : UITableViewDataSourcePrefetching {
                 let original_name = mediaItem["original_name"].stringValue
                 let name = mediaItem["name"].stringValue
                 let backdrop_path = mediaItem["backdrop_path"].stringValue
-                let vote_average = mediaItem["vote_average"].stringValue
+                let vote_average = mediaItem["vote_average"].doubleValue
                 let release_date = mediaItem["release_date"].stringValue
                 let first_air_date = mediaItem["first_air_date"].stringValue
                 let media_type = mediaItem["media_type"].stringValue

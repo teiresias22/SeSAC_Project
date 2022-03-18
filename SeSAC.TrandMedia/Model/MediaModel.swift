@@ -6,7 +6,7 @@ struct MediaModel {
     var originalName : String
     var name: String
     var backdropPath: String
-    var voteAverage: String
+    var voteAverage: Double
     var releaseDate: String
     var first_air_date: String
     var mediaType: String

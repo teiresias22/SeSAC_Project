@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,11 +24,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-Ao-YAc">
-                                <rect key="frame" x="16" y="241" width="60" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="MML-pV-OCl"/>
-                                    <constraint firstAttribute="width" constant="60" id="pFy-Cw-2cb"/>
-                                </constraints>
+                                <rect key="frame" x="8" y="240.5" width="398" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="277" width="414" height="585"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="rhG-rD-DA9" customClass="OverviewTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OverviewCell" rowHeight="90" id="rhG-rD-DA9" customClass="OverviewTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhG-rD-DA9" id="aIx-IS-DOY">
@@ -70,8 +67,12 @@
                                                 <constraint firstItem="3nU-IR-pEQ" firstAttribute="leading" secondItem="aIx-IS-DOY" secondAttribute="leadingMargin" constant="8" id="X9e-RH-FRC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mediaOverviewLabel" destination="3nU-IR-pEQ" id="RRb-AU-WHl"/>
+                                            <outlet property="mediaOverviewSeeMoreButton" destination="ohH-iM-cXz" id="KqA-zJ-8aS"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="124" id="3a2-BL-yZJ" customClass="CastListTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastListCell" rowHeight="124" id="3a2-BL-yZJ" customClass="CastListTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="134.5" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3a2-BL-yZJ" id="kSp-Jy-2qu">
@@ -115,6 +116,11 @@
                                                 <constraint firstItem="24p-B0-Izw" firstAttribute="top" secondItem="kSp-Jy-2qu" secondAttribute="top" constant="8" id="wlY-uX-gAe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgActorImage" destination="XGB-ER-Tg9" id="mYs-KH-OlW"/>
+                                            <outlet property="lbActorName" destination="Wm4-Uu-HKu" id="4Uo-uk-23L"/>
+                                            <outlet property="lbCastName" destination="yAx-Ri-p46" id="se0-c9-k62"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -125,12 +131,13 @@
                             <constraint firstItem="q3u-Ng-sPC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1Qi-Nx-DHU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nYe-CM-Swm" secondAttribute="bottom" id="7Vj-6z-l7M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="q3u-Ng-sPC" secondAttribute="trailing" id="Aph-MU-daJ"/>
+                            <constraint firstItem="Hnb-Ao-YAc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="DQP-3f-8DC"/>
                             <constraint firstItem="q3u-Ng-sPC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FLo-VP-6fC"/>
                             <constraint firstItem="nYe-CM-Swm" firstAttribute="top" secondItem="q3u-Ng-sPC" secondAttribute="bottom" id="HQq-Ww-woL"/>
                             <constraint firstItem="nYe-CM-Swm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UVP-HC-PHI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nYe-CM-Swm" secondAttribute="trailing" id="VFZ-ap-GEI"/>
-                            <constraint firstItem="nYe-CM-Swm" firstAttribute="top" secondItem="Hnb-Ao-YAc" secondAttribute="bottom" constant="16" id="Xim-cS-d3I"/>
-                            <constraint firstItem="Hnb-Ao-YAc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="opW-fG-wiZ"/>
+                            <constraint firstItem="nYe-CM-Swm" firstAttribute="top" secondItem="Hnb-Ao-YAc" secondAttribute="bottom" constant="16" id="o0e-Gf-JTR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hnb-Ao-YAc" secondAttribute="trailing" constant="8" id="s4o-aH-VcL"/>
                         </constraints>
                     </view>
                     <connections>

@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-Lo-YeG">
-                                        <rect key="frame" x="249" y="0.0" width="165" height="80"/>
+                                        <rect key="frame" x="248.5" y="0.0" width="165.5" height="80"/>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FMw-Hv-Qb3" customClass="BoxofficeTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoxofficeTableViewCell" id="FMw-Hv-Qb3" customClass="BoxofficeTableViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FMw-Hv-Qb3" id="hxz-Cd-ZZX">

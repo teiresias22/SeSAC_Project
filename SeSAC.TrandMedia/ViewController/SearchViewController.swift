@@ -4,7 +4,7 @@ import SwiftyJSON
 import Kingfisher
 import SwiftUI
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+class SearchViewController: UIViewController {
     @IBOutlet weak var showSearchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     
@@ -30,8 +30,48 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(closeButtonClicked))
         fetcMediaData()
     }
-    //e. 뷰디드로드
+    
+    //상단에 닫기 네비게이션 버튼 생성
+    @objc
+    func closeButtonClicked(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func checkKeyWardText() -> String {
+        let boxofficeName: String? = boxofficeData?.movieNmData
+        let searchText: String? = showSearchBar.text
+        
+        guard let searchName = boxofficeName ?? searchText else { return "star" }
+        return searchName
+    }
 
+    func fetcMediaData() {
+        text = checkKeyWardText()
+        
+        TMDBSearchAPIManager.shared.fetchTranslateData(mediaType: mediaType, text: text, startPage: startPage) { json in
+            for item in json["results"].arrayValue {
+                let poster_path = item["poster_path"].stringValue
+                let genre_ids = item["genre_ids"].stringValue
+                let id = item["id"].intValue
+                let original_title = item["original_title"].stringValue
+                let original_name = item["original_name"].stringValue
+                let overview = item["overview"].stringValue
+                let release_date = item["release_date"].stringValue
+                let first_air_date = item["first_air_date"].stringValue
+                
+                let data = MovieModel(poster_path: poster_path, genre_ids: genre_ids, id: id, original_title: original_title, original_name: original_name, overview: overview, release_date: release_date, first_air_date: first_air_date)
+                
+                self.totalPageCount = json["total_results"].intValue
+                self.movieData.append(data)
+            }
+            self.searchTableView.reloadData()
+        }
+    }
+}
+
+//MARK: TableViewDelegate
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    
     //셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieData.count
@@ -80,46 +120,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //상단에 닫기 네비게이션 버튼 생성
-    @objc
-    func closeButtonClicked(){
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func checkKeyWardText() -> String {
-        let boxofficeName: String? = boxofficeData?.movieNmData
-        let searchText: String? = showSearchBar.text
-        
-        guard let searchName = boxofficeName ?? searchText else { return "star" }
-        return searchName
-        
-        // 문제1. boxoffice에서 넘어오는 검색어가 한글이라 검색이 안됨
-        // 문제2. boxoffice에서 넘어오고 나면 검색어를 변경해도 수정이 안됨
-    }
-
-    func fetcMediaData() {
-        text = checkKeyWardText()
-        
-        TMDBSearchAPIManager.shared.fetchTranslateData(mediaType: mediaType, text: text, startPage: startPage) { json in
-            for item in json["results"].arrayValue {
-                let poster_path = item["poster_path"].stringValue
-                let genre_ids = item["genre_ids"].stringValue
-                let id = item["id"].intValue
-                let original_title = item["original_title"].stringValue
-                let original_name = item["original_name"].stringValue
-                let overview = item["overview"].stringValue
-                let release_date = item["release_date"].stringValue
-                let first_air_date = item["first_air_date"].stringValue
-                
-                let data = MovieModel(poster_path: poster_path, genre_ids: genre_ids, id: id, original_title: original_title, original_name: original_name, overview: overview, release_date: release_date, first_air_date: first_air_date)
-                
-                self.totalPageCount = json["total_results"].intValue
-                self.movieData.append(data)
-            }
-            self.searchTableView.reloadData()
-        }
-    }
-    
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if movieData.count - 1 == indexPath.row && movieData.count < totalPageCount {
@@ -133,8 +133,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         print("취소: \(indexPaths)")
     }
+    
 }
 
+
+//MARK: SearchBarDelegate
 extension SearchViewController : UISearchBarDelegate {
     
     //검색 버튼(키보드 리턴키)을 눌렀을 때 실행

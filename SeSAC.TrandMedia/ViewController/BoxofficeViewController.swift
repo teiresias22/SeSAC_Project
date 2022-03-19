@@ -9,7 +9,7 @@ class BoxofficeViewController: UIViewController {
     @IBOutlet weak var boxofficeDatePicker: UIDatePicker!
     
     var boxofficeData: [BoxofficeModel] = []
-    var setDate: String = getDateToString(date: Date(), format: "yyyy-MM-dd")
+    var setDate: String = getDateToString(date: Date(), format: "yyyyMMdd")
     
     var taskList: Results<BoxofficeRank>!
     var filterList: Results<BoxofficeRank>!
@@ -50,7 +50,8 @@ class BoxofficeViewController: UIViewController {
                 let openDtDate = filterList.first?.openDtArray[i]
                 let rankOldAndNewData = filterList.first?.rankOldAmdNewArray[i]
                 let audiAccData = filterList.first?.audiAccArray[i]
-                let data = BoxofficeModel(rankData: rankData!, movieNmData: movieNmData!, openDtData: openDtDate!, rankOldAndNewData: rankOldAndNewData!, audiAccData: audiAccData!)
+                let movieCdData = filterList.first?.movieCdArray[i]
+                let data = BoxofficeModel(rankData: rankData!, movieNmData: movieNmData!, openDtData: openDtDate!, rankOldAndNewData: rankOldAndNewData!, audiAccData: audiAccData!, movieCdData: movieCdData!)
                 
                 boxofficeData.append(data)
             }
@@ -94,16 +95,17 @@ class BoxofficeViewController: UIViewController {
         var openDtDate: [String] = []
         var rankOldAndNewData: [String] = []
         var audiAccData: [String] = []
+        var movieCdData: [String] = []
         for i in (0...9) {
             rankData.append(data[i].rankData)
             movieNmData.append(data[i].movieNmData)
             openDtDate.append(data[i].openDtData)
             rankOldAndNewData.append(data[i].rankOldAndNewData)
             audiAccData.append(data[i].audiAccData)
+            movieCdData.append(data[i].movieCdData)
         }
-        let task = BoxofficeRank(rankArray: rankData, movieNmArray: movieNmData, openDtArray: openDtDate, rankOldAndNewArray: rankOldAndNewData, audiAccArray: audiAccData, nowDate: setDate)
+        let task = BoxofficeRank(rankArray: rankData, movieNmArray: movieNmData, openDtArray: openDtDate, rankOldAndNewArray: rankOldAndNewData, audiAccArray: audiAccData, movieCdArray: movieNmData, nowDate: setDate)
         
-        //print("saveRealm task", task)
         try! localRealm.write{
             localRealm.add(task)
         }
@@ -130,7 +132,7 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
         } else if row.rankData == "2"{
             cell.rankLabel.textColor = .customBlue
         } else {
-            cell.rankLabel.textColor = .customGreen
+            cell.rankLabel.textColor = .black
         }
         
         cell.movieNmLabel.text = row.movieNmData
@@ -144,7 +146,6 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.rankOldAndNewLabel.text = ""
         }
-        //데이터를 새로 불러오는데 왜 신규 등록 베너가 자꾸만 생성되는건지??
         
         cell.audiAccLabel.text = "누적 관객수 : \(row.audiAccData)"
         cell.audiAccLabel.textColor = .customGreen
@@ -156,21 +157,10 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
         return UIScreen.main.bounds.height / 10
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            boxofficeData.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
-        
+        //MARK: didSelectRowAt
+        let sb = UIStoryboard(name: "CastList", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as? CastListViewController else { return }
         let row = boxofficeData[indexPath.row]
         vc.boxofficeData = row
         
@@ -178,7 +168,6 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func fetcMediaData(Date: String) {
-        
         boxofficeData = []
         
         KobisAPIManager.shared.fetchBoxofficeData(nowDate: setDate) { json in
@@ -188,8 +177,9 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
                 let movieNm = movie["movieNm"].stringValue
                 let openDt = movie["openDt"].stringValue
                 let rankOldAndNew = movie["rankOldAndNew"].stringValue
+                let movieCd = movie["movieCd"].stringValue
                         
-                let data = BoxofficeModel(rankData: rank, movieNmData: movieNm, openDtData: openDt, rankOldAndNewData: rankOldAndNew, audiAccData: audiAcc)
+                let data = BoxofficeModel(rankData: rank, movieNmData: movieNm, openDtData: openDt, rankOldAndNewData: rankOldAndNew, audiAccData: audiAcc, movieCdData: movieCd)
                 self.boxofficeData.append(data)
             }
             self.saveRealm(data: self.boxofficeData, nowDate: self.setDate)

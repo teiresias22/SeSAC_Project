@@ -1,14 +1,15 @@
 import UIKit
 import Kingfisher
 
-class CastListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CastListViewController: UIViewController {
     @IBOutlet weak var mainMediaImage: UIImageView!
     @IBOutlet weak var mainMediaLabel: UILabel!
     @IBOutlet weak var castListTableView: UITableView!
     
-    //데이터 저장 공간 생성
     var mediaData: MediaModel?
     var movieData: MovieModel?
+    var boxofficeData: BoxofficeModel?
+    
     var castList: [castModel] = []
     var startpage = 1
     
@@ -19,18 +20,22 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         castListTableView.delegate = self
         castListTableView.dataSource = self
-        
-        haderViewSetting()
-        loadMediaCreditsData()
-        
+                
         //네비게이션 버튼 생성
         navigationItem.title = "상세정보"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(closeButtonClicked))
+        
+        if boxofficeData == nil {
+            haderViewSetting()
+            loadMediaCreditsData()
+        } else {
+            print("다른곳에서 왔습니다.")
+        }
     }
     
+    //상단 이미지 영역 설정 TMDB만 가능
     func haderViewSetting() {
         let url = URL(string: Endpoint.TMDBImage + mediaData!.backdropPath)
-        
         mainMediaImage.kf.setImage(with: url)
         mainMediaImage.contentMode = .scaleAspectFill
         
@@ -43,12 +48,34 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
         mainMediaLabel.textColor = .white
         mainMediaLabel.font = UIFont().mainBold
     }
-    //e. 뷰디드로드
     
     @IBAction func toggleButtonClicked(_ sender: UIButton) {
         toggleButtonClick = !toggleButtonClick
         castListTableView.reloadData()
     }
+    
+    //TMDB CastList
+    func loadMediaCreditsData() {
+        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "credits", startPage: startpage) { json in
+            for cast in json["cast"].arrayValue {
+                let name = cast["name"].stringValue
+                let character = cast["character"].stringValue
+                let profile_path = cast["profile_path"].stringValue
+                
+                let data = castModel(name: name, character: character, profile_path: profile_path)
+                self.castList.append(data)
+            }
+            self.castListTableView.reloadData()
+        }
+    }
+    
+    @objc
+    func closeButtonClicked(){
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension CastListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -68,7 +95,6 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
         }else {
             return castList.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +105,7 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
             
             let image = toggleButtonClick ? UIImage(systemName: "arrow.up.to.line.alt"): UIImage(systemName: "arrow.down.to.line.alt")
             let lines = toggleButtonClick ? 0 : 2
+            
             cell.mediaOverviewLabel.numberOfLines = lines
             cell.mediaOverviewLabel.text = mediaData?.overview
             cell.mediaOverviewSeeMoreButton.setTitle("", for: .normal)
@@ -113,26 +140,4 @@ class CastListViewController: UIViewController, UITableViewDelegate, UITableView
             return UIScreen.main.bounds.height / 10
         }
     }
-    
-    func loadMediaCreditsData() {
-        TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "credits", startPage: startpage) { json in
-            for cast in json["cast"].arrayValue {
-                let name = cast["name"].stringValue
-                let character = cast["character"].stringValue
-                let profile_path = cast["profile_path"].stringValue
-                
-                let data = castModel(name: name, character: character, profile_path: profile_path)
-                self.castList.append(data)
-            }
-            self.castListTableView.reloadData()
-        }
-    }
-    
-    @objc
-    func closeButtonClicked(){
-        self.navigationController?.popViewController(animated: true)
-    }
-    //e. 네비게이션 설정
-
-
 }

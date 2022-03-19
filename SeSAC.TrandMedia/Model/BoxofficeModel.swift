@@ -6,4 +6,5 @@ struct BoxofficeModel {
     var openDtData: String
     var rankOldAndNewData: String
     var audiAccData: String
+    var movieCdData: String
 }

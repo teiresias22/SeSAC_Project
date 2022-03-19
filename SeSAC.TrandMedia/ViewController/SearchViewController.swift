@@ -8,7 +8,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var showSearchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     
-    var boxofficeData: BoxofficeModel?
     var movieData: [MovieModel] = []
     
     var text = "star"
@@ -38,10 +37,9 @@ class SearchViewController: UIViewController {
     }
     
     func checkKeyWardText() -> String {
-        let boxofficeName: String? = boxofficeData?.movieNmData
         let searchText: String? = showSearchBar.text
         
-        guard let searchName = boxofficeName ?? searchText else { return "star" }
+        guard let searchName = searchText else { return "star" }
         return searchName
     }
 
@@ -149,7 +147,6 @@ extension SearchViewController : UISearchBarDelegate {
     
     //취소 버튼 눌렀을 때 실행
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("취소" + #function)
         movieData.removeAll()
         searchTableView.reloadData()
         showSearchBar.setShowsCancelButton(false, animated: true)
@@ -157,7 +154,6 @@ extension SearchViewController : UISearchBarDelegate {
     
     //서치바에 커서 깜박이기 시작할 때
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("서치" + #function)
         showSearchBar.setShowsCancelButton(true, animated: true)
     }
 }

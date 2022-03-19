@@ -2,16 +2,24 @@ import UIKit
 
 class BookViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var bookCollectionView: UICollectionView!
     
     var bookData: [BookModel] = []
     var startPage = 1
     var totalPageCount = 100
     var service = "book"
-    var query = "해리포터"
+    var query = "개발자"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        collectionViewSet()
+        setSearchBar()
+        fetcBookData()
+    }
+    
+    func collectionViewSet() {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
         bookCollectionView.prefetchDataSource = self
@@ -19,23 +27,24 @@ class BookViewController: UIViewController {
         let nibName = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         bookCollectionView.register(nibName, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         
-        collectionViewSet()
-        fetcBookData()
-    }
-    
-    func collectionViewSet() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 16
         let width = UIScreen.main.bounds.width - (spacing * 3)
         
-        layout.itemSize = CGSize(width: width / 2 , height: width / 1.2  )
+        layout.itemSize = CGSize(width: width / 2 , height: width / 1.3  )
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
         layout.scrollDirection = .vertical
         
         bookCollectionView.collectionViewLayout = layout
-        navigationItem.title = query
+        navigationItem.title = "도서"
+    }
+    
+    func setSearchBar(){
+        searchBar.delegate = self
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "도서를 검색하세요"
     }
     
     func fetcBookData() {
@@ -94,5 +103,21 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
         print("취소")
+    }
+}
+
+extension BookViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        bookData.removeAll()
+        query = searchBar.text ?? "개발자"
+        fetcBookData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
     }
 }

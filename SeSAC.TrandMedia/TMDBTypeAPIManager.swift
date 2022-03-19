@@ -16,7 +16,7 @@ class TMDBTypeAPIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
+                //print("JSON: \(json)")
                 result(json)
                 
             case .failure(let error):

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-EV-Zfn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F1a-U3-bYx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,33 +27,41 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="im2-4h-dRM">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BookCollectionViewCell" reuseIdentifier="BookCollectionViewCell" id="im2-4h-dRM" customClass="BookCollectionViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MJP-ou-QGE">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MJP-ou-QGE" customClass="BookCollectionViewCell" customModule="SeSAC_TrandMedia" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IAg-hw-mSY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Zb8-MA-1QV"/>
-                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fx0-mX-Lam"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="u4n-EV-Zfn" secondAttribute="trailing" id="g3e-MM-GXT"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="u4n-EV-Zfn" secondAttribute="bottom" id="vzT-Qy-1sQ"/>
+                            <constraint firstItem="IAg-hw-mSY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4qp-Jb-APS"/>
+                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Jgq-AL-NQX"/>
+                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Q53-UC-0cU"/>
+                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TAc-4S-ePW"/>
+                            <constraint firstItem="IAg-hw-mSY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Vhm-A2-X2Q"/>
+                            <constraint firstItem="IAg-hw-mSY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YFq-C5-Goc"/>
+                            <constraint firstItem="u4n-EV-Zfn" firstAttribute="top" secondItem="IAg-hw-mSY" secondAttribute="bottom" id="vFa-9I-AC2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bookCollectionView" destination="u4n-EV-Zfn" id="lCT-Xf-LIG"/>
+                        <outlet property="searchBar" destination="IAg-hw-mSY" id="sNb-vS-VAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="120"/>
+            <point key="canvasLocation" x="18.840579710144929" y="119.86607142857142"/>
         </scene>
     </scenes>
     <resources>

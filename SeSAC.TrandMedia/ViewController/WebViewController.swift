@@ -5,7 +5,6 @@ import SwiftyJSON
 
 class WebViewController: UIViewController{
     @IBOutlet weak var mediaWebView: WKWebView!
-    
     static let identifier = "WebViewController"
     
     var startPage = 1
@@ -27,13 +26,10 @@ class WebViewController: UIViewController{
         }
         
         fetcMediaData()
-        print(mediaData!.mediaType)
-        print(mediaData!.id)
     }
     func fetcMediaData() {
         TMDBTypeAPIManager.shared.fetchTranslateData(mediaType: mediaData!.mediaType, mediaID: mediaData!.id, APIType: "videos", startPage: startPage) { json in
             self.mediaURL = json["results"][0]["key"].stringValue
-            print("url\(self.mediaURL)")
         }
     }
     

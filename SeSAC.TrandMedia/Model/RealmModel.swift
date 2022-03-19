@@ -1,5 +1,6 @@
 import UIKit
 import RealmSwift
+import Alamofire
 
 class BoxofficeRank: Object {
     @Persisted var rankData: List<String>
@@ -7,6 +8,7 @@ class BoxofficeRank: Object {
     @Persisted var openDtData: List<String>
     @Persisted var rankOldAndNewData: List<String>
     @Persisted var audiAccData: List<String>
+    @Persisted var movieCdData: List<String>
     @Persisted var nowDate: String
     
     var rankArray: [String] {
@@ -59,9 +61,19 @@ class BoxofficeRank: Object {
         }
     }
     
+    var movieCdArray: [String] {
+        get {
+            return movieCdData.map{$0}
+        }
+        set {
+            movieCdData.removeAll()
+            movieCdData.append(objectsIn: newValue)
+        }
+    }
+    
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(rankArray: [String], movieNmArray: [String], openDtArray: [String], rankOldAndNewArray: [String], audiAccArray: [String], nowDate: String) {
+    convenience init(rankArray: [String], movieNmArray: [String], openDtArray: [String], rankOldAndNewArray: [String], audiAccArray: [String], movieCdArray: [String], nowDate: String) {
         
         self.init()
         
@@ -70,6 +82,7 @@ class BoxofficeRank: Object {
         self.openDtData = openDtData
         self.rankOldAndNewData = rankOldAndNewData
         self.audiAccData = audiAccData
+        self.movieCdData = movieCdData
         self.nowDate = nowDate
         
         self.rankArray = rankArray
@@ -77,6 +90,7 @@ class BoxofficeRank: Object {
         self.openDtArray = openDtArray
         self.rankOldAmdNewArray = rankOldAndNewArray
         self.audiAccArray = audiAccArray
+        self.movieCdArray = movieCdArray
         
     }
 }

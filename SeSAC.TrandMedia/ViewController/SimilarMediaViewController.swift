@@ -37,7 +37,6 @@ class SimilarMediaViewController: UIViewController {
         
         SimilarCollectionView.collectionViewLayout = layout
         
-        //네비게이션 타이틀에 넣을때 글자수가 너무 많은경우가 있어 라벨로 일단 표시, title의 적절한 표시가 필요함
         if mediaData!.title != "" {
             similarMediaLabrl.text = mediaData!.title + "과 유사한 컨텐츠"
         } else if mediaData!.name != "" {
@@ -120,7 +119,6 @@ extension SimilarMediaViewController: UICollectionViewDelegate, UICollectionView
         print("취소")
     }
     
-    
     /* 선택하면 CastList로 넘어가고 싶은데 데이터를 어떻게 연동시켜야 할까????
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -131,17 +129,5 @@ extension SimilarMediaViewController: UICollectionViewDelegate, UICollectionView
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    */
-    //장르를 대분류해 색상을 부여할것
-    func setColor(_ genre: String) -> UIColor {
-        if genre == "" {
-            return UIColor.customBlue ?? .clear
-        } else if genre == "" {
-            return UIColor.customGreen ?? .clear
-        } else {
-            return UIColor.customYellow ?? .clear
-        }
-    }
-    
-    
+     */
 }

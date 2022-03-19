@@ -17,20 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk5-Mi-5dn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <rect key="frame" x="16" y="44" width="382" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pJ-Ei-sIg">
-                                        <rect key="frame" x="0.0" y="0.0" width="248.5" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-Lo-YeG">
-                                        <rect key="frame" x="248.5" y="0.0" width="165.5" height="80"/>
+                                        <rect key="frame" x="282" y="0.0" width="100" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="RpW-JK-qHb"/>
+                                        </constraints>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="1Sw-hL-gAf"/>
+                                    <constraint firstAttribute="height" constant="80" id="1hV-JX-pSj"/>
+                                    <constraint firstItem="XkG-Lo-YeG" firstAttribute="leading" secondItem="5pJ-Ei-sIg" secondAttribute="trailing" id="GoG-eg-eBP"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2ih-IN-iPr">
@@ -51,14 +55,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Dz5-Vv-dxf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2ih-IN-iPr" secondAttribute="bottom" id="Jif-7f-Qbg"/>
-                            <constraint firstItem="2ih-IN-iPr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="K4N-Bu-nKC"/>
-                            <constraint firstItem="2ih-IN-iPr" firstAttribute="top" secondItem="Nk5-Mi-5dn" secondAttribute="bottom" id="UN7-li-BPi"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2ih-IN-iPr" secondAttribute="trailing" id="an4-Id-rJM"/>
-                            <constraint firstItem="5pJ-Ei-sIg" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.6" id="eXK-gP-SGM"/>
-                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uwR-Uu-uFY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nk5-Mi-5dn" secondAttribute="trailing" id="xIl-Fr-izC"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DiB-Za-6Rg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nk5-Mi-5dn" secondAttribute="trailing" constant="16" id="MUq-eO-LpJ"/>
+                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QRX-bR-L77"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ThF-Yk-JOw"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="top" secondItem="Nk5-Mi-5dn" secondAttribute="bottom" id="idP-AQ-sVu"/>
+                            <constraint firstItem="Nk5-Mi-5dn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="teu-3R-mkz"/>
+                            <constraint firstItem="2ih-IN-iPr" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ugg-7E-OSf"/>
                         </constraints>
                     </view>
                     <connections>

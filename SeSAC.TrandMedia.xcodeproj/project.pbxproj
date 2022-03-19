@@ -70,6 +70,8 @@
 		75CE63B227E1E00100D32EFE /* SimilarMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */; };
 		75CE63B527E2483800D32EFE /* Date + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE63B427E2483800D32EFE /* Date + Extention.swift */; };
 		75CE63B727E2598A00D32EFE /* Color + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE63B627E2598A00D32EFE /* Color + Extention.swift */; };
+		75FFF05627E5BC9D007A69C8 /* KoficModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFF05527E5BC9D007A69C8 /* KoficModel.swift */; };
+		75FFF05827E64446007A69C8 /* KobisDetailAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FFF05727E64446007A69C8 /* KobisDetailAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -147,6 +149,8 @@
 		75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarMedia.storyboard; sourceTree = "<group>"; };
 		75CE63B427E2483800D32EFE /* Date + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extention.swift"; sourceTree = "<group>"; };
 		75CE63B627E2598A00D32EFE /* Color + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extention.swift"; sourceTree = "<group>"; };
+		75FFF05527E5BC9D007A69C8 /* KoficModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoficModel.swift; sourceTree = "<group>"; };
+		75FFF05727E64446007A69C8 /* KobisDetailAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisDetailAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 				7516B0A4272EB88800EDA375 /* TMDBSearchAPIManager.swift */,
 				756F2567272CEBBC004E05A9 /* NaverAPIManager.swift */,
 				75BFE4B12734EF9600D505A0 /* KobisAPIManager.swift */,
+				75FFF05727E64446007A69C8 /* KobisDetailAPIManager.swift */,
 				75CE63A327E1884400D32EFE /* Constance.swift */,
 			);
 			name = APIManager;
@@ -217,6 +222,7 @@
 				7527DA5B273179270048FF87 /* RealmModel.swift */,
 				757E088B2729C4780006AA14 /* MediaModel.swift */,
 				757E088927293E490006AA14 /* BoxofficeModel.swift */,
+				75FFF05527E5BC9D007A69C8 /* KoficModel.swift */,
 				75339990272C40930067C3AC /* CastModel.swift */,
 				75339996272C58430067C3AC /* MovieModel.swift */,
 				756F2575272D4F95004E05A9 /* SimilarModel.swift */,
@@ -433,6 +439,7 @@
 				759BCBDF271BC38D00BE2F65 /* SceneDelegate.swift in Sources */,
 				7516B0A5272EB88800EDA375 /* TMDBSearchAPIManager.swift in Sources */,
 				751F128F271F1B0700F24BB7 /* BookCollectionViewCell.swift in Sources */,
+				75FFF05627E5BC9D007A69C8 /* KoficModel.swift in Sources */,
 				75BFE4B22734EF9600D505A0 /* KobisAPIManager.swift in Sources */,
 				751F1292271F1B2F00F24BB7 /* BookViewController.swift in Sources */,
 				756F2576272D4F95004E05A9 /* SimilarModel.swift in Sources */,
@@ -442,6 +449,7 @@
 				757E088C2729C4780006AA14 /* MediaModel.swift in Sources */,
 				759BCBF6271BCCD300BE2F65 /* CastListViewController.swift in Sources */,
 				753C83E42720355900CBD286 /* MapViewController.swift in Sources */,
+				75FFF05827E64446007A69C8 /* KobisDetailAPIManager.swift in Sources */,
 				757E0887272925360006AA14 /* BoxofficeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

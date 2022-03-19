@@ -13,7 +13,6 @@ class CastListViewController: UIViewController {
     var castList: [castModel] = []
     var startpage = 1
     
-    //toggleButton 설정
     var toggleButtonClick:Bool = false
     
     override func viewDidLoad() {
@@ -44,6 +43,7 @@ class CastListViewController: UIViewController {
         } else {
             mainMediaLabel.text = mediaData!.originalName
         }
+        
         mainMediaLabel.textAlignment = .center
         mainMediaLabel.textColor = .white
         mainMediaLabel.font = UIFont().mainBold
@@ -76,7 +76,6 @@ class CastListViewController: UIViewController {
 }
 
 extension CastListViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -102,7 +101,6 @@ extension CastListViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else {
                 return UITableViewCell()
             }
-            
             let image = toggleButtonClick ? UIImage(systemName: "arrow.up.to.line.alt"): UIImage(systemName: "arrow.down.to.line.alt")
             let lines = toggleButtonClick ? 0 : 2
             
@@ -117,7 +115,6 @@ extension CastListViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CastListTableViewCell.identifier, for: indexPath) as? CastListTableViewCell else {
                 return UITableViewCell()
             }
-            
             let row = castList[indexPath.row]
             let url = URL(string: Endpoint.TMDBImage + row.profile_path)
             

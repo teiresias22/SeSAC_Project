@@ -104,7 +104,7 @@ class BoxofficeViewController: UIViewController {
             audiAccData.append(data[i].audiAccData)
             movieCdData.append(data[i].movieCdData)
         }
-        let task = BoxofficeRank(rankArray: rankData, movieNmArray: movieNmData, openDtArray: openDtDate, rankOldAndNewArray: rankOldAndNewData, audiAccArray: audiAccData, movieCdArray: movieNmData, nowDate: setDate)
+        let task = BoxofficeRank(rankArray: rankData, movieNmArray: movieNmData, openDtArray: openDtDate, rankOldAndNewArray: rankOldAndNewData, audiAccArray: audiAccData, movieCdArray: movieCdData, nowDate: setDate)
         
         try! localRealm.write{
             localRealm.add(task)
@@ -158,7 +158,6 @@ extension BoxofficeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //MARK: didSelectRowAt
         let sb = UIStoryboard(name: "CastList", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as? CastListViewController else { return }
         let row = boxofficeData[indexPath.row]

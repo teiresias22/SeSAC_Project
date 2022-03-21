@@ -14,7 +14,7 @@ class KobisDetailAPIManager {
     
     typealias CompletionHandler = (JSON) -> ()
     
-    func fetchKobisDetailData(movieID: String, result: @escaping CompletionHandler) {
+    func fetchTranslateData(movieID: String, result: @escaping CompletionHandler) {
         let url = Endpoint.KobisDetailURL + movieID
         
         AF.request(url, method: .get).validate().responseJSON { response in

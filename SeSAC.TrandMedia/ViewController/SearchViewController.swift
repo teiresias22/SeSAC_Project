@@ -56,8 +56,9 @@ class SearchViewController: UIViewController {
                 let overview = item["overview"].stringValue
                 let release_date = item["release_date"].stringValue
                 let first_air_date = item["first_air_date"].stringValue
+                let backdrop_path = item["backdrop_path"].stringValue
                 
-                let data = MovieModel(poster_path: poster_path, genre_ids: genre_ids, id: id, original_title: original_title, original_name: original_name, overview: overview, release_date: release_date, first_air_date: first_air_date)
+                let data = MovieModel(poster_path: poster_path, genre_ids: genre_ids, id: id, original_title: original_title, original_name: original_name, overview: overview, release_date: release_date, first_air_date: first_air_date, backdrop_path: backdrop_path)
                 
                 self.totalPageCount = json["total_results"].intValue
                 self.movieData.append(data)
@@ -109,7 +110,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
     //셀 클릭시 이동대상
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "CastList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as! CastListViewController
         
         let row = movieData[indexPath.row]

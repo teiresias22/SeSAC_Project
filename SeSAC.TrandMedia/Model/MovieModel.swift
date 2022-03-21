@@ -9,4 +9,5 @@ struct MovieModel {
     var overview: String
     var release_date: String
     var first_air_date: String
+    var backdrop_path: String
 }

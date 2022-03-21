@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct KofiModel {
-    var movieNmData: String
-    var movieNmEnData: String
-    var showTmData: String
-    var openDtData: String
-    var typeNmData: String
+struct KoficCastModel {
+    var peopleNm: String
+    var peopleNmEn: String
+    var cast: String
+    var castEn: String
 }

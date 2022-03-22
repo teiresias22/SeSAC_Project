@@ -253,21 +253,13 @@
 			isa = PBXGroup;
 			children = (
 				759BCBF7271BCD6200BE2F65 /* MainPageViewController.swift */,
-				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
 				759BCBF3271BCC8500BE2F65 /* SearchViewController.swift */,
-				75CE63A527E1B27200D32EFE /* Search.storyboard */,
 				7542A665271DD42D00CB433D /* WebViewController.swift */,
-				75CE63A727E1D6B500D32EFE /* WebView.storyboard */,
 				757E0882272913BF0006AA14 /* BoxofficeViewController.swift */,
-				75CE63A927E1DFE100D32EFE /* Boxoffice.storyboard */,
 				753C83E32720355900CBD286 /* MapViewController.swift */,
-				75CE63AB27E1DFE900D32EFE /* Map.storyboard */,
 				759BCBF5271BCCD300BE2F65 /* CastListViewController.swift */,
-				75CE63AD27E1DFF000D32EFE /* CastList.storyboard */,
 				751F1291271F1B2F00F24BB7 /* BookViewController.swift */,
-				75CE63AF27E1DFF600D32EFE /* Book.storyboard */,
 				756F2569272D2B52004E05A9 /* SimilarMediaViewController.swift */,
-				75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -296,6 +288,7 @@
 				759BCBDC271BC38D00BE2F65 /* AppDelegate.swift */,
 				759BCBDE271BC38D00BE2F65 /* SceneDelegate.swift */,
 				759BCBE0271BC38D00BE2F65 /* ViewController.swift */,
+				75A26F9A27E900DE00ACF541 /* Storyboard */,
 				757E0884272913C50006AA14 /* ViewController */,
 				753C83E22720352300CBD286 /* cell */,
 				753C83DF271FA2C100CBD286 /* Model */,
@@ -307,6 +300,21 @@
 				759BCBE5271BC38D00BE2F65 /* SeSAC_TrandMedia.xcdatamodeld */,
 			);
 			path = SeSAC.TrandMedia;
+			sourceTree = "<group>";
+		};
+		75A26F9A27E900DE00ACF541 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				759BCBE2271BC38D00BE2F65 /* Main.storyboard */,
+				75CE63A527E1B27200D32EFE /* Search.storyboard */,
+				75CE63A727E1D6B500D32EFE /* WebView.storyboard */,
+				75CE63A927E1DFE100D32EFE /* Boxoffice.storyboard */,
+				75CE63AB27E1DFE900D32EFE /* Map.storyboard */,
+				75CE63AD27E1DFF000D32EFE /* CastList.storyboard */,
+				75CE63AF27E1DFF600D32EFE /* Book.storyboard */,
+				75CE63B127E1E00100D32EFE /* SimilarMedia.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

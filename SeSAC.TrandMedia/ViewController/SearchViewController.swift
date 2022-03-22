@@ -109,7 +109,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
     
     //셀 클릭시 이동대상
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let sb = UIStoryboard(name: "CastList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "CastListViewController") as! CastListViewController
         

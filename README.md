@@ -37,6 +37,9 @@
 ### Xib를 활용한 Cell의 재사용
   * TableView의 Cell은 최초 로드에서 모든 Cell을 제작하는게 아닌 보여지는 Cell만을 제작하여 재사용함
 
+### 코드 리팩토링
+   * 스토리보드를 분리
+
  ### ViewController의 Life - Cycle
   * ViewController의 생명주기 (Life-Cycle)는 화면에 보여졌다가 사라지는 주기로 쓰임에 따라 종류가 다양하다.    
     init, loadView, viewDidLoad, viewWIllAppear, viewDidAppear, viewWillDisappear, viewDidDisappear, viewDidUnload

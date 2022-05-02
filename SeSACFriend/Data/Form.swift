@@ -40,3 +40,17 @@ struct WriteReviewFrom: Encodable {
     let reputation: [Int]
     let comment: String
 }
+
+struct UpdateMypageForm: Encodable {
+    let searchable: Int
+    let ageMin: Int
+    let ageMax: Int
+    let gender: Int
+    let hobby: String
+}
+
+struct ReportOtherFrom: Encodable {
+    let otheruid: String
+    let reportedReputation: [Int]
+    let comment: String
+}

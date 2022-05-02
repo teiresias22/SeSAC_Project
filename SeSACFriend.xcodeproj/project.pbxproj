@@ -98,6 +98,15 @@
 		7590987C27B77B760063E31B /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987B27B77B750063E31B /* ChattingViewController.swift */; };
 		7590987E27B77BCB0063E31B /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987D27B77BCB0063E31B /* ChattingView.swift */; };
 		7590988027B7EB670063E31B /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590987F27B7EB670063E31B /* CustomAnnotationView.swift */; };
+		75AAA20B281FB08D00DC4719 /* ChatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20A281FB08D00DC4719 /* ChatAPIService.swift */; };
+		75AAA20D281FB90900DC4719 /* ChatEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20C281FB90900DC4719 /* ChatEndPoint.swift */; };
+		75AAA20F281FC1B500DC4719 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20E281FC1B500DC4719 /* ChatViewModel.swift */; };
+		75AAA211281FDE8B00DC4719 /* URL + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA210281FDE8B00DC4719 /* URL + Extention.swift */; };
+		75AAA213281FE08D00DC4719 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA212281FE08D00DC4719 /* Chat.swift */; };
+		75AAA215281FE16600DC4719 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA214281FE16600DC4719 /* SocketIOManager.swift */; };
+		75AAA218281FEA1400DC4719 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 75AAA217281FEA1400DC4719 /* SocketIO */; };
+		75AAA21A282014B500DC4719 /* CustomChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA219282014B500DC4719 /* CustomChattingView.swift */; };
+		75AAA21C282015B000DC4719 /* CustomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA21B282015B000DC4719 /* CustomMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +195,14 @@
 		7590987B27B77B750063E31B /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		7590987D27B77BCB0063E31B /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		7590987F27B7EB670063E31B /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		75AAA20A281FB08D00DC4719 /* ChatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPIService.swift; sourceTree = "<group>"; };
+		75AAA20C281FB90900DC4719 /* ChatEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEndPoint.swift; sourceTree = "<group>"; };
+		75AAA20E281FC1B500DC4719 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		75AAA210281FDE8B00DC4719 /* URL + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extention.swift"; sourceTree = "<group>"; };
+		75AAA212281FE08D00DC4719 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		75AAA214281FE16600DC4719 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		75AAA219282014B500DC4719 /* CustomChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChattingView.swift; sourceTree = "<group>"; };
+		75AAA21B282015B000DC4719 /* CustomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +213,7 @@
 				759097B4279DE3930063E31B /* SwiftyJSON in Frameworks */,
 				75909769279528140063E31B /* FirebaseMessaging in Frameworks */,
 				759097B1279DE3450063E31B /* Alamofire in Frameworks */,
+				75AAA218281FEA1400DC4719 /* SocketIO in Frameworks */,
 				75909767279528140063E31B /* FirebaseDatabase in Frameworks */,
 				75909761279528140063E31B /* FirebaseAnalytics in Frameworks */,
 				75909765279528140063E31B /* FirebaseCrashlytics in Frameworks */,
@@ -299,6 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				759097942798DEBB0063E31B /* APIService.swift */,
+				75AAA20A281FB08D00DC4719 /* ChatAPIService.swift */,
+				75AAA20C281FB90900DC4719 /* ChatEndPoint.swift */,
 				7590986F27B6CC3D0063E31B /* QueueAPIService.swift */,
 				75909798279A6D7C0063E31B /* Endpoint.swift */,
 				7590987127B6CC930063E31B /* QueueEndpoint.swift */,
@@ -310,6 +330,8 @@
 				759097852795B9830063E31B /* Observable.swift */,
 				759097D727A17CFF0063E31B /* UserDefault.swift */,
 				7590986427B574A10063E31B /* Enums.swift */,
+				75AAA212281FE08D00DC4719 /* Chat.swift */,
+				75AAA214281FE16600DC4719 /* SocketIOManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -320,6 +342,7 @@
 				75909789279657550063E31B /* Color+Extention.swift */,
 				759097B7279E68AA0063E31B /* Font+Extention.swift */,
 				759097D927A1D5860063E31B /* Date+Extention.swift */,
+				75AAA210281FDE8B00DC4719 /* URL + Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -354,6 +377,8 @@
 				7590985127B26B7B0063E31B /* CantFindUserView.swift */,
 				7590987D27B77BCB0063E31B /* ChattingView.swift */,
 				7590987F27B7EB670063E31B /* CustomAnnotationView.swift */,
+				75AAA219282014B500DC4719 /* CustomChattingView.swift */,
+				75AAA21B282015B000DC4719 /* CustomMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				759097EA27A2A20C0063E31B /* HomeViewModel.swift */,
+				75AAA20E281FC1B500DC4719 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -581,6 +607,7 @@
 				7590978C2796629C0063E31B /* TextFieldEffects */,
 				759097B0279DE3450063E31B /* Alamofire */,
 				759097B3279DE3930063E31B /* SwiftyJSON */,
+				75AAA217281FEA1400DC4719 /* SocketIO */,
 			);
 			productName = SeSACFriend;
 			productReference = 75909743279517D80063E31B /* SeSACFriend.app */;
@@ -616,6 +643,7 @@
 				7590978B2796629C0063E31B /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				759097AF279DE3450063E31B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				759097B2279DE3930063E31B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				75AAA216281FEA1400DC4719 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
 			);
 			productRefGroup = 75909744279517D80063E31B /* Products */;
 			projectDirPath = "";
@@ -668,16 +696,19 @@
 				7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */,
 				7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */,
 				759097FB27A2ACFB0063E31B /* MyViewModel.swift in Sources */,
+				75AAA211281FDE8B00DC4719 /* URL + Extention.swift in Sources */,
 				759097DD27A2953A0063E31B /* TabBarViewController.swift in Sources */,
 				7590981927A7CE9C0063E31B /* CustomUserInfoHobby.swift in Sources */,
 				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
 				759097A1279AC5DB0063E31B /* SignUpGenderViewController.swift in Sources */,
+				75AAA215281FE16600DC4719 /* SocketIOManager.swift in Sources */,
 				759097C9279F1D870063E31B /* Form.swift in Sources */,
 				75909782279592B80063E31B /* ViewRepresentable.swift in Sources */,
 				759097B8279E68AA0063E31B /* Font+Extention.swift in Sources */,
 				7590985427B27B1F0063E31B /* NearUserViewCell.swift in Sources */,
 				7590974B279517D80063E31B /* ViewController.swift in Sources */,
 				7590980627A453B70063E31B /* MyDetailViewController.swift in Sources */,
+				75AAA21C282015B000DC4719 /* CustomMenuView.swift in Sources */,
 				759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */,
 				759097F527A2AC310063E31B /* FriendViewModel.swift in Sources */,
 				7590986527B574A20063E31B /* Enums.swift in Sources */,
@@ -688,11 +719,14 @@
 				759097C7279EF83A0063E31B /* HomeViewController.swift in Sources */,
 				7590987C27B77B760063E31B /* ChattingViewController.swift in Sources */,
 				759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */,
+				75AAA20B281FB08D00DC4719 /* ChatAPIService.swift in Sources */,
 				7590981427A7CCEC0063E31B /* CustomUserInfoCell.swift in Sources */,
 				759097ED27A2A9B80063E31B /* ShopView.swift in Sources */,
 				7590982D27AD92EA0063E31B /* HobbyViewController.swift in Sources */,
 				7590980227A3CD400063E31B /* MyMenuTableViewCell.swift in Sources */,
 				75909799279A6D7C0063E31B /* Endpoint.swift in Sources */,
+				75AAA213281FE08D00DC4719 /* Chat.swift in Sources */,
+				75AAA20D281FB90900DC4719 /* ChatEndPoint.swift in Sources */,
 				7590981727A7CE810063E31B /* CustomUserInfoTitle.swift in Sources */,
 				7590980E27A597BE0063E31B /* CustomButtonH32.swift in Sources */,
 				7590980A27A4DA3A0063E31B /* CustomUserInfoName.swift in Sources */,
@@ -702,6 +736,7 @@
 				7590982B27AD92A00063E31B /* HobbyView.swift in Sources */,
 				75429D8527BFD30900BADA9E /* QueueStateResult.swift in Sources */,
 				75909793279847150063E31B /* SignUpNicknameView.swift in Sources */,
+				75AAA20F281FC1B500DC4719 /* ChatViewModel.swift in Sources */,
 				7590985227B26B7B0063E31B /* CantFindUserView.swift in Sources */,
 				7590987E27B77BCB0063E31B /* ChattingView.swift in Sources */,
 				7590980027A3CD340063E31B /* MyProfileTableViewCell.swift in Sources */,
@@ -715,6 +750,7 @@
 				7590982F27AD9EBB0063E31B /* NearUserView.swift in Sources */,
 				7590988027B7EB670063E31B /* CustomAnnotationView.swift in Sources */,
 				759097862795B9830063E31B /* Observable.swift in Sources */,
+				75AAA21A282014B500DC4719 /* CustomChattingView.swift in Sources */,
 				759097D2279FD7260063E31B /* LaunchScreenView.swift in Sources */,
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
 				7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */,
@@ -978,6 +1014,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		75AAA216281FEA1400DC4719 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1025,6 +1069,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 759097B2279DE3930063E31B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		75AAA217281FEA1400DC4719 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75AAA216281FEA1400DC4719 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

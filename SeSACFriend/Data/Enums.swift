@@ -113,3 +113,35 @@ enum MyStatusCase: Int {
     case matching = 1
     case matched = 2
 }
+
+enum ChatStatusCodeCase: Int {
+    case success = 200
+    case fail = 201
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+}
+
+enum HobbyRequestStatusCodeCase: Int {
+    case success = 200
+    case alreadyRecievedRequest = 201
+    case otherCanceledMatcting = 202
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+    
+}
+
+enum HobbyAcceptStatusCodeCase: Int {
+    case success = 200
+    case alreadyOtherMatched = 201
+    case otherCanceledMatcting = 202
+    case alreadyIMatched = 203
+    case firebaseTokenError = 401
+    case unAuthorized = 406
+    case serverError = 500
+    case clientError = 501
+    
+}

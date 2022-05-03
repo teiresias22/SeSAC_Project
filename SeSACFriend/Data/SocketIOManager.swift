@@ -26,7 +26,7 @@ class SocketIOManager: NSObject {
         socket = manager.defaultSocket
         socket.on(clientEvent: .connect) { data, ack in
             print("socket is connected", data, ack)
-            self.socket.emit("changesocketid", UserDefaults.standard.string(forKey: UserDefaultKeys.myUid.rawValue)!)
+            self.socket.emit("changesocketid", UserDefaults.standard.string(forKey: UserDefault.myUid.rawValue)!)
         }
         
         socket.on(clientEvent: .disconnect) { data, ack in
@@ -41,9 +41,9 @@ class SocketIOManager: NSObject {
             let chat = data["chat"] as! String
             let createdAt = data["createdAt"] as! String
             let id = data["_id"] as! String
-            let v = data["__v"] as! I
-            print("check data",from, to, chat, createdAt, id, v)
-            
+            let v = data["__v"] as! Int
+            print("check data",from, to , chat, createdAt, id, v)
+              
             NotificationCenter.default.post(name: NSNotification.Name("getMessage"), object: self, userInfo: [
                 "from" : from,
                 "to" : to,

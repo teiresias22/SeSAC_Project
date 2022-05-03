@@ -12,4 +12,7 @@ enum UserDefault: String {
     case idToken = "idToken"
     case FCMToken = "FCMToken"
     case myStatus = "myStatus"
+    
+    case otherUid
+    case myUid
 }

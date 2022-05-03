@@ -51,4 +51,13 @@ extension URL {
     static func makeQueueEndPoint(_ endpoint: String) -> URL {
         URL(string: baseURL + "queue/" + endpoint)!
     }
+    
+    static func makeUserEndPoint(_ endpoint: String) -> URL {
+        URL(string: baseURL + "user/" + endpoint)!
+    }
+    
+    static func makeChatEndPoint(_ endpoint: String) -> URL {
+        URL(string: baseURL + "chat/" + endpoint)!
+    }
+    
 }

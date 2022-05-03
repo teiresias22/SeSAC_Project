@@ -34,8 +34,8 @@ class ChattingView: UIView, ViewRepresentable {
         return view
     }()
     
-    let menuView: MenuView = {
-        let view = MenuView()
+    let menuView: CustomMenuView = {
+        let view = CustomMenuView()
         view.backgroundColor = .white
         
         return view

@@ -101,12 +101,18 @@
 		75AAA20B281FB08D00DC4719 /* ChatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20A281FB08D00DC4719 /* ChatAPIService.swift */; };
 		75AAA20D281FB90900DC4719 /* ChatEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20C281FB90900DC4719 /* ChatEndPoint.swift */; };
 		75AAA20F281FC1B500DC4719 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA20E281FC1B500DC4719 /* ChatViewModel.swift */; };
-		75AAA211281FDE8B00DC4719 /* URL + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA210281FDE8B00DC4719 /* URL + Extention.swift */; };
 		75AAA213281FE08D00DC4719 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA212281FE08D00DC4719 /* Chat.swift */; };
 		75AAA215281FE16600DC4719 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA214281FE16600DC4719 /* SocketIOManager.swift */; };
 		75AAA218281FEA1400DC4719 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 75AAA217281FEA1400DC4719 /* SocketIO */; };
 		75AAA21A282014B500DC4719 /* CustomChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA219282014B500DC4719 /* CustomChattingView.swift */; };
 		75AAA21C282015B000DC4719 /* CustomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA21B282015B000DC4719 /* CustomMenuView.swift */; };
+		75AAA21E28204CB800DC4719 /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA21D28204CB800DC4719 /* MyChatTableViewCell.swift */; };
+		75AAA22028204F1D00DC4719 /* OtherChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA21F28204F1D00DC4719 /* OtherChatTableViewCell.swift */; };
+		75AAA2222820504800DC4719 /* ChattingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA2212820504800DC4719 /* ChattingHeaderTableViewCell.swift */; };
+		75AAA22428205DBA00DC4719 /* ChattingReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA22328205DBA00DC4719 /* ChattingReportViewController.swift */; };
+		75AAA226282153C300DC4719 /* CustomChattingRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA225282153C300DC4719 /* CustomChattingRateView.swift */; };
+		75AAA22828215C0400DC4719 /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA22728215C0400DC4719 /* DynamicHeightCollectionView.swift */; };
+		75AAA22A28215C2600DC4719 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAA22928215C2500DC4719 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,11 +204,17 @@
 		75AAA20A281FB08D00DC4719 /* ChatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPIService.swift; sourceTree = "<group>"; };
 		75AAA20C281FB90900DC4719 /* ChatEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEndPoint.swift; sourceTree = "<group>"; };
 		75AAA20E281FC1B500DC4719 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		75AAA210281FDE8B00DC4719 /* URL + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extention.swift"; sourceTree = "<group>"; };
 		75AAA212281FE08D00DC4719 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		75AAA214281FE16600DC4719 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		75AAA219282014B500DC4719 /* CustomChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChattingView.swift; sourceTree = "<group>"; };
 		75AAA21B282015B000DC4719 /* CustomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuView.swift; sourceTree = "<group>"; };
+		75AAA21D28204CB800DC4719 /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
+		75AAA21F28204F1D00DC4719 /* OtherChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatTableViewCell.swift; sourceTree = "<group>"; };
+		75AAA2212820504800DC4719 /* ChattingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		75AAA22328205DBA00DC4719 /* ChattingReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingReportViewController.swift; sourceTree = "<group>"; };
+		75AAA225282153C300DC4719 /* CustomChattingRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChattingRateView.swift; sourceTree = "<group>"; };
+		75AAA22728215C0400DC4719 /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		75AAA22928215C2500DC4719 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,7 +354,6 @@
 				75909789279657550063E31B /* Color+Extention.swift */,
 				759097B7279E68AA0063E31B /* Font+Extention.swift */,
 				759097D927A1D5860063E31B /* Date+Extention.swift */,
-				75AAA210281FDE8B00DC4719 /* URL + Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -379,6 +390,9 @@
 				7590987F27B7EB670063E31B /* CustomAnnotationView.swift */,
 				75AAA219282014B500DC4719 /* CustomChattingView.swift */,
 				75AAA21B282015B000DC4719 /* CustomMenuView.swift */,
+				75AAA225282153C300DC4719 /* CustomChattingRateView.swift */,
+				75AAA22928215C2500DC4719 /* MainButton.swift */,
+				75AAA22728215C0400DC4719 /* DynamicHeightCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +413,7 @@
 				7590982C27AD92EA0063E31B /* HobbyViewController.swift */,
 				7590983027AD9F050063E31B /* NearUserViewController.swift */,
 				7590987B27B77B750063E31B /* ChattingViewController.swift */,
+				75AAA22328205DBA00DC4719 /* ChattingReportViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -548,6 +563,9 @@
 			children = (
 				7590983327AE49EF0063E31B /* HobbyCollectionViewCell.swift */,
 				7590985327B27B1F0063E31B /* NearUserViewCell.swift */,
+				75AAA21D28204CB800DC4719 /* MyChatTableViewCell.swift */,
+				75AAA21F28204F1D00DC4719 /* OtherChatTableViewCell.swift */,
+				75AAA2212820504800DC4719 /* ChattingHeaderTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -696,7 +714,6 @@
 				7590979127972F1B0063E31B /* SignUpCodeCheckViewController.swift in Sources */,
 				7590977A2795852A0063E31B /* SignUpViewModel.swift in Sources */,
 				759097FB27A2ACFB0063E31B /* MyViewModel.swift in Sources */,
-				75AAA211281FDE8B00DC4719 /* URL + Extention.swift in Sources */,
 				759097DD27A2953A0063E31B /* TabBarViewController.swift in Sources */,
 				7590981927A7CE9C0063E31B /* CustomUserInfoHobby.swift in Sources */,
 				759097A8279C005B0063E31B /* CustomLabel.swift in Sources */,
@@ -712,7 +729,9 @@
 				759097C3279EF7EB0063E31B /* UserInfo.swift in Sources */,
 				759097F527A2AC310063E31B /* FriendViewModel.swift in Sources */,
 				7590986527B574A20063E31B /* Enums.swift in Sources */,
+				75AAA22A28215C2600DC4719 /* MainButton.swift in Sources */,
 				7590978A279657550063E31B /* Color+Extention.swift in Sources */,
+				75AAA2222820504800DC4719 /* ChattingHeaderTableViewCell.swift in Sources */,
 				7590980C27A4DAEA0063E31B /* CustomCardImageView.swift in Sources */,
 				759097EF27A2AA4A0063E31B /* ShopViewModel.swift in Sources */,
 				759097A6279B03B80063E31B /* SignUpBDView.swift in Sources */,
@@ -721,6 +740,8 @@
 				759097DA27A1D5860063E31B /* Date+Extention.swift in Sources */,
 				75AAA20B281FB08D00DC4719 /* ChatAPIService.swift in Sources */,
 				7590981427A7CCEC0063E31B /* CustomUserInfoCell.swift in Sources */,
+				75AAA22828215C0400DC4719 /* DynamicHeightCollectionView.swift in Sources */,
+				75AAA226282153C300DC4719 /* CustomChattingRateView.swift in Sources */,
 				759097ED27A2A9B80063E31B /* ShopView.swift in Sources */,
 				7590982D27AD92EA0063E31B /* HobbyViewController.swift in Sources */,
 				7590980227A3CD400063E31B /* MyMenuTableViewCell.swift in Sources */,
@@ -731,6 +752,7 @@
 				7590980E27A597BE0063E31B /* CustomButtonH32.swift in Sources */,
 				7590980A27A4DA3A0063E31B /* CustomUserInfoName.swift in Sources */,
 				75909747279517D80063E31B /* AppDelegate.swift in Sources */,
+				75AAA22028204F1D00DC4719 /* OtherChatTableViewCell.swift in Sources */,
 				759097D627A13D0E0063E31B /* AuthResponse.swift in Sources */,
 				759097CE279FC6CB0063E31B /* OnboardingView.swift in Sources */,
 				7590982B27AD92A00063E31B /* HobbyView.swift in Sources */,
@@ -755,10 +777,12 @@
 				7590977C279585370063E31B /* SignUpViewController.swift in Sources */,
 				7590979B279AC59A0063E31B /* SignUpNicknameViewController.swift in Sources */,
 				759097882795CB1E0063E31B /* Validation.swift in Sources */,
+				75AAA22428205DBA00DC4719 /* ChattingReportViewController.swift in Sources */,
 				759097F327A2ABEE0063E31B /* FriendView.swift in Sources */,
 				75909749279517D80063E31B /* SceneDelegate.swift in Sources */,
 				7590983127AD9F050063E31B /* NearUserViewController.swift in Sources */,
 				7590987027B6CC3D0063E31B /* QueueAPIService.swift in Sources */,
+				75AAA21E28204CB800DC4719 /* MyChatTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

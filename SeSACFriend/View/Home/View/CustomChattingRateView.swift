@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ChattingRateView: UIView, ViewRepresentable {
+class CustomChattingRateView: UIView, ViewRepresentable {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .Title3_M14
@@ -51,7 +51,7 @@ class ChattingRateView: UIView, ViewRepresentable {
         button.setTitle("rateButton", for: .normal)
         
         return button
-    }()
+    }(type: .disable)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

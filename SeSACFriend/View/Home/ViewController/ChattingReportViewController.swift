@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-class HomeChattingReportViewController: UIViewController {
+class HomeChattingReportViewController: BaseViewController {
     var viewModel = HomeViewModel()
     var reportTags = ["불법/사기", "불편한언행", "노쇼", "선정성", "인신공격", "기타"]
     var reportTagsSelected = [0, 0, 0 ,0, 0, 0]
     
     let chattingReportView: ChattingRateView = {
-        let view = ChattingRateView()
+        let view = CustomChattingRateView()
         view.titleLabel.text = "새싹 신고"
         view.subtitleLabel.text = "다시는 해당 새싹과 매칭되지 않습니다"
         view.rateTextView.text = "신고 사유를 적어주세요\n허위 신고 시 제재를 받을 수 있습니다"
@@ -121,7 +121,7 @@ class HomeChattingReportViewController: UIViewController {
             
         } else {
             self.view.endEditing(true)
-            view.makeToast("최소 한 개의 신고 항목을 선택해주세요")
+            toastMessage(message: "최소 한 개의 신고 항목을 선택해주세요")
         }
     }
 

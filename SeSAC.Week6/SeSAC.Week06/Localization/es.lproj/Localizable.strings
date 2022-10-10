@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SeSAC.Week06
+
+  Created by Joonhwan Jeon on 2021/11/01.
+  
+*/
+
+"tab_home" = "casa";
+"tab_Setting" = "configuración";
+
+"testLabel" = "¡Hola! Un placer conocerte";

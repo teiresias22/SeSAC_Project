@@ -20,7 +20,7 @@
 ## SeSAC Friend
     SeSAC에서 진행한 Final SLP입니다.
     
-## SeSAC Heritage
+## SeSAC Heritage(https://github.com/teiresias22/SeSAC.Heritage.git))
     SeSAC에서 진행한 출시프로젝트 입니다.
     
 ## TrandMedia

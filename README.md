@@ -1,16 +1,16 @@
 # SeSAC_Project
-> 깃헙 프로젝트 정리를 위해 SeSAC에서 진행한 프로젝트를 모아 보관합니다.
+   깃헙 프로젝트 정리를 위해 SeSAC에서 진행한 프로젝트를 모아 보관합니다.
 
 ### DrinkWater
-> 1차 테스트 프로젝트 하루하루 물을 마신 양을 기록합니다.
+> 1차 테스트 프로젝트 하루하루 물을 마신 양을 기록합니다.   
 > StoryBoard 사용
     
 ### OpenWeather
-> OpenWeather의 OpenAPI를 사용하는 프로젝트 입니다.
+> OpenWeather의 OpenAPI를 사용하는 프로젝트 입니다.   
 > StoryBoard 사용
     
 ### BaeminAutoLayout
-> AutoLayout 실습을 위한 프로젝트 입니다.
+> AutoLayout 실습을 위한 프로젝트 입니다.   
 > StoryBoard를 활용한 AutoLyout 사용
     
 ### EmotionDiary
@@ -29,9 +29,9 @@
 [Github](https://github.com/teiresias22/SeSAC.TrandMedia.git)
     
 ### Week06
-> SeSAC 6주차 실습
+> SeSAC 6주차 실습   
 > StoryBoard 분할, Realm 사용, Localiztion, CustomFont 적용
     
 ### ShoppingList
-> 2차 테스트 프로젝트, 리스트 메모앱 입니다.
+> 2차 테스트 프로젝트, 리스트 메모앱 입니다.   
 > StoryBoard, UserDefault 사용

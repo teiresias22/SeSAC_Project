@@ -1,0 +1,69 @@
+
+/* Class = "UITextField"; placeholder = "이메일 주소 또는 전화번호"; ObjectID = "0YY-i1-tem"; */
+"0YY-i1-tem.placeholder" = "이메일 주소 또는 전화번호";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1Li-JM-dx2"; */
+"1Li-JM-dx2.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "TV프로그램"; ObjectID = "4Fw-NA-Hd2"; */
+"4Fw-NA-Hd2.configuration.title" = "TV프로그램";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4Fw-NA-Hd2"; */
+"4Fw-NA-Hd2.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "영화"; ObjectID = "4jW-ly-EZf"; */
+"4jW-ly-EZf.configuration.title" = "영화";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4jW-ly-EZf"; */
+"4jW-ly-EZf.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "미리보기"; ObjectID = "CYM-BS-kfT"; */
+"CYM-BS-kfT.text" = "미리보기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Czy-Iq-BS0"; */
+"Czy-Iq-BS0.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "내가 찜한 컨텐츠"; ObjectID = "DtA-Ab-kgQ"; */
+"DtA-Ab-kgQ.text" = "내가 찜한 컨텐츠";
+
+/* Class = "UITextField"; placeholder = "위치"; ObjectID = "Jhu-A6-l6E"; */
+"Jhu-A6-l6E.placeholder" = "위치";
+
+/* Class = "UITextField"; placeholder = "쿠폰 코드 입력"; ObjectID = "KfL-YC-ZUn"; */
+"KfL-YC-ZUn.placeholder" = "쿠폰 코드 입력";
+
+/* Class = "UILabel"; text = "추가 정보 입력"; ObjectID = "MDF-Lw-54U"; */
+"MDF-Lw-54U.text" = "추가 정보 입력";
+
+/* Class = "UIButton"; configuration.title = "N"; ObjectID = "Zyr-DB-MbO"; */
+"Zyr-DB-MbO.configuration.title" = "N";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Zyr-DB-MbO"; */
+"Zyr-DB-MbO.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fnd-ye-D3e"; */
+"fnd-ye-D3e.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "내가 찜한 콘텐츠"; ObjectID = "i8P-Le-SAD"; */
+"i8P-Le-SAD.configuration.title" = "내가 찜한 콘텐츠";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i8P-Le-SAD"; */
+"i8P-Le-SAD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "정보"; ObjectID = "iYp-4j-Sbf"; */
+"iYp-4j-Sbf.text" = "정보";
+
+/* Class = "UITextField"; placeholder = "비밀번호"; ObjectID = "iZi-2f-En8"; */
+"iZi-2f-En8.placeholder" = "비밀번호";
+
+/* Class = "UIButton"; configuration.title = "회원가입"; ObjectID = "kRe-aN-sWW"; */
+"kRe-aN-sWW.configuration.title" = "회원가입";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kRe-aN-sWW"; */
+"kRe-aN-sWW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "NETFLEX"; ObjectID = "kko-iX-MWq"; */
+"kko-iX-MWq.text" = "NETFLEX";
+
+/* Class = "UITextField"; placeholder = "닉네임"; ObjectID = "loe-L8-TIp"; */
+"loe-L8-TIp.placeholder" = "닉네임";

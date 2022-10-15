@@ -1,7 +1,5 @@
 # SeSAC_Project
     깃헙 프로젝트 정리를 위해 SeSAC에서 진행한 프로젝트를 모아 보관합니다.
-    
-* * *
 
 ## DrinkWater
     1차 테스트 프로젝트 하루하루 물을 마신 양을 기록합니다.
@@ -22,8 +20,7 @@
     
 ## SeSAC Heritage
     SeSAC에서 진행한 출시프로젝트 입니다.
-
-[Github](https://github.com/teiresias22/SeSAC.Heritage.git, "Project link")
+[Github](https://github.com/teiresias22/SeSAC.Heritage.git)
     
 ## TrandMedia
     TMDB, 영화진흥위원회, NaverBook의 OpenAPI를 활용한 프로젝트 입니다.

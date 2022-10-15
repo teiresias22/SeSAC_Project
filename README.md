@@ -22,6 +22,7 @@
     
 ## SeSAC Heritage()
     SeSAC에서 진행한 출시프로젝트 입니다.
+    [Github]: https://github.com/teiresias22/SeSAC.Heritage.get "Project link"
     [Github](https://github.com/teiresias22/SeSAC.Heritage.git, "Project link")
     
 ## TrandMedia
